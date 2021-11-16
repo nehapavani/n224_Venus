@@ -21,6 +21,6 @@
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | 
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | 
 
-#Sprint 0 Week 13
+# Sprint 0 Week 13
 #### Goals: Pick Teams then organization of slack, github, brainwrites, README, Scrum Board, Running Project, Individual Home Pages, and Journal TPT
 #### To get complete points of 5/5, Scrum Boards and Issue for each individual (.5 to seed) and GitHub plan and commits by each individual (.5 to seed)
