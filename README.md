@@ -15,7 +15,7 @@
 ## Contributors
 | Name | GitHub ID and Profile | Tasks | Commits |
 |:-----|:----------------------|:------|:--------|
-| Christina Lee | [@christinlee367](https://github.com/christinlee367) | [Tickets](https://github.com/christinlee367/n225_fire_eradicators/issues/assigned/christinlee367) |[Scrum Board](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=christinalee367)
+| Christina Lee | [@christinlee367](https://github.com/christinlee367) | [Tickets](https://github.com/christinlee367/n225_fire_eradicators/issues/assigned/christinlee367) |[Scrum Board](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=christinlee367)
 | Gigi Guan | [@gigiguan](https://github.com/gigiguan) | [Tickets](https://github.com/christinlee367/n225_fire_eradicators/issues/assigned/gigiguan) |[Scrum Board](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=gigiguan)
 | Allison Huang | [@allisonthuang](https://github.com/allisonthuang) | [Tickets](https://github.com/christinlee367/n225_fire_eradicators/issues/assigned/allisonthuang) |[Scrum Board](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=allisonthuang)
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | [Tickets](https://github.com/christinlee367/n225_fire_eradicators/issues/assigned/nehapavani) |[Scrum Board](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=nehapavani)
