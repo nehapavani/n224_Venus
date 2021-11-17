@@ -1,8 +1,10 @@
 # AP CSP Period 5: Team Fire Eradicators
+Visual of homepage<br>
+Policy Document?<br>
 ## [Scrum Board](https://github.com/christinlee367/n225_fire_eradicators/projects/1)
 ## [Team Journal](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
 
-## Project Ideation
+## Project Ideation (Insert description... To read more information click here. Maybe link to wiki?)
 
 ### Unique Idea: fire eradicators: focusing on the theme of natural disasters
 #### To inform students of natural disasters that may come near them and save their lives
