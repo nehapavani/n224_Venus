@@ -18,7 +18,9 @@ def journal():
 def about():
     return render_template("layouts/about.html")
 
-
+@app.route("/christina/")
+def christina():
+    return render_template("team/christina.html")
 
 # from image import hide_msg
 # @app.route("/rgbhide")
