@@ -22,6 +22,10 @@ def about():
 def christina():
     return render_template("team/christina.html")
 
+@app.route("/gigi/")
+def gigi():
+    return render_template("team/gigi.html")
+
 # from image import hide_msg
 # @app.route("/rgbhide")
 # def hidemsg():

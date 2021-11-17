@@ -1,0 +1,23 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/about.html" %}
+
+{% block head%}
+
+{% endblock %}
+
+<!-- This variable sets name of browser tab  -->
+{% set project = "gigi" %}
+
+<!-- This is a replacement block for Body in base.html -->
+{% block body %}
+<!-- Try building a new body here -->
+<h1 style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 30px;">Gigi Guan</h1>
+<p style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">Deployment Manager and Developer</p>
+<p style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">Hello, I am here.</p>
+<h2 style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">Website Contributions</h2>
+<ol style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">
+  <li>base code</li>
+</ol>
+
+
+{% endblock %}
