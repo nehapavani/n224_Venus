@@ -11,13 +11,55 @@
 <!-- This is a replacement block for Body in base.html -->
 {% block body %}
 <!-- Try building a new body here -->
-<h1 style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 30px;">Gigi Guan</h1>
-<p style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">Deployment Manager and Developer</p>
-<p style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">Hello, I am here.</p>
-<h2 style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">Website Contributions</h2>
-<ol style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 20px;">
+<body style="background-color:#F3CFC6;">
+
+<h1>Gigi Guan</h1>
+<p>Deployment Manager and Developer</p>
+<p>Hello, I am here.</p>
+<h2>Website Contributions</h2>
+<ol>
   <li>base code</li>
 </ol>
+
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+</style>
+<div class="jumbotron text-center" style= "width: 950px; height: 325px; margin: 50px 200px;">
+  <div class="col-md">
+    <h3>Learn a New Word!</h3>
+    <style>
+      .button {
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .button1 {background-color: #D2B48C;} /* Tan */
+    </style>
+    </head>
+    <body>
+<form action="/gigi">
+  <button class="button button1">Refresh</button>
+</form>
+<br>
+<p><strong>Word: </strong>{{ Y[0].word }}</p>
+<p><strong>Definition: </strong>{{ Y[0].definition }}</p>
+<p><strong>Pronunciation: </strong>{{ Y[0].pronunciation }}</p>
+
+<div class="row justify-content-md-center">
+</div>
+
 
 
 {% endblock %}
