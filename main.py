@@ -52,6 +52,11 @@ def gigi():
     print(response.text)
     return render_template("team/gigi.html", Y=output)
 
+@app.route("/anika/")
+def anika():
+    return render_template("team/anika.html")
+
+
 # from image import hide_msg
 # @app.route("/rgbhide")
 # def hidemsg():
