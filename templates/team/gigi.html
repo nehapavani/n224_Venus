@@ -13,12 +13,35 @@
 <!-- Try building a new body here -->
 <body style="background-color:#F3CFC6;">
 
-<h1>Gigi Guan</h1>
-<p>Deployment Manager and Developer</p>
+<h1>☁ Gigi Guan ☁ </h1>
+<p>✨ Deployment Manager and Developer</p>
 <p>Hello, I am here.</p>
-<h2>Website Contributions</h2>
+
+<button class="button button1" onclick="myFunction()">Click Me</button>
+
+
+<div id="myDIV">
+  This is my DIV element.
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "document.getElementById('myImage').src='/static/assets/mask_off_gigi.png'";
+    } else {
+    x.style.display = "none";
+  }
+}
+</script>
+<img id="myImage" src="/static/assets/mask_off_gigi.png" style="width:300px">
+
+
+
+<h2>Links</h2>
 <ol>
-  <li>base code</li>
+  <li><a href="https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing">Notes & Quiz</a></li>
 </ol>
 
 <style>
@@ -45,12 +68,14 @@
         cursor: pointer;
       }
 
-      .button1 {background-color: #D2B48C;} /* Tan */
+      .button1 {background-color: #be355e;} /* Pink */
+      .button2 {background-color: #D2B48C;} /* Tan */
+
     </style>
     </head>
     <body>
 <form action="/gigi">
-  <button class="button button1">Refresh</button>
+  <button class="button button2">Refresh</button>
 </form>
 <br>
 <p><strong>Word: </strong>{{ Y[0].word }}</p>
