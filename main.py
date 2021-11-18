@@ -20,9 +20,23 @@ def journal():
 def about():
     return render_template("layouts/about.html")
 
-@app.route("/christina/")
+@app.route("/christina/", methods=['GET', 'POST'])
 def christina():
-    return render_template("team/christina.html")
+    place="Atlanta"
+    if request.method == 'POST':
+        place = request.form['place']
+    querystring = {"q":place}
+
+    url = "https://weatherapi-com.p.rapidapi.com/current.json"
+
+    headers = {
+        'x-rapidapi-host': "weatherapi-com.p.rapidapi.com",
+        'x-rapidapi-key': "35c993f134msh6fbb5b79c410a17p11f3f7jsn6ad7e30cfe36"
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    output = json.loads(response.text)
+    print(response.text)
+    return render_template("team/christina.html", detail=output)
 
 @app.route("/gigi/")
 def gigi():
