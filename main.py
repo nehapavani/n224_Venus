@@ -57,6 +57,10 @@ def anika():
     return render_template("team/anika.html")
 
 
+@app.route("/neha/")
+def neha():
+    return render_template("team/neha.html")
+
 # from image import hide_msg
 # @app.route("/rgbhide")
 # def hidemsg():
