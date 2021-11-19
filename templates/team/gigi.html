@@ -13,12 +13,28 @@
 <!-- Try building a new body here -->
 <body style="background-color:#F3CFC6;">
 
-<h1>Gigi Guan</h1>
-<p>Deployment Manager and Developer</p>
-<p>Hello, I am here.</p>
-<h2>Website Contributions</h2>
+<h1>☁ 𝓖𝓲𝓰𝓲 𝓖𝓾𝓪𝓷 ☁ </h1>
+<p>✨ ᴅᴇᴘʟᴏʏᴍᴇɴᴛ ᴍᴀɴᴀɢᴇʀ ᴀɴᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ</p>
+
+<p><button class="button button1" onclick="toggleImage()">Click Me</button></p>
+
+<img id="maskOff" src="/static/assets/mask_off_gigi.jpg" style="width:200px">
+
+
+<script>
+  function toggleImage() {
+    var img = document.getElementById("maskOff");
+    if (img.src.match("/static/assets/mask_on_gigi.jpg")){
+      img.src = "/static/assets/mask_off_gigi.jpg";
+    }else{
+      img.src = "/static/assets/mask_on_gigi.jpg"
+    }
+  }
+</script>
+
+<h2>𝓛𝓲𝓷𝓴𝓼</h2>
 <ol>
-  <li>base code</li>
+  <li><a href="https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing">Notes & Quiz</a></li>
 </ol>
 
 <style>
@@ -45,21 +61,23 @@
         cursor: pointer;
       }
 
-      .button1 {background-color: #D2B48C;} /* Tan */
+      .button1 {background-color: #be355e;} /* Pink */
+      .button2 {background-color: #b99f7a;} /* Tan */
+
     </style>
     </head>
     <body>
-<form action="/gigi">
-  <button class="button button1">Refresh</button>
-</form>
-<br>
-<p><strong>Word: </strong>{{ Y[0].word }}</p>
-<p><strong>Definition: </strong>{{ Y[0].definition }}</p>
-<p><strong>Pronunciation: </strong>{{ Y[0].pronunciation }}</p>
+    <form action="/gigi">
+      <button class="button button2">Refresh</button>
+    </form>
+    <br>
+    <p><strong>Word: </strong>{{ Y[0].word }}</p>
+    <p><strong>Definition: </strong>{{ Y[0].definition }}</p>
+    <p><strong>Pronunciation: </strong>{{ Y[0].pronunciation }}</p>
 
-<div class="row justify-content-md-center">
-</div>
+    <div class="row justify-content-md-center">
+    </div>
 
 
 
-{% endblock %}
+    {% endblock %}
