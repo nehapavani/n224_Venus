@@ -31,6 +31,7 @@ Table of Contents<br>
 4. Deployment - Wiki Plan, Hardware and Frequency
 5. Scrum Board - Assignments and Backlog
 6. [TPT 1.3 and 1.4](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
+7. [Updated README.MD](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md)
 
 ## Sprint 0 Week  
 Goals: Pick Teams then organization of slack, github, brainwrites, README, Scrum Board, Running Project, Individual Home Pages, and Journal TPT
