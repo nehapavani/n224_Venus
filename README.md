@@ -28,7 +28,7 @@ Policy Document?<br>
 Goals: Pick Teams then organization of slack, github, brainwrites, README, Scrum Board, Running Project, Individual Home Pages, and Journal TPT
 To get complete points of 5/5, Scrum Boards and Issue for each individual (.5 to seed) and GitHub plan and commits by each individual (.5 to seed)
 
-## Sprint 1 Week<br>
+## [Sprint 1 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/11)<br>
 Table of Contents<br>
 1. Design - Wiki Theme, Brain Write & Wire Frame
 2. Technicals - 10 to 12 key ideas
