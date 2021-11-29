@@ -22,10 +22,6 @@ Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/nehapavani) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=nehapavani)
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/anika1sharma1) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=anika1sharma1)
 
-## Sprint 0 Week  
-Goals: Pick Teams then organization of slack, github, brainwrites, README, Scrum Board, Running Project, Individual Home Pages, and Journal TPT
-To get complete points of 5/5, Scrum Boards and Issue for each individual (.5 to seed) and GitHub plan and commits by each individual (.5 to seed)
-
 ## [Sprint 1 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/11)<br>
 Table of Contents<br>
 1. Design - Wiki Theme, Brain Write & Wire Frame
@@ -34,3 +30,7 @@ Table of Contents<br>
 4. Deployment - Wiki Plan, Hardware and Frequency
 5. Scrum Board - Assignments and Backlog
 6. TPT 1.3 and 1.4
+
+## Sprint 0 Week  
+Goals: Pick Teams then organization of slack, github, brainwrites, README, Scrum Board, Running Project, Individual Home Pages, and Journal TPT
+To get complete points of 5/5, Scrum Boards and Issue for each individual (.5 to seed) and GitHub plan and commits by each individual (.5 to seed)
