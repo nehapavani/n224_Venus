@@ -25,8 +25,8 @@ Policy Document?<br>
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/anika1sharma1) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=anika1sharma1)
 
 ## Sprint 0 Week  
-#### Goals: Pick Teams then organization of slack, github, brainwrites, README, Scrum Board, Running Project, Individual Home Pages, and Journal TPT
-#### To get complete points of 5/5, Scrum Boards and Issue for each individual (.5 to seed) and GitHub plan and commits by each individual (.5 to seed)
+Goals: Pick Teams then organization of slack, github, brainwrites, README, Scrum Board, Running Project, Individual Home Pages, and Journal TPT
+To get complete points of 5/5, Scrum Boards and Issue for each individual (.5 to seed) and GitHub plan and commits by each individual (.5 to seed)
 
 ## Sprint 1 Week<br>
 Table of Contents<br>
