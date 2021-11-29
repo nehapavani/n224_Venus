@@ -1,4 +1,4 @@
-# AP CSP Period 5: Team Fire Eradicators
+# AP CSP Period 5: Team Fire Eradicators🧯
 Insert Visual of homepage<br>
 Policy Document?<br>
 ### [Scrum Board](https://github.com/christinlee367/n225_fire_eradicators/projects/1) and [Team Journal](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
