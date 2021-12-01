@@ -27,7 +27,7 @@ Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with
 Table of Contents<br>
 1. Design - Wiki Theme, Brain Write & Wire Frame
 2. Technicals - 10 to 12 key ideas
-3. Github - On Wiki containing Management Plan
+3. Github - On Wiki containing [Management Plan](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/CONTRIBUTING.md)
 4. Deployment - Wiki Plan, Hardware and Frequency
 5. Scrum Board - Assignments and Backlog
 6. [TPT 1.3 and 1.4](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
