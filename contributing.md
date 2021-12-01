@@ -1,6 +1,6 @@
 # How have you started your GitHub project?  
-# Did you create a .gitignore to avoid committing files that don't belong in version control?  
-# Did you make sure NO .idea files are in your GitHub repository?
+## Did you create a .gitignore to avoid committing files that don't belong in version control?  
+## Did you make sure NO .idea files are in your GitHub repository?
 
 I created a .gitignore file to avoid committing files that don’t belong in version control and made sure that including me, no one in my team is committing .idea files. In the event that someone does accidentally push a .idea file since we have branches, it would not affect the code in the main branch.
 
