@@ -25,11 +25,11 @@ Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with
 
 ## [Sprint 1 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/11)<br>
 Table of Contents<br>
-1. Design - Wiki Theme, Brain Write & Wire Frame
-2. Technicals - 10 to 12 key ideas
-3. Github - On Wiki containing [Management Plan](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/CONTRIBUTING.md)
-4. Deployment - Wiki Plan, Hardware and Frequency
-5. Scrum Board - Assignments and Backlog
+1. [Design - Wiki Theme, Brain Write & Wire Frame](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing) (Slide 19) - Anika
+2. [Technicals - 10 to 12 key ideas](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/wiki#key-ideas-and-features) - Neha
+3. [Github - On Wiki containing Management Plan](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/wiki#how-have-you-started-your-github-project) - Christina
+4. [Deployment - Wiki Plan, Hardware and Frequency](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/wiki#deployment-hardware-and-frequency) - Gigi
+5. [Scrum Board - Assignments and Backlog](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/projects/1) - Allison
 6. [TPT 1.3 and 1.4](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
 7. [Updated README.MD](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md)
 
