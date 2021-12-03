@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import requests
 import json
 
+
 # create an instance of flask object
 app = Flask(__name__)
 
