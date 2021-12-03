@@ -1,0 +1,54 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/about.html" %}
+{% block head%}
+
+{% endblock %}
+
+
+
+<!-- This variable sets name of browser tab  -->
+{% set project = "neha" %}
+
+
+
+
+<!-- This is a replacement block for Body in base.html -->
+{% block body %}
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <button onclick="myFunction()">Try it</button>
+
+    <div id="myDIV">
+        This is my DIV element.
+    </div>
+
+    <body style="background-color:#E37383;">
+
+
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: arial,sans-serif;">
+
+        <span style="font-size: 300%; "> <p>Neha Valluri</p></span>
+
+        <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: arial,sans-serif;">
+
+
+
+            <span style="font-size: 150%; ">  <p> - Senior at Del Norte High School</p></span>
+
+            <span style="font-size: 150%; ">  <p> - 17 years old</p></span>
+
+            <span style="font-size: 150%; ">  <p> - Technical Officer of Scrum Team</p></span>
+
+            <span style="font-size: 150%; ">  <p> - Hobbies: Singing and dancing</p></span>
+
+            <span style="font-size: 150%; "> <p> - Interested in pursuing a career in STEM</p></span>
+
+{% endblock %}
