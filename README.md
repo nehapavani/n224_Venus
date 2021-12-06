@@ -23,6 +23,9 @@ Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/nehapavani) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=nehapavani)
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/anika1sharma1) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=anika1sharma1)
 
+## Sprint 2 Week
+Table of Contents<br>
+
 ## [Sprint 1 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/11)<br>
 Table of Contents<br>
 1. [Design - Wiki Theme, Brain Write & Wire Frame](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing) (Slide 19) - Anika
