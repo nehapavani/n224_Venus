@@ -61,10 +61,6 @@ def anika():
 def allison():
     return render_template("team/allison.html")
 
-@app.route("/neha/")
-def neha():
-    return render_template("team/neha.html")
-
 @app.route("/neha/",methods=['GET', 'POST'])
 def neha():
     output = [{'number':2,'text':'is a prime number'}]
