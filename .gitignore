@@ -1,6 +1,14 @@
-### Exclude IntelliJ IDEA from GitHub ###
-.idea
-*.iws
-*.iml
-*.ipr
+
+.idea/runConfigurations.xml
+.idea/m223_team_lovelace.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/other.xml
+.idea/vcs.xml
+__pycache__/image.cpython-39.pyc
 *.xml
+node_modules
+/node_modules/.package-lock.json
+/static/scss/custom.css.map
+/package.json
+/package-lock.json

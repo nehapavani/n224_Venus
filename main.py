@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import requests
 import json
 
+
 # create an instance of flask object
 app = Flask(__name__)
 
@@ -56,6 +57,13 @@ def gigi():
 def anika():
     return render_template("team/anika.html")
 
+@app.route("/allison/")
+def allison():
+    return render_template("team/allison.html")
+
+@app.route("/neha/")
+def neha():
+    return render_template("team/neha.html")
 
 @app.route("/neha/",methods=['GET', 'POST'])
 def neha():
