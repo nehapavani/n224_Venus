@@ -23,7 +23,7 @@ Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/nehapavani) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=nehapavani)
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/anika1sharma1) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=anika1sharma1)
 
-## Sprint 2 Week
+## [Sprint 2 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/27)
 Table of Contents<br>
 1. Deployed Website
 2. About Pages ([Gigi](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/4), [Christina](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/5), [Neha](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/3), [Anika](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/2), [Allison](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/1))
