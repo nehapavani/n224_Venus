@@ -55,6 +55,8 @@ def gigi():
 
 @app.route("/anika/")
 def anika():
+    url = "https://swapi.dev/api/starships/?format=json"
+    print()
     return render_template("team/anika.html")
 
 @app.route("/allison/")
