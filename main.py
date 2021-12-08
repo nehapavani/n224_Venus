@@ -63,9 +63,25 @@ def anika():
 def allison():
     return render_template("team/allison.html")
 
-@app.route("/neha/")
+@app.route("/neha/",methods=['GET', 'POST'])
 def neha():
-    return render_template("team/neha.html")
+    output = [{'number':2,'text':'is a prime number'}]
+    if request.form:
+        num1 = request.form.get('num1')
+
+        if len(num1)>0:  # input field has content
+            url = "https://numbersapi.p.rapidapi.com/"+num1+"/math"
+
+            querystring = {"fragment":"true","json":"true", "number":"num"}
+            headers = {
+                'x-rapidapi-host': "numbersapi.p.rapidapi.com",
+                'x-rapidapi-key': "2f4fb94902msh2ed8a6c271d64d9p1535e1jsn91c7cb7b9d1c",
+                'x-numbers-api-number': "num"
+            }
+            response = requests.request("GET", url, headers=headers, params=querystring)
+
+            return render_template("team/neha.html", x=response.json())
+    return render_template("team/neha.html", x=output)
 
 # from image import hide_msg
 # @app.route("/rgbhide")

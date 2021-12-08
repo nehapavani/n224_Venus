@@ -2,7 +2,7 @@
 Insert Visual of homepage<br>
 Policy Document?<br>
 #### [Scrum Board](https://github.com/christinlee367/n225_fire_eradicators/projects/1) and [Team Journal](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
-#### [Sprint 0](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-0-week), [Sprint 1](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-1-week)
+#### [Sprint 0](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-0-week), [Sprint 1](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-1-week), [Sprint 2](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-2-week)
 
 ## Project Ideation 🚀
 Unique Idea: fire eradicators: focusing on the theme of natural disasters<br>
@@ -22,6 +22,13 @@ Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with
 | Allison Huang | [@allisonthuang](https://github.com/allisonthuang) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/allisonthuang) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=allisonthuang)
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/nehapavani) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=nehapavani)
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/anika1sharma1) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=anika1sharma1)
+
+## [Sprint 2 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/27)
+Table of Contents<br>
+1. Deployed Website
+2. About Pages ([Gigi](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/4), [Christina](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/5), [Neha](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/3), [Anika](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/2), [Allison](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/1))
+3. [TPT 2.3 and 2.4](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
+4. [Create Task Plans](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/9) (Gigi/Christina, Anika/Allison)
 
 ## [Sprint 1 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/11)<br>
 Table of Contents<br>
