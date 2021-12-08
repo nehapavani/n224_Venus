@@ -61,7 +61,17 @@ def anika():
 
 @app.route("/allison/")
 def allison():
-    return render_template("team/allison.html")
+    url = "https://random-words-with-pronunciation.p.rapidapi.com/word"
+
+    headers = {
+        'x-rapidapi-host': "random-words-with-pronunciation.p.rapidapi.com",
+        'x-rapidapi-key': "4ab4681ba9mshf17197c9d59be44p17d1edjsnabe7ccc22eb5"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+    output = json.loads(response.text)
+    print(response.text)
+    return render_template("team/allison.html", Y=output)
 
 @app.route("/neha/",methods=['GET', 'POST'])
 def neha():
