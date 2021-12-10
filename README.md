@@ -29,6 +29,8 @@ Table of Contents<br>
 2. About Pages ([Gigi](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/4), [Christina](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/5), [Neha](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/3), [Anika](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/2), [Allison](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/1))
 3. [TPT 2.3 and 2.4](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing)
 4. [Create Task Plans](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/9) (Gigi/Christina, Anika/Allison)
+5. [Release Day Policies](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/wiki#deployment-hardware-and-frequency)
+6. [Scrum Board](https://github.com/christinlee367/n225_fire_eradicators/projects/1)
 
 ## [Sprint 1 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/11)<br>
 Table of Contents<br>
