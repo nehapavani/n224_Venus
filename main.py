@@ -55,8 +55,22 @@ def gigi():
 
 @app.route("/anika/")
 def anika():
-    url = "https://swapi.dev/api/starships/?format=json"
-    print()
+    import requests
+    url = "https://random-palette-generator.p.rapidapi.com/palette/10/3"
+
+    headers = {
+        'x-rapidapi-host': "random-palette-generator.p.rapidapi.com",
+        'x-rapidapi-key': "919ce4f3a5msh7c957a7d94f60dfp124405jsnb6d1a6618168"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+
+    print(response.text)
+    output = json.loads(response.text)
+    print(response.text)
+    return render_template("team/anika.html", A=output, B=output)
+
+
     return render_template("team/anika.html")
 
 @app.route("/allison/")
