@@ -2,7 +2,7 @@
 Insert Visual of homepage<br>
 
 #### [Scrum Board](https://github.com/christinlee367/n225_fire_eradicators/projects/1) , [Team Journal](https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing), [Release Day Policies](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/wiki#deployment-hardware-and-frequency), [Wiki](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/wiki)
-#### [Sprint 0](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-0-week), [Sprint 1](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-1-week), [Sprint 2](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-2-week)
+#### [Sprint 0](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-0-week), [Sprint 1](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-1-week), [Sprint 2](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/blob/main/README.md#sprint-2-week), [Sprint 3](url)
 
 ## Project Ideation 🚀
 Unique Idea: fire eradicators: focusing on the theme of natural disasters<br>
@@ -22,6 +22,16 @@ Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with
 | Allison Huang | [@allisonthuang](https://github.com/allisonthuang) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/allisonthuang) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=allisonthuang)
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/nehapavani) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=nehapavani)
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | [Tickets](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/assigned/anika1sharma1) |[Code](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/commits?author=anika1sharma1)
+
+## [Sprint 3 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/35)
+Table of Contents<br>
+1.  GitHub admin highlighting commits and pull requests completed by each individual - [Christina](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/18)
+2. Technical officer highlighting Asynchronous access(es) to a Database (expectation is a Search and/or a CRUD operations) - [Neha](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/16)
+3. Design Manager showing Bootstrap layouts, and at least 3 frontend screens screens with functionality toward Project Theme - [Anika](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/14)
+4. Deployment manager showing Web Site running from URL (https), and demonstrating the process to perform an update - [Gigi](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/17)
+5. Scrum Master overview of progress using GitHub README, Tickets (Completed and Backlog), and Wiki. Show expected backlog when returning from Winter Break - [Allison](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/15)
+6. AP MCQ Test and Corrections
+7. 3.11, 3.12, 3.13 Notes + Quiz w/corrections
 
 ## [Sprint 2 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/27)
 Table of Contents<br>
