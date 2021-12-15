@@ -27,4 +27,23 @@
     <li><a href="https://www.sandiegouniontribune.com/news/local-history/story/2021-06-27/from-the-archives-tracy-jarman-became-san-diegos-first-female-chief-in-2006">Link to informative article</a></li>
 <!--&gt;>>>>>> fd34e7b (added bare bones)-->
 
+    <body style="background-color:#FFC0CB;">
+    <body> Currently interim chief, Jarman inherits a struggling agency, but it’s one she’s familiar with. She started with the San Diego Fire-Rescue Department 22 years ago as a recruit. She was planning to retire this month, but she changed her mind when the chief’s job opened up. </body>
+
+    <body>
+    <img src="/static/assets/fires.jpeg" id="fires" style="width: 200px">
+    <p><button class="button" onclick="toggleImage()">Click to extinguish the fire</button></p>
+    </body>
+
+    <script>
+        function toggleImage() {
+            var img = document.getElementById("fires");
+            if (img.src.match("/static/assets/fires.jpeg")){
+                img.src = "/static/assets/drylands.jpeg";
+            }else{
+                img.src = "/static/assets/fires.jpeg"
+            }
+        }
+    </script>
+
 {%endblock%}
