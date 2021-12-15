@@ -17,6 +17,10 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
+@app.route("/tracy_jarman/")
+def tracy_jarman():
+    return render_template("women_disasters/tracy_jarman.html")
+
 @app.route("/about/")
 def about():
     return render_template("layouts/about.html")
