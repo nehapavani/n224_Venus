@@ -21,6 +21,10 @@ def journal():
 def tracy_jarman():
     return render_template("women_disasters/tracy_jarman.html")
 
+@app.route("/anna_mani/")
+def anna_mani():
+    return render_template("women_disasters/anna_mani.html")
+
 @app.route("/about/")
 def about():
     return render_template("layouts/about.html")
