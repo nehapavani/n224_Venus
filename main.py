@@ -1,10 +1,13 @@
-from flask import Flask, render_template, request
+from flask import render_template, request
+from _init_ import app
 import requests
 import json
 
+from crud.app_crud import app_crud
+app.register_blueprint(app_crud)
 
 # create an instance of flask object
-app = Flask(__name__)
+
 
 
 # home page accessed with http://127.0.0.1:5000/
