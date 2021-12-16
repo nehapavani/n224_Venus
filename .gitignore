@@ -1,11 +1,7 @@
-
-.idea/runConfigurations.xml
-.idea/m223_team_lovelace.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/other.xml
-.idea/vcs.xml
-__pycache__/image.cpython-39.pyc
+.idea
+*.iws
+*.iml
+*.ipr
 *.xml
 node_modules
 /node_modules/.package-lock.json
