@@ -2,4 +2,5 @@
 1. Be kind to fellow team members
 2. Listen and consider fellow team members’ opinion
 3. Make appropriate commit and issue messages that appropriately portray the meaning of it.
-4. Happy coding!
+4. If you didn't make it, DON'T PUSH/COMMIT IT!
+5. Happy coding!
