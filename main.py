@@ -28,6 +28,10 @@ def tracy_jarman():
 def anna_mani():
     return render_template("women_disasters/anna_mani.html")
 
+@app.route("/lydia_sijp/")
+def lydia_sijp():
+    return render_template("women_disasters/lydia_sijp.html")
+
 @app.route("/about/")
 def about():
     return render_template("layouts/about.html")
