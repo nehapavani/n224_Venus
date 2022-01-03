@@ -31,7 +31,8 @@ Table of Contents<br>
 4. Deployment manager showing Web Site running from URL (https), and demonstrating the process to perform an update - [Gigi](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/17)
 5. Scrum Master overview of progress using GitHub README, Tickets (Completed and Backlog), and Wiki. Show expected backlog when returning from Winter Break - [Allison](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/15)
 6. AP MCQ Test and Corrections
-7. 3.11, 3.12, 3.13 Notes + Quiz w/corrections
+7. 3.11, 3.12, 3.13 Notes + Quiz with corrections
+8. [Grading ticket](https://github.com/christinlee367/n225_FireEradicatorsTheSequel/issues/43)
 
 ## [Sprint 2 Week](https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues/27)
 Table of Contents<br>
