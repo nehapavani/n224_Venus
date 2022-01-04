@@ -43,11 +43,39 @@
             </div>
 
             <div class="col-sm">
-                <p style="font-family: 'Agency FB', monospace; padding: 5px; color:black; font-size: 20px;">What new area did you find? Let people know.</p>
-
+                <div class="comment">
+                    <p style="font-family: 'Agency FB', monospace; padding: 5px; color:black; font-size: 20px;">What new area did you find? Let people know.</p>
+                    <textarea id="submission" type="text "rows="10" cols="50" style="color: white; background-color: #be355e" placeholder="Let us know where you went!"></textarea>
+                    <input type="submit" value="Post" onclick="post()" style="width:100px; color: #ffffff; background-color: #FF9999; border: #be355e" /></form>
+                </div>
             </div>
 
         </div>
     </div>
 
 {% endblock %}
+
+    <div id="display"></div>
+    <!--we set up an id called display-->
+    <script type="text/javascript">
+        var initial = [];
+        var submission = document.getElementById("submission");
+        var display = document.getElementById("display");
+
+        function post () {
+            initial.push(submission.value);
+
+            clear();
+
+        }
+
+        function clear ()
+        {
+            submission.value = "";
+
+            display.innerHTML = "";
+
+            display.innerHTML += " " + initial.join("<br/> ") + "<br/>";
+
+        }
+    </script>

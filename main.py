@@ -20,9 +20,17 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
-@app.route("/disastermap/")
+@app.route("/disastermap/" , methods=['GET', 'POST'])
 def disastermap():
-    return render_template("disastermap/disastermap.html")
+    if request.form:
+        comment = request.form.get("comment")
+        if comment.__len__() != 0:  # input field has content
+            return render_template("disastermap/disastermap.html", comment=comment)
+        else:
+            # starting and empty input default
+            return render_template("disastermap/disastermap.html", comment="Bad input")
+    else:
+        return render_template("disastermap/disastermap.html")
 
 @app.route("/tracy_jarman/")
 def tracy_jarman():
