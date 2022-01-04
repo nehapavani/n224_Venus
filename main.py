@@ -20,6 +20,10 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
+@app.route("/disastermap/")
+def disastermap():
+    return render_template("disastermap/disastermap.html")
+
 @app.route("/tracy_jarman/")
 def tracy_jarman():
     return render_template("women_disasters/tracy_jarman.html")
