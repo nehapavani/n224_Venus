@@ -20,6 +20,10 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
+@app.route("/recent_updates/")
+def recent_updates():
+    return render_template("recent_updates.html")
+
 @app.route("/disastermap/" , methods=['GET', 'POST'])
 def disastermap():
     if request.form:

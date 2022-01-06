@@ -1,0 +1,85 @@
+{% extends "layouts/base.html" %}
+{%block head%}
+
+{%endblock%}
+
+{%block body%}
+
+    <h2>Recent Updates</h2>
+    <iframe width="1500" height=500" src="https://www.accuweather.com/en/us/san-diego/92101/weather-forecast/347628" ></iframe>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    </head>
+    <body>
+{#    <script>#}
+{#        var granimInstance = new Granim({#}
+{#            element: '#canvas-background',#}
+{#            name: 'background-animation',#}
+{#            direction: 'left-right',#}
+{#            opacity: [1, 1],#}
+{#            isPausedWhenNotInView: true,#}
+{#            states : {#}
+{#                "default-state": {#}
+{#                    gradients: [#}
+{#                        ['#e74c3c', '#ffffff'],#}
+{#                        ['#ffffff', '#e74c3c']#}
+{#                    ]#}
+{#                }#}
+{#            }#}
+{#        });#}
+{#    </script>#}
+<body style="background-color:#FF9999;">
+    <h2>Table:Will be updated every thursday with the most recent information on natural disasters</h2>
+    <h1 style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 15px;">
+        We know all too well that disaster can strike at any time, in any place in the world. Here at FireEradicators.tk, we work to inform our audiences of
+        the most recent threats to our beloved world. From there we can do things like: donate, pray, and support those in need.
+        In the display above you can find a display that informs you of recent weather updates. We encourage you to play around with this website because it includes
+        many other different features like a hurricane tracker.
+    </h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Category/Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Typhoon Rai</td>
+            <td>Category 5 hurricane</td>
+            <td>Philippines,Super Typhoon. Officials evacuated more than 309,000 people into shelters as winds over 121 mph (195 km/h) battered the islands.
+                95% of houses in Dinagat island lost their roofs during the storm. As of Dec. 20, the typhoon has claimed more than 200 people and 50 missing
+            </td>
+        </tr>
+        <tr>
+            <td>Derecho</td>
+            <td>record-breaking tornado</td>
+            <td>United States. long-lasting and fast-moving line of thunderstorms usually seen in much warmer months, swept across 660 miles (1,060 km) in just over 10 hours, wreaking havoc from New Mexico and Colorado through
+                Kansas, Nebraska, Missouri, Iowa, Minneapolis, Wisconsin and Michigan</td>
+        </tr>
+        <tr>
+            <td>Flooding</td>
+            <td>Iraq, Republic of Congo, South Africa, and Spain</td>
+            <td>dozens of people who were trapped in their homes, multiple rivers have overflowed their banks, homes damaged due to hail, lightning, strong winds and heavy rain
+            , and accumulation of moisture accompanied by new rainfall and snowmelt led to flooding along the Arga and Ebro rivers</td>
+        </tr>
+        <tr>
+            <td>Ongoing Disasters</td>
+            <td>Severe weather, Volcanic eruption, Coronavirus (Stay safe!)</td>
+            <td>United States, La Palma, Worldwide</td>
+        </tr>
+    </table>
+{%endblock%}
