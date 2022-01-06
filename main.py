@@ -20,17 +20,40 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
-@app.route("/disastermap/" , methods=['GET', 'POST'])
+@app.route("/earthquakerating/")
+def earthquakerating():
+    return render_template("earthquakerating/earthquakerating.html")
+
+@app.route('/greet_earthquakerating', methods=['GET', 'POST'])
+def greet_earthquakerating():
+    # submit button has been pushed
+    if request.form:
+        rating = request.form.get("rating")
+        if rating.__len__() != 0:  # input field has content
+            return render_template("earthquakerating/earthquakerating.html", rating=rating)
+        else:
+            # starting and empty input default
+            return render_template("earthquakerating/earthquakerating.html", rating="World")
+    else:
+        return render_template("earthquakerating/earthquakerating.html")
+
+@app.route("/disastermap/")
 def disastermap():
+    return render_template("disastermap/disastermap.html")
+
+@app.route('/greet_disastermap', methods=['GET', 'POST'])
+def greet_disastermap():
+    # submit button has been pushed
     if request.form:
         comment = request.form.get("comment")
         if comment.__len__() != 0:  # input field has content
             return render_template("disastermap/disastermap.html", comment=comment)
         else:
             # starting and empty input default
-            return render_template("disastermap/disastermap.html", comment="Bad input")
+            return render_template("disastermap/disastermap.html", comment="World")
     else:
         return render_template("disastermap/disastermap.html")
+
 
 @app.route("/tracy_jarman/")
 def tracy_jarman():
