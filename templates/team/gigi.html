@@ -18,16 +18,16 @@
 
 <p><button class="button button1" onclick="toggleImage()">Click Me</button></p>
 
-<img id="maskOff" src="/static/assets/mask_off_gigi.jpg" style="width:200px">
+<img id="maskOff" src="/static/assets/aboutImg/maskOff/mask_off_gigi.jpg" style="width:200px">
 
 
 <script>
   function toggleImage() {
     var img = document.getElementById("maskOff");
-    if (img.src.match("/static/assets/mask_on_gigi.jpg")){
-      img.src = "/static/assets/mask_off_gigi.jpg";
+    if (img.src.match("/static/assets/aboutImg/mask_on_gigi.jpg")){
+      img.src = "/static/assets/aboutImg/maskOff/mask_off_gigi.jpg";
     }else{
-      img.src = "/static/assets/mask_on_gigi.jpg"
+      img.src = "/static/assets/aboutImg/mask_on_gigi.jpg"
     }
   }
 </script>

@@ -22,19 +22,19 @@ def journal():
 
 @app.route("/recent_updates/")
 def recent_updates():
-    return render_template("recent_updates.html")
+    return render_template("pblweek4/recent_updates.html")
 
 @app.route("/disastermap/" , methods=['GET', 'POST'])
 def disastermap():
     if request.form:
         comment = request.form.get("comment")
         if comment.__len__() != 0:  # input field has content
-            return render_template("disastermap/disastermap.html", comment=comment)
+            return render_template("disastermap/templates/pblweek4/disastermap.html", comment=comment)
         else:
             # starting and empty input default
-            return render_template("disastermap/disastermap.html", comment="Bad input")
+            return render_template("disastermap/templates/pblweek4/disastermap.html", comment="Bad input")
     else:
-        return render_template("disastermap/disastermap.html")
+        return render_template("pblweek4/disastermap.html")
 
 @app.route("/tracy_jarman/")
 def tracy_jarman():
