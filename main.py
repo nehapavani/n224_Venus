@@ -11,7 +11,7 @@ app.register_blueprint(app_crud)
 
 
 # home page accessed with http://127.0.0.1:5000/
-@app.route("/")
+@app.route("/",methods=['GET', 'POST'])
 # map URL route for function below
 def index():
     return render_template("index.html")
@@ -135,6 +135,10 @@ def neha():
 
             return render_template("team/neha.html", x=response.json())
     return render_template("team/neha.html", x=output)
+
+@app.route("/Tornado/")
+def Tornado():
+    return render_template("Natural Disaster Info Pages/Tornado.html")
 
 # from image import hide_msg
 # @app.route("/rgbhide")
