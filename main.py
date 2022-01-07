@@ -11,7 +11,7 @@ app.register_blueprint(app_crud)
 
 
 # home page accessed with http://127.0.0.1:5000/
-@app.route("/")
+@app.route("/",methods=['GET', 'POST'])
 # map URL route for function below
 def index():
     return render_template("index.html")
@@ -20,17 +20,45 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
+@app.route("/earthquakerating/")
+def earthquakerating():
+    return render_template("earthquakerating/earthquakerating.html")
+
+@app.route('/greet_earthquakerating', methods=['GET', 'POST'])
+def greet_earthquakerating():
+    # submit button has been pushed
+    if request.form:
+        rating = request.form.get("rating")
+        if rating.__len__() != 0:  # input field has content
+            return render_template("earthquakerating/earthquakerating.html", rating=rating)
+        else:
+            # starting and empty input default
+            return render_template("earthquakerating/earthquakerating.html", rating="World")
+    else:
+        return render_template("earthquakerating/earthquakerating.html")
+
+@app.route("/recent_updates/")
+def recent_updates():
+    return render_template("pblweek4/recent_updates.html")
+
 @app.route("/disastermap/" , methods=['GET', 'POST'])
 def disastermap():
+    return render_template("pblweek4/disastermap.html")
+
+@app.route('/greet_disastermap', methods=['GET', 'POST'])
+def greet_disastermap():
+    # submit button has been pushed
     if request.form:
         comment = request.form.get("comment")
         if comment.__len__() != 0:  # input field has content
-            return render_template("disastermap/disastermap.html", comment=comment)
+            return render_template("pblweek4/disastermap.html", comment=comment)
         else:
             # starting and empty input default
-            return render_template("disastermap/disastermap.html", comment="Bad input")
+            return render_template("pblweek4/disastermap.html", comment="World")
+            return render_template("pblweek4/disastermap.html", comment="Bad input")
     else:
-        return render_template("disastermap/disastermap.html")
+        return render_template("pblweek4/disastermap.html")
+
 
 @app.route("/tracy_jarman/")
 def tracy_jarman():
@@ -43,6 +71,22 @@ def anna_mani():
 @app.route("/lydia_sijp/")
 def lydia_sijp():
     return render_template("women_disasters/lydia_sijp.html")
+
+@app.route("/impacts/")
+def impacts():
+    return render_template("pblweek4/impacts.html")
+
+@app.route("/world/")
+def world():
+    return render_template("pblweek4/world.html")
+
+@app.route("/animal/")
+def animal():
+    return render_template("pblweek4/animal.html")
+
+@app.route("/political/")
+def political():
+    return render_template("pblweek4/political.html")
 
 @app.route("/about/")
 def about():
@@ -135,6 +179,10 @@ def neha():
 
             return render_template("team/neha.html", x=response.json())
     return render_template("team/neha.html", x=output)
+
+@app.route("/Tornado/")
+def Tornado():
+    return render_template("Natural Disaster Info Pages/Tornado.html")
 
 # from image import hide_msg
 # @app.route("/rgbhide")

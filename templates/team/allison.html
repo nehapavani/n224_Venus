@@ -31,17 +31,17 @@
     </head>
     <h1 style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 30px;">Allison Huang</h1>
     <body style="background-color:#FFC0CB;">
-    <img src="/static/assets/mask_on_allison.JPG" id="maskOff" style="width: 200px">
+    <img src="/static/assets/aboutImg/mask_on_allison.JPG" id="maskOff" style="width: 200px">
 
     <p><button class="button" onclick="toggleImage()">Click Me</button></p>
 
     <script>
         function toggleImage() {
             var img = document.getElementById("maskOff");
-            if (img.src.match("/static/assets/mask_on_allison.JPG")){
-                img.src = "/static/assets/mask_off_allison.jpg";
+            if (img.src.match("/static/assets/aboutImg/mask_on_allison.JPG")){
+                img.src = "/static/assets/aboutimg/maskOff/mask_off_allison.jpg";
             }else{
-                img.src = "/static/assets/mask_on_allison.JPG"
+                img.src = "/static/assets/aboutImg/mask_on_allison.JPG"
             }
         }
     </script>
