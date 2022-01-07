@@ -60,6 +60,9 @@ def greet_disastermap():
         return render_template("pblweek4/disastermap.html")
 
 
+# @app.route("/disasterNews/")
+# def disasterNews():
+
 @app.route("/tracy_jarman/")
 def tracy_jarman():
     return render_template("women_disasters/tracy_jarman.html")
