@@ -20,7 +20,6 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
-<<<<<<< HEAD
 @app.route("/earthquakerating/")
 def earthquakerating():
     return render_template("earthquakerating/earthquakerating.html")
@@ -39,13 +38,11 @@ def greet_earthquakerating():
         return render_template("earthquakerating/earthquakerating.html")
 
 @app.route("/disastermap/")
-=======
 @app.route("/recent_updates/")
 def recent_updates():
     return render_template("pblweek4/recent_updates.html")
 
 @app.route("/disastermap/" , methods=['GET', 'POST'])
->>>>>>> a26f7a7a122a5a9bebfb4b70a7ef2f6e9f32f5cb
 def disastermap():
     return render_template("disastermap/disastermap.html")
 
@@ -58,11 +55,8 @@ def greet_disastermap():
             return render_template("disastermap/templates/pblweek4/disastermap.html", comment=comment)
         else:
             # starting and empty input default
-<<<<<<< HEAD
             return render_template("disastermap/disastermap.html", comment="World")
-=======
             return render_template("disastermap/templates/pblweek4/disastermap.html", comment="Bad input")
->>>>>>> a26f7a7a122a5a9bebfb4b70a7ef2f6e9f32f5cb
     else:
         return render_template("pblweek4/disastermap.html")
 
@@ -78,6 +72,14 @@ def anna_mani():
 @app.route("/lydia_sijp/")
 def lydia_sijp():
     return render_template("women_disasters/lydia_sijp.html")
+
+@app.route("/impacts/")
+def impacts():
+    return render_template("pblweek4/impacts.html")
+
+@app.route("/world/")
+def world():
+    return render_template("pblweek4/world.html")
 
 @app.route("/about/")
 def about():
