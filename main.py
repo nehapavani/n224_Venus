@@ -80,6 +80,14 @@ def impacts():
 def world():
     return render_template("pblweek4/world.html")
 
+@app.route("/animal/")
+def animal():
+    return render_template("pblweek4/animal.html")
+
+@app.route("/political/")
+def political():
+    return render_template("pblweek4/political.html")
+
 @app.route("/about/")
 def about():
     return render_template("layouts/about.html")
