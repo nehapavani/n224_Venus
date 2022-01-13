@@ -52,3 +52,11 @@ class Palindrome:
     @property
     def analysis(self):
         return self._analysis
+
+if __name__ == "__main__":
+    word = input('Enter a word:\n')
+
+    if word == word[::-1]:
+        print('is indeed a palindrome!')
+    else:
+        print('isnt a palindrome!')
