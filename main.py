@@ -39,11 +39,11 @@ def greet_earthquakerating():
 
 @app.route("/recent_updates/")
 def recent_updates():
-    return render_template("pblweek4/recent_updates.html")
+    return render_template("pbl/week4/recent_updates.html")
 
 @app.route("/disastermap/" , methods=['GET', 'POST'])
 def disastermap():
-    return render_template("pblweek4/disastermap.html")
+    return render_template("pbl/week4/disastermap.html")
 
 @app.route('/greet_disastermap', methods=['GET', 'POST'])
 def greet_disastermap():
@@ -51,13 +51,13 @@ def greet_disastermap():
     if request.form:
         comment = request.form.get("comment")
         if comment.__len__() != 0:  # input field has content
-            return render_template("pblweek4/disastermap.html", comment=comment)
+            return render_template("pbl/week4/disastermap.html", comment=comment)
         else:
             # starting and empty input default
-            return render_template("pblweek4/disastermap.html", comment="World")
-            return render_template("pblweek4/disastermap.html", comment="Bad input")
+            return render_template("pbl/week4/disastermap.html", comment="World")
+            return render_template("pbl/week4/disastermap.html", comment="Bad input")
     else:
-        return render_template("pblweek4/disastermap.html")
+        return render_template("pbl/week4/disastermap.html")
 
 
 # @app.route("/disasterNews/")
@@ -77,19 +77,23 @@ def lydia_sijp():
 
 @app.route("/impacts/")
 def impacts():
-    return render_template("pblweek4/impacts.html")
+    return render_template("pbl/week4/impacts.html")
 
 @app.route("/world/")
 def world():
-    return render_template("pblweek4/world.html")
+    return render_template("pbl/week4/world.html")
+
+@app.route("/weather_fun/")
+def weather_fun():
+    return render_template("pbl/week5/weather_fun.html")
 
 @app.route("/animal/")
 def animal():
-    return render_template("pblweek4/animal.html")
+    return render_template("pbl/week4/animal.html")
 
 @app.route("/political/")
 def political():
-    return render_template("pblweek4/political.html")
+    return render_template("pbl/week4/political.html")
 
 @app.route("/about/")
 def about():
