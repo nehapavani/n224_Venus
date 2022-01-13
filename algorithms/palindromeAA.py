@@ -57,6 +57,6 @@ if __name__ == "__main__":
     word = input('Enter a word:\n')
 
     if word == word[::-1]:
-        print('is a palindrome')
+        print('is indeed a palindrome!')
     else:
-        print('not a palindrome')
+        print('isnt a palindrome!')
