@@ -20,6 +20,10 @@ def index():
 def journal():
     return render_template("journals/journal.html")
 
+@app.route("/staticsite/")
+def staticsite():
+    return render_template("layouts/staticsite.html")
+
 @app.route("/earthquakerating/")
 def earthquakerating():
     return render_template("earthquakerating/earthquakerating.html")
