@@ -53,6 +53,7 @@ class Palindrome:
     def analysis(self):
         return self._analysis
 
+
 if __name__ == "__main__":
     word = input('Enter a word:\n')
 
