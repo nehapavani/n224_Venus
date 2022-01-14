@@ -4,13 +4,31 @@
 {%endblock%}
 
 {%block body%}
+    <body style="background-color:lightpink;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #myDIV {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightpink;
+            margin-top: 20px;
+        }
+    </style>
 
     <h2>Impacts of Natural Disasters: Global</h2>
-    <p><ul>
-    <li>Natural disasters kill on average 60,000 people per year, globally.</li>
-    <li>Globally, disasters were responsible for 0.1% of deaths over the past decade. This was highly variable, ranging from 0.01% to 0.4%.</li>
-    <li>Deaths from natural disasters have seen a large decline over the past century – from, in some years, millions of deaths per year to an average of 60,000 over the past decade.</li>
-    <li>Historically, droughts and floods were the most fatal disaster events. Deaths from these events are now very low – the most deadly events today tend to be earthquakes.</li>
-    <li>Disasters affect those in poverty most heavily: high death tolls tend to be centered in low-to-middle income countries without the infrastructure to protect and respond to events.</li> </ul>
-    Economy wise, in the 10 years since Hurricane Katrina, the world has seen an annual average of 260 major natural disasters, with average annual economic losses of US$211 billion, insured losses of US$63 billion, and 76,000 lives lost, according to Aon’s latest annual Global Climate Catastrophe Report.</p>
+    <button onclick="myFunction()">Click to Learn More!</button>
+
+    <p id="myDIV"></p>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDIV").innerHTML =
+    "Natural disasters kill on average 60,000 people per year, globally. " + "Globally, disasters were responsible for 0.1% of deaths over the past decade. This was highly variable, ranging from 0.01% to 0.4%." + " Deaths from natural disasters have seen a large decline over the past century – from, in some years, millions of deaths per year to an average of 60,000 over the past decade."
+    + " Historically, droughts and floods were the most fatal disaster events. Deaths from these events are now very low – the most deadly events today tend to be earthquakes."
+    + " Disasters affect those in poverty most heavily: high death tolls tend to be centered in low-to-middle income countries without the infrastructure to protect and respond to events."
+    + " Economy wise, in the 10 years since Hurricane Katrina, the world has seen an annual average of 260 major natural disasters, with average annual economic losses of US$211 billion, insured losses of US$63 billion, and 76,000 lives lost, according to Aon’s latest annual Global Climate Catastrophe Report."
+        }
+    </script>
+
 {%endblock%}

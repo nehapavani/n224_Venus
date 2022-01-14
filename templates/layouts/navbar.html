@@ -16,8 +16,6 @@
             <li><a class="nav-link" href={{ url_for('index') }}>Home</a></li>
             <li><a class="nav-link" href={{ url_for('journal') }}>Journal</a></li>
             <li><a class="nav-link" href={{ url_for('disastermap') }}>Disaster Map</a></li>
-            <li><a class="nav-link" href={{ url_for('earthquakerating') }}>Earthquake Rating</a></li>
-            <li><a class="nav-link" href={{ url_for('staticsite') }} >Static Site</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
                     About
@@ -40,6 +38,16 @@
                     <a class="dropdown-item" href={{ url_for('lydia_sijp') }}>Lydia Sijp</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
+                    Forum
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <a class="dropdown-item" href={{ url_for('disastermap') }}>Disaster Map</a>
+                    <a class="dropdown-item" href={{ url_for('earthquakerating') }}>Earthquake Rating</a>
+                </div>
+            </li>
+
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
