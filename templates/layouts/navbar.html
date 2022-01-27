@@ -6,14 +6,14 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" style="margin-left: 1em;">Fire Eradicators</a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #F68F8C;">
+    <a class="navbar-brand" style="margin-left: 1em;" >Fire Eradicators</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-            <li><a class="nav-link" href={{ url_for('index') }}>Home</a></li>
+            <li><a class="nav-link" style="font-palette: #ffffff;" href={{ url_for('index') }}>Home</a></li>
             <li><a class="nav-link" href={{ url_for('journal') }}>Journal</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
@@ -82,14 +82,22 @@
         </ul>
     </div>
 
-    <div class="topnav">
+    <div class="navbar navbar-light">
         <div class="search-container">
             <form action={{url_for('index')}} method="POST">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit">Submit</button>
+                <input class="form-control mr-sm-2" style="background-color: #F68F8C;" type="search" placeholder="   " aria-label="Search">
+        </div>
+                <button class="btn btn-outline-success my-2 my-sm-0" style="background-color: #ffffff;" style="text-decoration-color: #F68F8C;" type="submit">Search</button>
             </form>
         </div>
     </div>
+{##}
+{#    <nav class="">#}
+{#        <form class="form-inline">#}
+{#            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
+{#            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+{#        </form>#}
+{#    </nav>#}
 
 </nav>
 </body>
