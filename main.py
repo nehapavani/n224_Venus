@@ -4,10 +4,11 @@ import requests
 import json
 
 from crud.app_crud import app_crud
+from earthquakerating.app_earthquakerating import app_earthquakerating
 app.register_blueprint(app_crud)
+app.register_blueprint(app_earthquakerating)
 
 # create an instance of flask object
-
 
 
 # home page accessed with http://127.0.0.1:5000/
