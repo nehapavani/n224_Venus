@@ -1,0 +1,52 @@
+{% extends "layouts/base.html" %}
+{%block head%}
+
+{%endblock%}
+
+{%block body%}
+
+    <h2>Weather API Number 2</h2>
+    <body style="background-color:#F9DECE;">
+    <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+            <span class="fs-4">Weather API#2</span>
+        </header>
+
+        <div class="row mx-3 bg-primary text-light rounded-3">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td>
+                        <form action={{url_for('christinaWeath')}}>
+                            <button>Refresh!</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table text-light">
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th style="text-align:right">name</th>
+                    <th style="text-align:right">country</th>
+                    <th style="text-align:right">region</th>
+                    <th style="text-align:right">latitude</th>
+                    <th style="text-align:right">longitude</th>
+                    <th style="text-align:right">population</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>World</td>
+                    <td style="text-align:right"> {{W.name}} </td>
+                    <td style="text-align:right"> {{W.country}} </td>
+                    <td style="text-align:right"> {{W.region}} </td>
+                    <td style="text-align:right"> {{W.latitude}} </td>
+                    <td style="text-align:right"> {{W.longitude}} </td>
+                    <td style="text-align:right"> {{W.population}} </td>
+                </tr>
+
+
+{%endblock%}
