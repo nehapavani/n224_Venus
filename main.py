@@ -138,6 +138,20 @@ def earthquake_monitor():
     print(response.text)
     return render_template("pbl/earthquakem.html", Z=output)
 
+@app.route("/christinaWeath/")
+def christinaWeath():
+    url = "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions"
+
+    headers = {
+        'x-rapidapi-host': "wft-geo-db.p.rapidapi.com",
+        'x-rapidapi-key': "35c993f134msh6fbb5b79c410a17p11f3f7jsn6ad7e30cfe36"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+    output = json.loads(response.text)
+    print(response.text)
+    return render_template("pbl/TT7/christinaWeath.html", W=output)
+
 @app.route("/forecasting/")
 def forecasting():
     return render_template("pbl/TT7/forecasting.html")
