@@ -138,6 +138,9 @@ def earthquake_monitor():
     print(response.text)
     return render_template("pbl/earthquakem.html", Z=output)
 
+@app.route("/forecasting/")
+def forecasting():
+    return render_template("pbl/TT7/forecasting.html")
 # from image import hide_msg
 # @app.route("/rgbhide")
 # def hidemsg():
