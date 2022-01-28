@@ -1,0 +1,150 @@
+{% extends "layouts/base.html" %}
+{%block head%}
+    <link rel=¨stylesheet¨ href=¨style1.css¨>
+{%endblock%}
+
+{%block body%}
+
+    <h2>Fore-Fun</h2>
+        <script src="foreCast.js"></script>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>CodePen - DevWars Weekly Challenge Week 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.3.2/css/weather-icons.css'><link rel="stylesheet" href="./style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+    </head>
+    <body>
+    <!-- partial:index.partial.html -->
+    <section class="container">
+
+        <!-- Current Weather Details //-->
+        <header>
+            <div class="row">
+
+                <div class="sm-four columns current-city-name">
+                    <h2>Portsmouth</h2>
+                </div>
+
+                <div class="sm-four columns current-city-weather">
+                    <i class="wi wi-day-showers"></i>
+                </div>
+
+                <div class="sm-four columns current-city-temp">
+                    <h2>18<sup>o</sup>C</h2>
+                </div>
+
+                <span class="current-city-day">Sun</span>
+
+            </div>
+        </header>
+        <!--// End Current Weather Details -->
+
+        <!-- Days //-->
+        <section class="week-days">
+
+            <div class="row">
+
+                <div class="sm-days columns">
+                    <div class="day">
+                        Sun
+                    </div>
+                    <div class="day-weather-icon">
+                        <i class="wi wi-day-showers"></i>
+                    </div>
+                    <div class="day-weather-info">
+                        <h2>18<sup>o</sup>C</h2>
+                    </div>
+                </div>
+
+                <div class="sm-days columns">
+                    <div class="day">
+                        Mon
+                    </div>
+                    <div class="day-weather-icon">
+                        <i class="wi wi-cloudy"></i>
+                    </div>
+                    <div class="day-weather-info">
+                        <h2>19<sup>o</sup>C</h2>
+                    </div>
+                </div>
+
+                <div class="sm-days columns">
+                    <div class="day">
+                        Tue
+                    </div>
+                    <div class="day-weather-icon">
+                        <i class="wi wi-showers"></i>
+                    </div>
+                    <div class="day-weather-info">
+                        <h2>17<sup>o</sup>C</h2>
+                    </div>
+                </div>
+
+                <div class="sm-days columns">
+                    <div class="day">
+                        Wed
+                    </div>
+                    <div class="day-weather-icon">
+                        <i class="wi wi-day-lightning"></i>
+                    </div>
+                    <div class="day-weather-info">
+                        <h2>18<sup>o</sup>C</h2>
+                    </div>
+                </div>
+
+                <div class="sm-days columns">
+                    <div class="day">
+                        Thu
+                    </div>
+                    <div class="day-weather-icon">
+                        <i class="wi wi-cloudy"></i>
+                    </div>
+                    <div class="day-weather-info">
+                        <h2>19<sup>o</sup>C</h2>
+                    </div>
+                </div>
+
+                <div class="sm-days columns">
+                    <div class="day">
+                        Fri
+                    </div>
+                    <div class="day-weather-icon">
+                        <i class="wi wi-day-showers"></i>
+                    </div>
+                    <div class="day-weather-info">
+                        <h2>20<sup>o</sup>C</h2>
+                    </div>
+                </div>
+
+                <div class="sm-days columns">
+                    <div class="day">
+                        Sat
+                    </div>
+                    <div class="day-weather-icon">
+                        <i class="wi wi-day-sunny"></i>
+                    </div>
+                    <div class="day-weather-info">
+                        <h2>18<sup>o</sup>C</h2>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!--// End Days -->
+
+    </section>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+    </body>
+    </html>
+
+
+
+
+
+{%endblock%}

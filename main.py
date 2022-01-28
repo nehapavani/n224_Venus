@@ -196,6 +196,9 @@ def neha():
 def Tornado():
     return render_template("Natural Disaster Info Pages/Tornado.html")
 
+@app.route("/forecasting/")
+def forecasting():
+    return render_template("pbl/TT7/forecasting.html")
 # from image import hide_msg
 # @app.route("/rgbhide")
 # def hidemsg():
