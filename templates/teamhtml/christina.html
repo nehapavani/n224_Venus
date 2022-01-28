@@ -40,7 +40,7 @@
 <img src="">
 <p style="font-family: 'Agency FB', monospace; padding: 5px; color:black; font-size: 20px;">GitHub Admin and Developer</p>
 <!--using a form to pass the location name-->
-<form action="/christina/" method="post">
+<form action={{url_for('christina.christina')}} method="POST">
   <label for="place">City: </label>
   <input type="text" id="place" name="place"><br><br>
   <input type="submit" value="Submit">
