@@ -30,8 +30,8 @@ def create():
     if request.form:
         po = Users(
             request.form.get("name"),
-            request.form.get("email"),
-            request.form.get("password"),
+            request.form.get("address"),
+            request.form.get("city"),
             request.form.get("phone")
         )
         po.create()

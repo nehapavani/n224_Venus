@@ -51,34 +51,36 @@
                     </form>
                 </div>
                 <p style="font-family: 'Agency FB', monospace; padding: 5px; color:black; font-size: 10px;">{{ comment }}</p>
+
+                <button button class="button" id="button" style = "background-color: #E37383; color: white; 200px " >Liked 0 times!</button><img class="image" src="https://drive.google.com/thumbnail?id=18Q_fmYiKM9M5hqxpkFISApp3_xrinw3Y" />
+
+                <style>
+                    .image {
+                        display: none;
+                    }
+
+                    .button:active ~ .image{
+                        display: block;
+                    }
+                </style>
+
+                <script>
+                    //set count of clicks by default to = 0
+                    var count = 0;
+
+                    var button = document.getElementById('button');
+
+                    button.onclick = updateStatus;
+
+                    function updateStatus() {
+                        // "++count" counts the number of clicks, displays in between like and times
+                        button.textContent = 'Liked ' + ++count + ' times!';
+                    }
+                </script>
+
             </div>
 
         </div>
     </div>
 
 {% endblock %}
-
-    <div id="greet_disastermap_id"></div>
-    <!--we set up an id called display-->
-    <script type="text/javascript">
-        var initial = [];
-        var greet_disastermap_id = document.getElementById("greet_disastermap_id");
-        var display = document.getElementById("display");
-
-        function post () {
-            initial.push(greet_disastermap_id.value);
-
-            clear();
-
-        }
-
-        function clear ()
-        {
-            greet_disastermap_id.value = "";
-
-            display.innerHTML = "";
-
-            display.innerHTML += " " + initial.join("<br/> ") + "<br/>";
-
-        }
-    </script>
