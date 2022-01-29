@@ -19,7 +19,7 @@ def users_all_sql():
 def users_ilike(term):
     """filter Users table by term into JSON list (ordered by User.name)"""
     term = "%{}%".format(term)  # "ilike" is case insensitive and requires wrapped  %term%
-    table = Users.query.order_by(Users.name).filter((Users.name.ilike(term)) | (Users.email.ilike(term)))
+    table = Users.query.order_by(Users.name).filter((Users.name.ilike(term)) | (Users.address.ilike(term)))
     return [peep.read() for peep in table]
 
 
@@ -29,10 +29,10 @@ def user_by_id(userid):
     return Users.query.filter_by(userID=userid).first()
 
 
-# SQLAlchemy extract single user from database matching email
-def user_by_email(email):
-    """finds User in table matching email """
-    return Users.query.filter_by(email=email).first()
+# SQLAlchemy extract single user from database matching address
+def user_by_address(address):
+    """finds User in table matching address """
+    return Users.query.filter_by(address=address).first()
 
 
 # ALGORITHM to convert the results of an SQL Query to a JSON ready format in Python
