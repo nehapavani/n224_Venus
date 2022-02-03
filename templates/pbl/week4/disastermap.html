@@ -27,6 +27,13 @@
             tr:nth-child(even) {
                 background-color: #F9DECE ;
             }
+            .image {
+                display: none;
+            }
+
+            .button:active ~ .image{
+                display: block;
+            }
         </style>
     </head>
 
@@ -46,24 +53,13 @@
                 <div class="col-12">
                     <form action="/greet_disastermap" id="greet_disastermap_id" method="POST" >
                         <label for="comment" style="color: #be355e; font-family: 'Helvetica'" >Where did you travel?</label>
-                        <input name="comment" id="comment" style = "background-color: #be355e; color: white; 200px ">
-                        <input type="submit" value="Post" style = "background-color: #E37383; color: white; 200px ">
+                        <input name="comment" id="comment" style = "background-color: #be355e; color: white;">
+                        <input type="submit" value="Post" style = "background-color: #E37383; color: white;">
                     </form>
                 </div>
                 <p style="font-family: 'Agency FB', monospace; padding: 5px; color:black; font-size: 10px;">{{ comment }}</p>
 
-                <button button class="button" id="button" style = "background-color: #E37383; color: white; 200px " >Liked 0 times!</button><img class="image" src="https://drive.google.com/thumbnail?id=18Q_fmYiKM9M5hqxpkFISApp3_xrinw3Y" />
-
-                <style>
-                    .image {
-                        display: none;
-                    }
-
-                    .button:active ~ .image{
-                        display: block;
-                    }
-                </style>
-
+                <button button class="button" id="button" style = "background-color: #E37383; color: white;" >Liked 0 times!</button><img class="image" src="https://drive.google.com/thumbnail?id=18Q_fmYiKM9M5hqxpkFISApp3_xrinw3Y" />
                 <script>
                     //set count of clicks by default to = 0
                     var count = 0;
@@ -76,6 +72,20 @@
                         // "++count" counts the number of clicks, displays in between like and times
                         button.textContent = 'Liked ' + ++count + ' times!';
                     }
+
+                    function doneButton(checkboxId, preparedId)
+                    {
+                        var checkbox = document.getElementById(checkboxId)
+                        var prepared = document.getElementById(preparedId)
+                        if (checkbox.checked)
+                        {
+                            prepared.innerText = "Yes"
+                        }
+                        else
+                        {
+                            prepared.innerText = "No"
+                        }
+                    }
                 </script>
 
             </div>
@@ -86,21 +96,28 @@
             <tr>
                 <th>Question</th>
                 <th>Done?</th>
-                <th>Are your prepared?</th>
+                <th>Are you prepared?</th>
+            </tr>
+            <tr>
+                <td>
+                    <span>Do you have a fire extinguisher in the house?</span>
+                    <input type="checkbox" name="A" class="incline checkbox" id="aBox" value="1">
+                </td>
+
+                <td><input type="button" onclick="doneButton(aBox, aPrepared)" class="button button2" value="Done"></td>
+                <td id="aPrepared"> stuff </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Do you know what fault lines are near you?</span>
+                    <input type="checkbox" name="B" class="incline checkbox" id="bBox" value="1">
+                </td>
+
+                <td><input type="button" onclick="doneButton()" class="button button2" value="Done"></td>
+                <td id="bPrepared"> stuff2 </td>
             </tr>
 
-            <td> <label>
-                <span>Do you have a fire extinguisher in the house?</span>
-                <input type="checkbox" name="A" class="incline checkbox" id="abox" value="1">
-            </label>
-
-                <label>
-                    <span>Do you know what fault lines are near you?</span>
-                    <input type="checkbox" name="B" class="incline checkbox" id="bbox" value="1">
-                </label></td>
-            <td><input type="button" onclick="myFxn()" class="button button2" value="Done"></td>
-            <td><span id="uno"></span></td>
-
+        </table>
             <!-- Old part of the table
             <tr>
                 <td><label>
