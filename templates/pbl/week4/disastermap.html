@@ -27,13 +27,6 @@
             tr:nth-child(even) {
                 background-color: #F9DECE ;
             }
-            .image {
-                display: none;
-            }
-
-            .button:active ~ .image{
-                display: block;
-            }
         </style>
     </head>
 
@@ -53,13 +46,24 @@
                 <div class="col-12">
                     <form action="/greet_disastermap" id="greet_disastermap_id" method="POST" >
                         <label for="comment" style="color: #be355e; font-family: 'Helvetica'" >Where did you travel?</label>
-                        <input name="comment" id="comment" style = "background-color: #be355e; color: white;">
-                        <input type="submit" value="Post" style = "background-color: #E37383; color: white;">
+                        <input name="comment" id="comment" style = "background-color: #be355e; color: white; 200px ">
+                        <input type="submit" value="Post" style = "background-color: #E37383; color: white; 200px ">
                     </form>
                 </div>
                 <p style="font-family: 'Agency FB', monospace; padding: 5px; color:black; font-size: 10px;">{{ comment }}</p>
 
-                <button button class="button" id="button" style = "background-color: #E37383; color: white;" >Liked 0 times!</button><img class="image" src="https://drive.google.com/thumbnail?id=18Q_fmYiKM9M5hqxpkFISApp3_xrinw3Y" />
+                <button button class="button" id="button" style = "background-color: #E37383; color: white; 200px " >Liked 0 times!</button><img class="image" src="https://drive.google.com/thumbnail?id=18Q_fmYiKM9M5hqxpkFISApp3_xrinw3Y" />
+
+                <style>
+                    .image {
+                        display: none;
+                    }
+
+                    .button:active ~ .image{
+                        display: block;
+                    }
+                </style>
+
                 <script>
                     //set count of clicks by default to = 0
                     var count = 0;
@@ -72,20 +76,6 @@
                         // "++count" counts the number of clicks, displays in between like and times
                         button.textContent = 'Liked ' + ++count + ' times!';
                     }
-
-                    function doneButton(checkboxId, preparedId)
-                    {
-                        var checkbox = document.getElementById(checkboxId)
-                        var prepared = document.getElementById(preparedId)
-                        if (checkbox.checked)
-                        {
-                            prepared.innerText = "Yes"
-                        }
-                        else
-                        {
-                            prepared.innerText = "No"
-                        }
-                    }
                 </script>
 
             </div>
@@ -96,68 +86,105 @@
             <tr>
                 <th>Question</th>
                 <th>Done?</th>
-                <th>Are you prepared?</th>
+                <th>Are your prepared?</th>
             </tr>
-            <tr>
-                <td>
+
+            <td>
+                <label>
                     <span>Do you have a fire extinguisher in the house?</span>
-                    <input type="checkbox" name="A" class="incline checkbox" id="aBox" value="1">
-                </td>
-
-                <td><input type="button" onclick="doneButton(aBox, aPrepared)" class="button button2" value="Done"></td>
-                <td id="aPrepared"> stuff </td>
-            </tr>
-            <tr>
-                <td>
+                    <input type="checkbox" name="A" class="incline checkbox" id="abox" value="1">
+                </label>
+                <label>
                     <span>Do you know what fault lines are near you?</span>
-                    <input type="checkbox" name="B" class="incline checkbox" id="bBox" value="1">
-                </td>
-
-                <td><input type="button" onclick="doneButton()" class="button button2" value="Done"></td>
-                <td id="bPrepared"> stuff2 </td>
-            </tr>
-
-        </table>
-            <!-- Old part of the table
-            <tr>
-                <td><label>
-                    <span> &nbsp &nbsp &nbsp Did you enjoy?</span>
-                    <input type="checkbox" name="C" class="incline checkbox" id="cbox" value="1">
+                    <input type="checkbox" name="A" class="incline checkbox" id="abox" value="1">
                 </label>
-
-                    <label>
-                        <span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Was the class easy?</span>
-                        <input type="checkbox" name="D" class="incline checkbox" id="dbox" value="1">
-                    </label></td>
-                <td>#2</td>
-                <td><span id="dos"></span></td>
-            </tr>
-            <tr>
-                <td><label>
-                    <span>&nbsp &nbsp &nbsp Were the resources helpful?</span>
-                    <input type="checkbox" name="E" class="incline checkbox" id="ebox" value="1">
+                <label>
+                    <span>Do you have a sturdy object to hide under?</span>
+                    <input type="checkbox" name="A" class="incline checkbox" id="abox" value="1">
                 </label>
+            </td>
 
-                    <label>
-                        <span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp Did you learn?</span>
-                        <input type="checkbox" name="F" class="incline checkbox" id="fbox" value="1">
-                    </label></td>
-                <td>#3</td>
-                <td><span id="tres"></span></td>
-            </tr>
-            <tr>
-                <td><label>
-                    <span>&nbsp &nbsp &nbsp Are you ready for your result!</span>
-                    <input type="checkbox" name="g" class="incline checkbox" id="zbox" value="1">
-                </label>
-                </td>
-                <td><input type="button" onclick="myFxn()" class="button button2" value="Done"></td>
-                <td><span id="result"> </span>
-                    <span id="pictureresult"></span>
-                </td>
-            </tr>
-        </table> -->
+            <td><input type="button" onclick="myFxn()" class="button button2" value="Done"></td>
+            <td><span id="uno"></span></td>
 
-    </div>
+
+            <script>
+                function doneButton(checkId, cellId) {
+                    // const x = ;
+                    // const y = ;
+                    if (document.getElementById(checkId).checked) {
+                        document.getElementById(cellId).innerHTML = "thing"
+                    }
+                }
+                function myFxn() {
+                    const x = document.getElementById("abox")
+                    const y = document.getElementById("bbox")
+                    if (x.checked) {
+                        document.getElementById("uno").innerHTML = "<img src=/static/assets/drylands.jpeg height=125 width=125>"
+                        var i = 1
+                    }
+                    if (x.checked && y.checked) {
+                        document.getElementById("uno").innerHTML = "<img src=static/assets/drylands.jpeg height=125 width=125></img>"
+                        var i = 2
+                    }
+                    if (!(x.checked || y.checked)) {
+                        document.getElementById("uno").innerHTML = "<img src=static/assets/realsadsad.PNG height=125 width=125> </img>"
+                        var i = 0
+
+                    }
+
+                    const c = document.getElementById("cbox")
+                    const d = document.getElementById("dbox")
+                    if (c.checked || d.checked) {
+                        document.getElementById("dos").innerHTML = "<img src=static/assets/sortsort.PNG height=125 width=125></img>"
+                        var o = 1
+                    }
+                    if (c.checked && d.checked) {
+                        document.getElementById("dos").innerHTML = "<img src=static/assets/drylands.jpeg height=125 width=125></img>"
+                        var o = 2
+                    }
+                    if (!(c.checked || d.checked)) {
+                        document.getElementById("dos").innerHTML = "<img src=static/assets/realsadsad.PNG height=125 width=125></img>"
+                        var o = 0
+                    }
+
+                    const e = document.getElementById("ebox")
+                    const f = document.getElementById("fbox")
+                    if (e.checked || f.checked) {
+                        document.getElementById("tres").innerHTML = "<img src=static/assets/sortsort.PNG height=125 width=125></img>"
+                        var p = 1
+                    }
+                    if (e.checked && f.checked) {
+                        document.getElementById("tres").innerHTML = "<img src=static/assets/drylands.jpeg height=125 width=125></img>"
+                        var p = 2
+                    }
+                    if (!(e.checked || f.checked)) {
+                        document.getElementById("tres").innerHTML = "<img src=static/assets/realsadsad.PNG height=125 width=125></img>"
+                        var p = 0
+                    }
+                    const z = document.getElementById("zbox")
+                    var decimals = (i + o + p) / 6
+                    var decimalsper = decimals*100 + "%"
+                    if (z.checked) {
+                        document.getElementById("result").innerHTML = decimalsper;
+                    }
+
+
+                    if (decimals > .8) {
+                        document.getElementById("pictureresult").innerHTML = "<img src=static/assets/drylands.jpeg height=125 width=125></img>"
+                    }
+                    else
+                    {
+                        if (decimals < .5) {
+                            document.getElementById("pictureresult").innerHTML = "<img src=static/assets/realsadsad.PNG height=125 width=125></img>"
+                        }
+                        else {
+                            document.getElementById("pictureresult").innerHTML = "<img src=static/assets/sortsort.PNG height=125 width=125></img>"
+
+                        }
+                    }
+                }
+            </script>
+
 
 {% endblock %}
