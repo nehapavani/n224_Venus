@@ -28,11 +28,11 @@ def crud():
 def create():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = Users(
-            request.form.get("name"),
-            request.form.get("email"),
-            request.form.get("password"),
-            request.form.get("phone")
+        po = Events(
+            request.form.get("type"),
+            request.form.get("rating"),
+            request.form.get("location"),
+            request.form.get("date")
         )
         po.create()
     return redirect(url_for('crud.crud'))
@@ -44,8 +44,8 @@ def read():
     """gets userid from form and obtains corresponding data from Users table"""
     table = []
     if request.form:
-        userid = request.form.get("userid")
-        po = user_by_id(userid)
+        eventID = request.form.get("eventID")
+        po = user_by_id(eventID)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
     return render_template("crud.html", table=table)
@@ -54,13 +54,13 @@ def read():
 # CRUD update
 @app_crud.route('/update/', methods=["POST"])
 def update():
-    """gets userid and name from form and filters and then data in  Users table"""
+    """gets userid and type from form and filters and then data in  Users table"""
     if request.form:
-        userid = request.form.get("userid")
-        name = request.form.get("name")
-        po = user_by_id(userid)
+        eventID = request.form.get("eventID")
+        type = request.form.get("type")
+        po = user_by_id(eventID)
         if po is not None:
-            po.update(name)
+            po.update(type)
     return redirect(url_for('crud.crud'))
 
 
@@ -69,8 +69,8 @@ def update():
 def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
-        userid = request.form.get("userid")
-        po = user_by_id(userid)
+        eventID = request.form.get("eventID")
+        po = user_by_id(eventID)
         if po is not None:
             po.delete()
     return redirect(url_for('crud.crud'))

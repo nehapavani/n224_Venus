@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 from _init_ import app
 
 # Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
-# Define variable to define type of database (sqlite), and name and location of myDB.db
+# Define variable to define type of database (sqlite), and type and location of myDB.db
 dbURI = 'sqlite:///model/myDB.db'
 # Setup properties for the database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -53,14 +53,14 @@ class Users(db.Model):
     # returns dictionary
     def read(self):
         return {
-            "userID": self.userID,
-            "name": self.name,
+            "eventID": self.userID,
+            "type": self.name,
             "address": self.address,
             "city": self.city,
-            "phone": self.phone
+            "date": self.phone
         }
 
-    # CRUD update: updates users name, city, phone
+    # CRUD update: updates users type, city, date
     # returns self
     def update(self, name, city="", phone=""):
         """only updates values with length"""

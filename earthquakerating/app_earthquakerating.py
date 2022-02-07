@@ -29,10 +29,10 @@ def create():
     """gets data from form and add it to Users table"""
     if request.form:
         po = Users(
-            request.form.get("name"),
+            request.form.get("type"),
             request.form.get("address"),
             request.form.get("city"),
-            request.form.get("phone")
+            request.form.get("date")
         )
         po.create()
     return redirect(url_for('earthquakerating.earthquakerating'))
@@ -54,10 +54,10 @@ def read():
 # CRUD update
 @app_earthquakerating.route('/update/', methods=["POST"])
 def update():
-    """gets userid and name from form and filters and then data in  Users table"""
+    """gets userid and type from form and filters and then data in  Users table"""
     if request.form:
         userid = request.form.get("userid")
-        name = request.form.get("name")
+        name = request.form.get("type")
         po = user_by_id(userid)
         if po is not None:
             po.update(name)

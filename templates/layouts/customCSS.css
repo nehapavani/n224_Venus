@@ -5987,7 +5987,7 @@ textarea.form-control-lg {
 /* rtl:options: {
   "autoRename": true,
   "stringMap":[ {
-    "name"    : "prev-next",
+    "type"    : "prev-next",
     "search"  : "prev",
     "replace" : "next"
   } ]
@@ -11128,7 +11128,7 @@ html, body {
     /* rtl:raw:
   [type="tel"],
   [type="url"],
-  [type="email"],
+  [type="rating"],
   [type="number"] {
     direction: ltr;
   }
@@ -11138,7 +11138,7 @@ html, body {
     /* rtl:options: {
     "autoRename": true,
     "stringMap":[ {
-      "name"    : "prev-next",
+      "type"    : "prev-next",
       "search"  : "prev",
       "replace" : "next"
     } ]
