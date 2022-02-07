@@ -124,6 +124,10 @@ def about():
 def Tornado():
     return render_template("Natural Disaster Info Pages/Tornado.html")
 
+@app.route("/Tsunami/")
+def Tsunami():
+    return render_template("Natural Disaster Info Pages/tsunami.html")
+
 @app.route("/earthquake_monitor/")
 def earthquake_monitor():
     url = "https://earthquake-monitor.p.rapidapi.com/recent"

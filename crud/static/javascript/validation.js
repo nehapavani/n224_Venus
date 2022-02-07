@@ -10,12 +10,12 @@ function verifyPassword(event) {
     Name your variables well, my friends.
     */
 
-    const psw =  document.getElementById("password").value;
+    const psw =  document.getElementById("location").value;
 
     if (psw.length < 6 || psw.length > 20) {
         document.getElementById("pswError").innerHTML = "Password must be between 6 and 20 characters";
         event.preventDefault();
-        //prevents submission of form when password length is not valid.
+        //prevents submission of form when location length is not valid.
     }
 
 }

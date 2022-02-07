@@ -14,10 +14,10 @@
         function create_User(){
             //Validate Password (must be 6-20 characters in len)
             verifyPassword("click");
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            const phone = document.getElementById("phone").value;
+            const name = document.getElementById("type").value;
+            const email = document.getElementById("rating").value;
+            const password = document.getElementById("location").value;
+            const phone = document.getElementById("date").value;
             const requestOptions = {
                 method: 'POST',
                 headers: {
@@ -59,22 +59,22 @@
                     let optGrp = document.getElementById("ogr_userid");
                     //create a DOM element for the option(new userid) in the option group(dropdown)
                     let option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['eventID'];
                     //add the new userid to the dropdown
                     optGrp.appendChild(option);
                     optGrp = document.getElementById("ogu_userid");
                     option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['eventID'];
                     optGrp.appendChild(option);
                     optGrp = document.getElementById("ogd_userid");
                     option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['eventID'];
                     optGrp.appendChild(option);
                     document.getElementById("pswError").innerHTML ="";
-                    document.getElementById("name").value="";
-                    document.getElementById("email").value="";
-                    document.getElementById("password").value="";
-                    document.getElementById("phone").value="";
+                    document.getElementById("type").value="";
+                    document.getElementById("rating").value="";
+                    document.getElementById("location").value="";
+                    document.getElementById("date").value="";
                 })
             })
         }
@@ -220,7 +220,7 @@
 
 <!-- CONTENT (in <body>), content for this page -->
 {% block content %}
-    <div class="container py-4 text-light bg-success">
+    <div class="container py-4 text-light bg-dark">
         <header class="pb-3 mb-4 border-bottom">
             <div class="d-flex align-items-center text-light text-decoration-none">
                 <span class="fs-4">Async SQL CRUD Admin Page</span>
@@ -259,15 +259,15 @@
                             {% for row in table %}
                                 <!--
                                 Prepare table for display
-                                    caution: phone number needs "~" format step to force type to string
+                                    caution: date number needs "~" format step to force type to string
                                 -->
-                                {% set pn = "" ~ row['phone'] %}
+                                {% set pn = "" ~ row['date'] %}
                                 {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
                                 <tr>
-                                    <td>{{ row['userID'] }}</td>
-                                    <td>{{ row['name'] }}</td>
-                                    <td>{{ row['email'] }}</td>
-                                    <td>{{ row['password'] }}</td>
+                                    <td>{{ row['eventID'] }}</td>
+                                    <td>{{ row['type'] }}</td>
+                                    <td>{{ row['rating'] }}</td>
+                                    <td>{{ row['location'] }}</td>
                                     <td>{{ pnf }}</td>
                                 </tr>
                             {% endfor %}
@@ -317,7 +317,7 @@
                                     <select name="userid" id="read_userid">
                                         <optgroup id="ogr_userid" label="userid" >
                                             {% for row in table %}
-                                                <option id="option" label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option id="option" label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -343,7 +343,7 @@
                                     <select name="userid" id="update_userid">
                                         <optgroup id="ogu_userid" label="userid" >
                                             {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
@@ -366,7 +366,7 @@
                                     <select name="userid" id="delete_userid">
                                         <optgroup id="ogd_userid" label="userid">
                                             {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>

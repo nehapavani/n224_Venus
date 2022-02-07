@@ -5,7 +5,7 @@
 
 {% endblock %}
 
-<!-- This variable sets name of browser tab  -->
+<!-- This variable sets type of browser tab  -->
 {% set project = "christina" %}
 
 <!-- This is a replacement block for Body in base.html -->
@@ -39,7 +39,7 @@
 <button onclick="document.getElementById('myImage').src='/static/assets/aboutImg/maskOff/fires.jpeg'">Turn off the light</button>
 <img src="">
 <p style="font-family: 'Agency FB', monospace; padding: 5px; color:black; font-size: 20px;">GitHub Admin and Developer</p>
-<!--using a form to pass the location name-->
+<!--using a form to pass the location type-->
 <form action={{url_for('christina.christina')}} method="POST">
   <label for="place">City: </label>
   <input type="text" id="place" name="place"><br><br>

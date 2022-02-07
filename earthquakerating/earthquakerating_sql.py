@@ -17,9 +17,9 @@ def users_all_sql():
 
 # SQLAlchemy extract users from database matching term
 def users_ilike(term):
-    """filter Users table by term into JSON list (ordered by User.name)"""
+    """filter Users table by term into JSON list (ordered by User.type)"""
     term = "%{}%".format(term)  # "ilike" is case insensitive and requires wrapped  %term%
-    table = Users.query.order_by(Users.name).filter((Users.name.ilike(term)) | (Users.address.ilike(term)))
+    table = Users.query.order_by(Users.type).filter((Users.type.ilike(term)) | (Users.address.ilike(term)))
     return [peep.read() for peep in table]
 
 

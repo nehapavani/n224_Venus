@@ -1,0 +1,111 @@
+
+{% extends "layouts/base.html" %}
+{%block head%}
+
+{%endblock%}
+
+{%block body%}
+
+    <h2>Tsunamis</h2>
+    <body style="background-color:#F3CFC6;">
+
+    <div class="square">
+        <div>
+        </div>
+        <img src="/static/assets/tsunami.jpeg" style="width: 400px">
+
+
+        <p>
+        <p> A tsunami is a series of waves caused by earthquakes or undersea volcanic eruptions. This force creates waves that radiate outward in all directions away from their source, sometimes crossing entire ocean basins. A tsunami can kill or injure people and damage or destroy buildings and infrastructure as waves come in and go out. One fun fact about tsunami's is that the waves can be as huge as 100 feet!     </p>
+
+    </div>
+    </body>
+
+    <a href="https://cimss.ssec.wisc.edu/oakfield/Fscale.htm"
+       target="popup"
+       onclick="window.open('https://cimss.ssec.wisc.edu/oakfield/Fscale.htm','popup','width=600,height=600,scrollbars=no,resizable=no'); return false;">
+        Open Link in Popup
+    </a>
+
+    <style>
+        .image__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+    </style>
+
+    <style>
+        .image {
+            position: relative;
+            width: 30%;
+        }
+
+        .image__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.25s;
+        }
+    </style>
+    <style>
+        .image__overlay{
+            opacity: 0;
+        }
+
+
+        .image__overlay:hover {
+            opacity: 1;
+        }
+    </style>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .row {
+                display: flex;
+            }
+
+            /* Create three equal columns that sits next to each other */
+            .column {
+                flex: 33.33%;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+
+
+
+
+    <div class="image">
+        <img src="/static/assets/hazardzone.jpeg" style="width: 450px">
+        <div class="image__overlay">
+            <div class="image__title">Safety Tips!</div>
+            <p class="image__description">
+                Get to high ground as far inland as possible
+                Get under something sturdy or in a hallway.
+                Listen to emergency information and alerts.
+                Drop, Cover, and Hold On. Drop to your hands and knees. Cover your head and neck with your arms. Hold on to any sturdy furniture until the shaking stops
+                Leave immediately if you are told to do so. Evacuation routes are often marked by a wave with an arrow in the direction of higher ground.
+            </p>
+        </div>
+    </div>
+
+{%endblock%}

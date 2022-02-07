@@ -88,13 +88,13 @@
                             {% for row in table %}
                                 <!--
                                 Prepare table for display
-                                    caution: phone number needs "~" format step to force type to string
+                                    caution: date number needs "~" format step to force type to string
                                 -->
-                                {% set pn = "" ~ row['phone'] %}
+                                {% set pn = "" ~ row['date'] %}
                                 {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
                                 <tr>
-                                    <td>{{ row['userID'] }}</td>
-                                    <td>{{ row['name'] }}</td>
+                                    <td>{{ row['eventID'] }}</td>
+                                    <td>{{ row['type'] }}</td>
                                     <td>{{ row['address'] }}</td>
                                     <td>{{ row['City'] }}</td>
                                     <td>{{ pnf }}</td>
@@ -154,7 +154,7 @@
                                         <select name="userid" id="read_userid">
                                             <optgroup label="userid">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
@@ -182,7 +182,7 @@
                                         <select name="userid" id="update_userid">
                                             <optgroup label="userid">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>
@@ -206,7 +206,7 @@
                                         <select name="userid" id="delete_userid">
                                             <optgroup label="userid">
                                                 {% for row in table %}
-                                                    <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                    <option label="{{ row['eventID'] }}">{{ row['eventID'] }}</option>
                                                 {% endfor %}
                                             </optgroup>
                                         </select>

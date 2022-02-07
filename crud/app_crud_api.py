@@ -30,24 +30,24 @@ def crud_api():
 class UsersAPI:
     # class for create/post
     class _Create(Resource):
-        def post(self, name, email, password, phone):
-            po = Users(name, email, password, phone)
-            person = po.create()
-            if person:
-                return person.read()
-            return {'message': f'Processed {name}, either a format error or {email} is duplicate'}, 210
+        def post(self, type, rating, location, date):
+            po = Events(type, rating, location, date)
+            event = po.create()
+            if event:
+                return event.read()
+            return {'message': f'Processed {type}, either a format error or {rating} is duplicate'}, 210
 
     # class for read/get
     class _Read(Resource):
         def get(self):
-            return users_all()
+            return  q qusers_all()
 
     # class for delete
     class _ReadID(Resource):
-        def get(self, userid):
-            po = user_by_id(userid)
+        def get(self, eventID):
+            po = user_by_id(eventID)
             if po is None:
-                return {'message': f"{userid} is not found"}, 210
+                return {'message': f"{eventID} is not found"}, 210
             data = po.read()
             return data
 
@@ -94,13 +94,13 @@ class UsersAPI:
 
     # building RESTapi resource
     # building RESTapi resource
-    api.add_resource(_Create, '/create/<string:name>/<string:email>/<string:password>/<string:phone>')
+    api.add_resource(_Create, '/create/<string:type>/<string:rating>/<string:location>/<string:date>')
     api.add_resource(_Read, '/read/')
     api.add_resource(_ReadID, '/read/<int:userid>')
     api.add_resource(_ReadILike, '/read/ilike/<string:term>')
-    api.add_resource(_Update, '/update/<string:email>/<string:name>')
-    api.add_resource(_UpdateName, '/update/<int:userid>/<string:name>')
-    api.add_resource(_UpdateAll, '/update/<string:email>/<string:name>/<string:password>/<string:phone>')
+    api.add_resource(_Update, '/update/<string:rating>/<string:type>')
+    api.add_resource(_UpdateName, '/update/<int:userid>/<string:type>')
+    api.add_resource(_UpdateAll, '/update/<string:rating>/<string:type>/<string:location>/<string:date>')
     api.add_resource(_Delete, '/delete/<int:userid>')
 
 
