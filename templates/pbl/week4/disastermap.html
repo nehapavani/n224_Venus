@@ -39,30 +39,60 @@
     <script>
         // parameters checkId1 & checkId2 are pointing to checkboxes
         // targetId is the target html element
-        // content1 & content2 are the contents desired to replace the target element with
-        function doneButton(checkId1, checkId2, targetId, content1, content2) {
+        // if - else if - else chain sets the target HTML element to images depending on condition
+        // if - XOR - else operators
+
+        function doneButton(checkId1, checkId2, targetId) {
+            var check1 = document.getElementById(checkId1);
+            var check2 = document.getElementById(checkId2);
+            var target = document.getElementById(targetId);
+            if (check1.checked && check2.checked) {
+                target.innerHTML = '<img src=/static/assets/happyface.png height=125 width=125>';
+            }
+            else if ((check1.checked && !check2.checked) || (!check1.checked && check2.checked)) {
+                target.innerHTML = '<img src=/static/assets/medium.png height=125 width=125>';
+            }
+            else {
+                target.innerHTML = '<img src=/static/assets/sadface.jfif height=125 width=125>';
+            }
+        }
+
+        /*
+
+        Following are alternate ways to write this function:
+
+//  This one includes 5 parameters. This was the one I was using in the previous commit,
+//  but I decided to axe it in favor of the active one. I realized that the last 3 parameters (contents 1-3)
+//  were unnecessary as I was passing the same three <img> tags through them.
+
+        function doneButton5Param(checkId1, checkId2, targetId, content1, content2, content3) {
             var check1 = document.getElementById(checkId1);
             var check2 = document.getElementById(checkId2);
             var target = document.getElementById(targetId);
             if (check1.checked && check2.checked) {
                 target.innerHTML = content1;
             }
-            else {
+            else if ((check1.checked && !check2.checked) || (!check1.checked && check2.checked)) {
                 target.innerHTML = content2;
             }
+            else {
+                target.innerHTML = content3;
+            }
         }
-        /*
-        function doneButton can also be written as:
 
-        function doneButton(checkId1, checkId2, targetId, goodContent, badContent) {
+//  This is the first iteration of the doneButton() function.
+//  It does not include any variables, sacrificng major readability for minor code condensing
+
+        function doneButton5Param(checkId1, checkId2, targetId, content1, content2, content3) {
             if (document.getElementById(checkId1).checked && document.getElementById(checkId2)) {
-                document.getElementById(targetId).innerHTML = goodContent;
+                document.getElementById(targetId).innerHTML = content1;
+            }
+            else if ((check1.checked && !check2.checked) || (!check1.checked && check2.checked)) {
+                document.getElementById(targetId).innerHTML = content2;
             }
             else {
-                document.getElementById(targetId).innerHTML = badContent
+                document.getElementById(targetId).innerHTML = content3
             }
-
-        but I've chosen the un-commented one for readability
 
         old code from Allison:
             function myFxn() {
@@ -176,9 +206,7 @@
             </td>
             <td>
                 <input
-                type="button" onclick="doneButton('plan', 'supply', 'target1',
-                '<img src=/static/assets/happyface.png height=125 width=125>',
-                '<img src=/static/assets/sadface.jfif height=125 width=125>')"
+                type="button" onclick="doneButton('plan', 'supply', 'target1')"
                 class="button button2" value="Done"
                 >
             </td>
@@ -196,9 +224,7 @@
             </td>
             <td>
                 <input
-                        type="button" onclick="doneButton('fault', 'sturdy', 'target2',
-                '<img src=/static/assets/happyface.png height=125 width=125>',
-                '<img src=/static/assets/sadface.jfif height=125 width=125>')"
+                        type="button" onclick="doneButton('fault', 'sturdy', 'target2')"
                 class="button button2" value="Done"
                 >
             </td>
@@ -216,9 +242,7 @@
             </td>
             <td>
                 <input
-                type="button" onclick="doneButton('fire', 'place', 'target3',
-                '<img src=/static/assets/happyface.png height=125 width=125>',
-                '<img src=/static/assets/sadface.jfif height=125 width=125>')"
+                type="button" onclick="doneButton('fire', 'place', 'target3')"
                 class="button button2" value="Done"
                 >
             </td>
@@ -228,5 +252,4 @@
         </tr>
     </table>
 </body>
-
 {% endblock %}
