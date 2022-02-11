@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 from _init_ import app
 
 # Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along
-# Define variable to define type of database (sqlite), and name and location of myDB.db
+# Define variable to define type of database (sqlite), and type and location of myDB.db
 dbURI = 'sqlite:///model/myDB.db'
 # Setup properties for the database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -22,20 +22,21 @@ Migrate(app, db)
 # -- a.) db.Model is like an inner layer of the onion in ORM
 # -- b.) Users represents data we want to store, something that is built on db.Model
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
-class Users(db.Model):
+class Events (db.Model):
     # define the Users schema
-    userID = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(255), unique=False, nullable=False)
-    email = db.Column(db.String(255), unique=True, nullable=False)
-    password = db.Column(db.String(255), unique=False, nullable=False)
-    phone = db.Column(db.String(255), unique=False, nullable=False)
+    eventID = db.Column(db.Integer, primary_key=True)
+    type = db.Column(db.String(255), unique=False, nullable=False)
+    rating = db.Column(db.String(255), unique=False, nullable=False)
+    location = db.Column(db.String(255), unique=False, nullable=False)
+    date = db.Column(db.String(255), unique=False, nullable=False)
 
     # constructor of a User object, initializes of instance variables within object
-    def __init__(self, name, email, password, phone):
-        self.name = name
-        self.email = email
-        self.password = password
-        self.phone = phone
+    def __init__(self, type, rating, location, date):
+        self.type = type
+        self.rating = rating
+        self.location = location
+        self.date = date
+
 
     # CRUD create/add a new record to the table
     # returns self or None on error
@@ -53,23 +54,19 @@ class Users(db.Model):
     # returns dictionary
     def read(self):
         return {
-            "userID": self.userID,
-            "name": self.name,
-            "email": self.email,
-            "password": self.password,
-            "phone": self.phone
+            "eventID": self.eventID,
+            "type": self.type,
+            "rating": self.rating,
+            "location": self.location,
+            "date": self.date
         }
 
-    # CRUD update: updates users name, password, phone
+    # CRUD update: updates users type, location, date
     # returns self
-    def update(self, name, password="", phone=""):
+    def update(self, type):
         """only updates values with length"""
-        if len(name) > 0:
-            self.name = name
-        if len(password) > 0:
-            self.password = password
-        if len(phone) > 0:
-            self.phone = phone
+        if len(type) > 0:
+            self.type = type
         db.session.commit()
         return self
 
@@ -86,33 +83,29 @@ class Users(db.Model):
 
 def model_tester():
     print("--------------------------")
-    print("Seed Data for Table: users")
+    print("Seed Data for Table: events")
     print("--------------------------")
     db.create_all()
     """Tester data for table"""
-    u1 = Users(name='Thomas Edison', email='tedison@example.com', password='123toby', phone="1111111111")
-    u2 = Users(name='Nicholas Tesla', email='ntesla@example.com', password='123niko', phone="1111112222")
-    u3 = Users(name='Alexander Graham Bell', email='agbell@example.com', password='123lex', phone="1111113333")
-    u4 = Users(name='Eli Whitney', email='eliw@example.com', password='123whit', phone="1111114444")
-    u5 = Users(name='John Mortensen', email='jmort1021@gmail.com', password='123qwerty', phone="8587754956")
-    u6 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8587754956")
-    # U7 intended to fail as duplicate key
-    u7 = Users(name='John Mortensen', email='jmort1021@yahoo.com', password='123qwerty', phone="8586791294")
-    table = [u1, u2, u3, u4, u5, u6, u7]
+
+    u1 = Events(type='Flood', rating='4', location='New York', date="2003-03-02")
+
+
+    table = [u1]
     for row in table:
         try:
             db.session.add(row)
             db.session.commit()
         except IntegrityError:
             db.session.remove()
-            print(f"Records exist, duplicate email, or error: {row.email}")
+            print(f"Records exist, duplicate rating, or error: {row.rating}")
 
 
 def model_printer():
     print("------------")
-    print("Table: users with SQL query")
+    print("Table: events with SQL query")
     print("------------")
-    result = db.session.execute('select * from users')
+    result = db.session.execute('select * from Events')
     print(result.keys())
     for row in result:
         print(row)

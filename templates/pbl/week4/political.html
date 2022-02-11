@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+{%block head%}
+
+{%endblock%}
+
+{%block body%}
+    <body style="background-color:lightpink;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    #myDIV {
+        width: 100%;
+        padding: 50px 0;
+        text-align: center;
+        background-color: lightpink;
+        margin-top: 20px;
+    }
+</style>
+
+<h2>Impacts of Natural Disasters: Political</h2>
+
+<button onclick="myFunction()">Click to Learn More!</button>
+
+
+
+    <p id="myDIV"></p>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDIV").innerHTML = "Just as disaster vulnerability is mediated by a country’s political system, disasters can have major effects on political stability and political legitimacy. Politicization occurs when disasters as events in the political landscape are taken over by actors for political causes. A three-phase analytical model for disaster politicization in authoritarian contexts is inductively derived from the empirical evidence of the 12 May 2008 Wenchuan earthquake in China. This model theorizes the parallel development in the political discourse of consensus-based and contentious political mobilization surrounding a disaster. On the one hand, disasters can be framed as a consensus crisis to increase the political capacity and legitimacy of those in power. In opposition, they can also be framed to support contentious social claims. The disaster becomes a political issue, and the victims are no longer individual and passive disaster victims, but whole social groups advancing grievances and claims towards those in power. This process can have particularly important implications in a non-democratic political context. Disasters are intervening factors exogenous to the political system, and their effects can escape the control of those in power. Disasters can become unforeseen yet powerful factors in an otherwise limited space for political contestation."
+        }
+    </script>
+
+
+{%endblock%}

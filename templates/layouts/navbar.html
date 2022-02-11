@@ -6,28 +6,25 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" style="margin-left: 1em;">Fire Eradicators</a>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #F68F8C;">
+    <a class="navbar-brand" style="margin-left: 1em;" >Fire Eradicators</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-            <li><a class="nav-link" href={{ url_for('index') }}>Home</a></li>
+            <li><a class="nav-link" style="font-palette: #ffffff;" href={{ url_for('index') }}>Home</a></li>
             <li><a class="nav-link" href={{ url_for('journal') }}>Journal</a></li>
-            <li><a class="nav-link" href={{ url_for('disastermap') }}>Disaster Map</a></li>
-            <li><a class="nav-link" href={{ url_for('earthquakerating') }}>Earthquake Rating</a></li>
-            <li><a class="nav-link" href=https://allisonthuang.github.io/ >Static Site</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
                     About
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <a class="dropdown-item" href={{ url_for('gigi') }}>Gigi</a>
-                    <a class="dropdown-item" href={{ url_for('anika') }}>Anika</a>
-                    <a class="dropdown-item" href={{ url_for('allison') }}>Allison</a>
-                    <a class="dropdown-item" href={{ url_for('christina') }}>Christina</a>
-                    <a class="dropdown-item" href={{ url_for('neha') }}>Neha</a>
+                    <a class="dropdown-item" href={{ url_for('gigi.gigi') }}>Gigi</a>
+                    <a class="dropdown-item" href={{ url_for('anika.anika') }}>Anika</a>
+                    <a class="dropdown-item" href={{ url_for('allison.allison') }}>Allison</a>
+                    <a class="dropdown-item" href={{ url_for('christina.christina') }}>Christina</a>
+                    <a class="dropdown-item" href={{ url_for('neha.neha') }}>Neha</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -40,15 +37,28 @@
                     <a class="dropdown-item" href={{ url_for('lydia_sijp') }}>Lydia Sijp</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
+                    Forum
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <a class="dropdown-item" href={{ url_for('disastermap') }}>Disaster Map</a>
+                    <a class="dropdown-item" href={{ url_for('earthquakerating') }}>Earthquake Rating</a>
+                </div>
+            </li>
+
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuButton1" type="button">
-                    PBL Week 4
+                    PBL
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <a class="dropdown-item" href={{ url_for('recent_updates') }}>Recent Updates</a>
-                    <a class="dropdown-item" href={{ url_for('disastermap') }}>Disaster Map</a>
                     <a class="dropdown-item" href={{ url_for('impacts') }}>Impacts</a>
+                    <a class="dropdown-item" href={{ url_for('weather_fun') }}>Fun</a>
+                    <a class="dropdown-item" href={{ url_for('earthquake_monitor') }}>Earthquake Monitor</a>
+                    <a class="dropdown-item" href={{ url_for('forecasting') }}>Fore-Core</a>
+                    <a class="dropdown-item" href={{ url_for('christinaWeath') }}>API#2CL</a>
 
                 </div>
             </li>
@@ -61,6 +71,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <a class="dropdown-item" href={{ url_for('Tornado') }}>Tornadoes</a>
+                    <a class="dropdown-item" href={{ url_for('Tsunami') }}>Tsunami</a>
+
             </li>
             </li>
             <li class="nav-item dropdown">
@@ -75,14 +87,22 @@
         </ul>
     </div>
 
-    <div class="topnav">
+    <div class="navbar navbar-light">
         <div class="search-container">
             <form action={{url_for('index')}} method="POST">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit">Submit</button>
+                <input class="form-control mr-sm-2" style="background-color: #F68F8C;" type="search" placeholder="   " aria-label="Search">
+        </div>
+                <button class="btn btn-outline-success my-2 my-sm-0" style="background-color: #ffffff;" style="text-decoration-color: #F68F8C;" type="submit">Search</button>
             </form>
         </div>
     </div>
+{##}
+{#    <nav class="">#}
+{#        <form class="form-inline">#}
+{#            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
+{#            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>#}
+{#        </form>#}
+{#    </nav>#}
 
 </nav>
 </body>

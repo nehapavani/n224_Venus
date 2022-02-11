@@ -1,0 +1,81 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/about.html" %}
+{% block head%}
+{% endblock %}
+<!-- This variable sets type of browser tab  -->
+{% set project = "neha" %}
+
+<!-- This is a replacement block for Body in base.html -->
+{% block body %}
+
+<div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: arial,sans-serif;">
+
+
+    <span style="font-size: 300%; "> <p>Neha Valluri</p></span>
+    <div>
+
+        <img src="/static/assets/aboutImg/maskOn/neha_maskon.jpg" id="getImage" style="width: 400px; height: 400px">
+
+    </div>
+    <div>
+        <input type="button" onclick="imagefun()" value="Change Image">
+    </div>
+    <script>
+        function imagefun() {
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("/static/assets/aboutImg/maskOn/neha_maskon.jpg")) {
+                Image_Id.src = "/static/assets/aboutImg/maskOff/neha_maskoff.jpg";
+            }
+            else {
+                Image_Id.src = "/static/assets/aboutImg/maskOn/neha_maskon.jpg";
+            }
+        }
+    </script>
+
+    <body style="background-color:#E37383;">
+    <body style="background-color:#E37383;">
+
+
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: arial,sans-serif;">
+
+        <span style="font-size: 300%; "> <p>Neha Valluri</p></span>
+
+        <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: arial,sans-serif;">
+
+
+
+            <span style="font-size: 150%; "> <p> - Senior at Del Norte High School</p></span>
+            <span style="font-size: 150%; "> <p> - 17 years old</p></span>
+            <span style="font-size: 150%; "> <p> - Technical Officer of Scrum Team</p></span>
+            <span style="font-size: 150%; "> <p> - Hobbies: Singing and dancing</p></span>
+            <span style="font-size: 150%; "> <p> - Interested in pursuing a career in STEM</p></span>
+
+            <div class="container">
+                <div class="center-block" style="margin: 2% 5% 5%;">
+                    <div class="col-12" style="text-align: center;">
+                        <h1> Number Facts </h1>
+                        <form action={{url_for('neha.neha')}} method="POST">                            <label for="num1">Type a number</label>
+                            <input name="num1" id="num1" />
+                            <input type="submit" value="Press">
+                        </form>
+                    </div>
+
+                    <!-- Input and Content -->
+                    <div class="jumbotron text-left row">
+                        <div class="col-md">
+
+                            <h2 class="setup"><strong>{{x.number}}</strong></h2>
+                            <p class="setup"><strong>{{x.text}}</strong></p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: arial,sans-serif;">
+                    <span style="font-size: 300%; "> <p>Links</p></span>
+
+
+                    <p><a href="https://docs.google.com/presentation/d/1DApdo31H95xfT2xFg8UQQlewpzwJxkxVgRRZPVxQS9U/edit?usp=sharing">Journal Link</a></p>
+                    <p><a href="https://github.com/anika1sharma1/n225_FireEradicatorsTheSequel/issues?q=assignee%3Anehapavani+is%3Aopen">Tasks</a></p>
+                    <p><a href="https://docs.google.com/document/d/1_FblKeJd6onG7pxZWElgKK68IkfHQM7O1YzLi8X0jCI/edit?usp=sharing">Create Task Planning</a></p>
+                </div>
+{% endblock %}

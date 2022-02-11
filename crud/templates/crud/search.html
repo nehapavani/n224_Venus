@@ -35,11 +35,28 @@ inspiration from https://www.youtube.com/watch?v=QKcVjdLEX_s
 <div class="container">
     <div class="row" id="result">
     </div>
+    <style>
+        table {
+            font-family: Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #F9DECE ;
+        }
+    </style>
 </div>
 
 <script>
     function search_data() {
-        // fetch standard requires data set to a name-value pair
+        // fetch standard requires data set to a type-value pair
         const term = document.getElementById("term");
         const body = {
             term: term.value
@@ -77,7 +94,7 @@ inspiration from https://www.youtube.com/watch?v=QKcVjdLEX_s
                     // loop through JSON and build HTML output
                     for (let i = 0; i < data.length; i++) {
                         const div = document.createElement("div");
-                        div.innerHTML = data[i].name + ' ' + data[i].email;
+                        div.innerHTML = 'Type of Disaster:' + data[i].name + '      ' + 'Rating :' + data[i].email
                         resultContainer.appendChild(div);
                     }
                 })
