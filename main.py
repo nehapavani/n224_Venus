@@ -21,6 +21,9 @@ app.register_blueprint(app_anika)
 from team.allison import app_allison
 app.register_blueprint(app_allison)
 
+from createtask.app_createtask import app_createtask
+app.register_blueprint(app_createtask)
+
 app.register_blueprint(app_crud)
 app.register_blueprint(app_earthquakerating)
 
