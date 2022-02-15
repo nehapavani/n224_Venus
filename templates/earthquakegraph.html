@@ -4,11 +4,31 @@
 
 <h2>Graph</h2>
 
+<table class="table">
+    <thead>
+    <tr>
+        <th><label for="type">Type of Disaster</label></th>
+        <th><label for="rating">Disaster Rating</label></th>
+        <th><label for="location">Location</label></th>
+        <th><label for="date">Date</label></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="text" name="type" id="type" required></td>
+        <td><input type="text" name="rating" id="rating" placeholder="3" required></td>
+        <td><input type="text" name="location" id="location" required></td>
+        <td><input type="date" name="date" id="date"  required></td>
+        <td><input type="submit" value="Create"></td>
+    </tr>
+    </tbody>
+</table>
+
 
 {% block content %}
     <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-            <h3 class="fs-4">JavaScript - Draw on Canvas</h3>
+            <h3 class="fs-4">Earthquake Graph</h3>
         </header>
 
         <div class="container py-4 bg-primary" style="text-align:center;">
