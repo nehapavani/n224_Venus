@@ -83,6 +83,17 @@ def greet_disastermap():
     else:
         return render_template("pbl/week4/disastermap.html")
 
+@app.route('/magnitude_lvar', methods=['GET', 'POST'])
+def magnitude_lvar():
+    # submit button has been pushed
+    if request.form:
+        lvar = request.form.get("lvar")
+        eqmsg = ""
+        if lvar.__len__() != 0:  # input field has content
+            return render_template("earthquakegraph.html", lvar=lvar, eqmsg = eqmsg)
+    else:
+        return render_template("earthquakegraph.html",lvar="Hello")
+
 
 # @app.route("/disasterNews/")
 # def disasterNews():
