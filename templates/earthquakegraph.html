@@ -28,7 +28,6 @@
 
 <body>
 <pre id="arrPrint"> </pre>
-<pre id="cords"> {{ xcord }} {{ ycord }} </pre>
 
 <script>
     const arr = [ "That's not the worst", "OK you'll be fine", "Stay safe!" ];
@@ -37,12 +36,9 @@
 
     function magnitude(mag){
         if ((parseInt(mag) == 1) || (parseInt(mag) == 2) || (parseInt(mag) == 3)) {
-            //console.log(5+6)
-
             const magni = Math.floor(Math.random() * arr.length);
             console.log(magni, arr[magni]);
             document.getElementById("arrPrint").innerHTML = arr[magni];
-
         }
         else{
             document.getElementById("arrPrint").innerHTML = "xxx";
