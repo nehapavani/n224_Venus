@@ -45,6 +45,8 @@ def click(x, y):
         hide[mark] = False
         state['mark'] = None
 
+
+
 def draw():
     clear()
     goto(0, 0)

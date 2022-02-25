@@ -1,34 +1,63 @@
 <!DOCTYPE html>
 
-% extends "layouts/base.html" %} - leaving this here so i remember
 
 <h2>Graph</h2>
+<body style="background-color:#FFC0CB;">
 
 <table class="table">
     <thead>
     <tr>
-        <th><label for="type">Type of Disaster</label></th>
-        <th><label for="rating">Disaster Rating</label></th>
-        <th><label for="location">Location</label></th>
-        <th><label for="date">Date</label></th>
+        <th><label for="xvar">X-Coordinate of your location</label></th>
+        <th><label for="yvar">Y-Coordinate of your location</label></th>
+        <th><label for="lvar">Magnitude of earthquake</label></th>
+        <!-- <th><label for="date">Date</label></th> -->
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td><input type="text" name="type" id="type" required></td>
-        <td><input type="text" name="rating" id="rating" placeholder="3" required></td>
-        <td><input type="text" name="location" id="location" required></td>
-        <td><input type="date" name="date" id="date"  required></td>
-        <td><input type="submit" value="Create"></td>
+        <td>
+            <input name="xcord" id="xcord">
+            <input name="ycord" id="ycord">
+            <button onclick="square(document.getElementById('xcord').value,document.getElementById('ycord').value,document.getElementById('lvar').value)"> Draw Graph </button>
+            <input name="lvar" id="lvar">
+            <button onclick="magnitude(document.getElementById('lvar').value)"> Create </button>
+         </td>
     </tr>
     </tbody>
 </table>
+
+<body>
+<pre id="arrPrint"> </pre>
+
+<script>
+    const arr = [ "That's not the worst", "OK you'll be fine", "Stay safe!" ];
+    const avg = [ "Wow, that was a pretty decent shake", "Hope you're okay!", "Uh oh, that wasn't good." ];
+    const bad = [ "Evacuate your family immediately.", "GET OUT. NOW!", "Find shelter immediately!" ];
+
+    function magnitude(mag){
+        if ((parseInt(mag) == 1) || (parseInt(mag) == 2) || (parseInt(mag) == 3)) {
+            const magni = Math.floor(Math.random() * arr.length);
+            console.log(magni, arr[magni]);
+            document.getElementById("arrPrint").innerHTML = arr[magni];
+        }
+        else{
+            document.getElementById("arrPrint").innerHTML = "xxx";
+            return 'xxx';
+        }
+    }
+
+
+
+</script>
+
+</body>
 
 
 {% block content %}
     <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom border-primary text-dark">
             <h3 class="fs-4">Earthquake Graph</h3>
+            <p id="allison"></p>
         </header>
 
         <div class="container py-4 bg-primary" style="text-align:center;">
@@ -45,6 +74,7 @@
         const CELL_SIZE = 16;   // CELL_SIZE block size
 
         // grid based off of width, HEIGHT
+
         function grid(){
             // color and pen width
             ctx.strokeStyle = 'white';
@@ -76,9 +106,10 @@
         }
 
         // square using lines
-        function square(x0, y0, len) {
-            ctx.strokeStyle = 'black';
-            ctx.lineWidth = 5;
+        function square(x0,y0,len) {
+
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 3;
             // NOTE canvas 0,0 is upper left corner, grid 0,0 is in middle of canvas
             let x = x0*CELL_SIZE + (WIDTH/2);
             let y = -y0*CELL_SIZE + (HEIGHT/2);
@@ -122,17 +153,15 @@
         axis();
 
         // Sample squares
-        square(-2, -2, 4);   // center square
+        //square(-2, -2, 4);   // center square
         //square(12, 8, 4);    // quadrant 1 extents
         //square(-16, 8, 4);   // quadrant 2 extents
         //square(-16, -12, 4); // quadrant 3 extents
         //square(12, -12, 4);  // quadrant 4 extents
 
         // Random squares
-        randomDraw(50);
+        //randomDraw(2);
 
     </script>
-
-    <body style="background-color:#FFC0CB;">
 
 {% endblock %}

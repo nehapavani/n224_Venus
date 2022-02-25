@@ -83,7 +83,6 @@ def greet_disastermap():
     else:
         return render_template("pbl/week4/disastermap.html")
 
-
 # @app.route("/disasterNews/")
 # def disasterNews():
 
