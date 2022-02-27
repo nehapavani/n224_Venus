@@ -161,6 +161,11 @@ def christinaWeath():
 @app.route("/forecasting/")
 def forecasting():
     return render_template("pbl/TT7/forecasting.html")
+
+@app.route("/playlist/")
+def playlist():
+    return render_template("pbl/CLYGNV/playlist.html")
+
 # from image import hide_msg
 # @app.route("/rgbhide")
 # def hidemsg():
