@@ -130,19 +130,7 @@ def Tornado():
 def Tsunami():
     return render_template("Natural Disaster Info Pages/tsunami.html")
 
-@app.route("/earthquake_monitor/")
-def earthquake_monitor():
-    url = "https://earthquake-monitor.p.rapidapi.com/recent"
 
-    headers = {
-        'x-rapidapi-host': "earthquake-monitor.p.rapidapi.com",
-        'x-rapidapi-key': "4ab4681ba9mshf17197c9d59be44p17d1edjsnabe7ccc22eb5"
-    }
-
-    response = requests.request("GET", url, headers=headers)
-    output = json.loads(response.text)
-    print(response.text)
-    return render_template("pbl/earthquakem.html", Z=output)
 
 @app.route("/current_weather/")
 def current_weather():
