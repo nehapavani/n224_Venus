@@ -130,19 +130,24 @@ def Tornado():
 def Tsunami():
     return render_template("Natural Disaster Info Pages/tsunami.html")
 
-@app.route("/earthquake_monitor/")
-def earthquake_monitor():
-    url = "https://earthquake-monitor.p.rapidapi.com/recent"
+
+
+@app.route("/current_weather/")
+def current_weather():
+    url = "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather"
+
+    querystring = {"zip":"92127","city":"San Diego","state":"California","country":"United States"}
 
     headers = {
-        'x-rapidapi-host': "earthquake-monitor.p.rapidapi.com",
+        'x-rapidapi-host': "weather-by-api-ninjas.p.rapidapi.com",
         'x-rapidapi-key': "4ab4681ba9mshf17197c9d59be44p17d1edjsnabe7ccc22eb5"
     }
 
-    response = requests.request("GET", url, headers=headers)
-    output = json.loads(response.text)
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
     print(response.text)
-    return render_template("pbl/earthquakem.html", Z=output)
+    output = json.loads(response.text)
+    return render_template("pbl/currentw.html", C=output)
 
 @app.route("/christinaWeath/")
 def christinaWeath():
