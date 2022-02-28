@@ -21,8 +21,7 @@ app.register_blueprint(app_anika)
 from team.allison import app_allison
 app.register_blueprint(app_allison)
 
-from createtask.app_createtask import app_createtask
-app.register_blueprint(app_createtask)
+
 
 app.register_blueprint(app_crud)
 app.register_blueprint(app_earthquakerating)
@@ -171,10 +170,13 @@ def forecasting():
 def playlist():
     return render_template("pbl/CTCLPBL/playlist.html")
 
+@app.route("/ct/")
+def ct():
+    return render_template("ct.html")
 # from image import hide_msg
 # @app.route("/rgbhide")
 # def hidemsg():
 #    hide_msg()
 
 if __name__ == "__main__":
-    app.run(debug=True,port=8000)
+    app.run(debug=True,port=7000)
