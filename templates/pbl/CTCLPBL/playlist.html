@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="" width="device-width, inital-scale=1.0">
+    <title>JavaScript</title>
+    <h1 style="font-family: 'Agency FB', monospace; padding: 20px; color:black; font-size: 30px;">Can You Hear It?</h1>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<body style="background-color:#FF9999;">
+<p><button onclick="myFunction()">Translate</button></p>
+
+<div id="myDIV">Hello, Welcome to Identifying Sounds. Knowing when danger is coming could mean the difference between life and death. For our mandarin audience, please click above/中文在上</div>
+{#cannot directly reference(mp3) need to copy in static and reference through the way below - Christina Lee#}
+<table style="width:100%">
+    <tr>
+        <th id="title">Title</th>
+        <th id="Tune">Tune</th>
+    </tr>
+    <tr>
+        <td id="storm">Storm - Seek shelter immediately either in an enclosed building or a hard-topped vehicle</td>
+        <td><audio controls><source src="{{ url_for('static', filename='storm.mp3')}}" type="audio/mpeg"></audio></td>
+    </tr>
+    <tr>
+        <td id="tornado">Tornado - When you hear this, go somewhere low and sturdy</td>
+        <td><audio controls><source src="{{ url_for('static', filename='tornado.mp3') }}" type="audio/mpeg"></audio></td>
+    </tr>
+    <tr>
+        <td id="volcanos">Volcano - Avoid volcanic ash, ventilation is key</td>
+        <td><audio controls><source src="{{ url_for('static', filename='volcano.mp3') }}" type="audio/mpeg"></audio></td>
+    </tr>
+    <tr>
+        <td id="earthquake">Earthquake - Take cover and avoid objects that are easily fallen like bookshelves</td>
+        <td><audio controls><source src="{{ url_for('static', filename='earthquake.mp3')}}" type="audio/mpeg"></audio></td>
+    </tr>
+</table>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("title");
+        var a = document.getElementById("Tune");
+        var b = document.getElementById("myDIV");
+        var c = document.getElementById("storm");
+        var d = document.getElementById("tornado");
+        var e = document.getElementById("volcanos");
+        var f = document.getElementById("earthquake");
+
+        if (x.innerHTML === "Title") {
+            x.innerHTML = "名称";
+        } else {
+            x.innerHTML = "Title";
+        }
+        if (a.innerHTML === "Tune") {
+            a.innerHTML = "歌曲";
+        } else {
+            a.innerHTML = "Tune";
+        }
+        if (b.innerHTML === "Hello, Welcome to Identifying Sounds. Knowing when danger is coming could mean the difference between life and death. For our mandarin audience, please click above/中文在上") {
+            b.innerHTML = "您好，欢迎来到识别声音。 知道危险何时到来可能意味着生与死的区别。对于我们的英语观众，请点击上方/For English Please click above";
+        } else {
+            b.innerHTML = "Hello, Welcome to Identifying Sounds. Knowing when danger is coming could mean the difference between life and death. For our mandarin audience, please click above/中文在上";
+        }
+        if (c.innerHTML === "Storm - Seek shelter immediately either in an enclosed building or a hard-topped vehicle") {
+            c.innerHTML = "风暴 - 立即在封闭的建筑物或硬顶车辆中寻求庇护";
+        } else {
+            c.innerHTML = "Storm - Seek shelter immediately either in an enclosed building or a hard-topped vehicle";
+        }
+        if(d.innerHTML === "Tornado - When you hear this, go somewhere low and sturdy") {
+            d.innerHTML = "龙卷风 - 当你听到这个，去一个低而坚固的地方"
+        } else {
+            d.innerHTML = "Tornado - When you hear this, go somewhere low and sturdy"
+        }
+        if(e.innerHTML === "Volcano - Avoid volcanic ash, ventilation is key") {
+            e.innerHTML = "火山 - 避免火山灰，通风是关键"
+        } else {
+            e.innerHTML = "Volcano - Avoid volcanic ash, ventilation is key"
+        }
+        if(f.innerHTML === "Earthquake - Take cover and avoid objects that are easily fallen like bookshelves") {
+            f.innerHTML = "地震 - 躲避书架等容易掉落的物体"
+        } else {
+            f.innerHTML = "Earthquake - Take cover and avoid objects that are easily fallen like bookshelves"
+        }
+    }
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
