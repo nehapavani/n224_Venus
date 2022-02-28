@@ -164,7 +164,7 @@ def forecasting():
 
 @app.route("/playlist/")
 def playlist():
-    return render_template("pbl/CLYGNV/playlist.html")
+    return render_template("pbl/CTCLPBL/playlist.html")
 
 # from image import hide_msg
 # @app.route("/rgbhide")
