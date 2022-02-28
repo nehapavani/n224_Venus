@@ -1,0 +1,80 @@
+<!-- Extending the predefined project layout -->
+{% extends "layouts/about.html" %}
+
+{% block head%}
+
+{% endblock %}
+
+<!-- This variable sets type of browser tab  -->
+{% set project = "gigi" %}
+
+<!-- This is a replacement block for Body in base.html -->
+{% block body %}
+    <!-- Try building a new body here -->
+    <body style="background-color:#F3CFC6;">
+
+    <div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <span class="fs-4">Current Weather API</span>
+    </header>
+    <div class="col-md">
+    <h5>Get your location's most recent weather updates!</h5>
+    <style>
+        .button {
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button2 {background-color: #b99f7a;} /* Tan */
+
+    </style>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>
+
+                <form action={{url_for('current_weather')}}>
+                    <button class="button button2">Refresh!</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="table text-light">
+        <thead>
+        <tr>
+            <th style="text-align:right">Temperature</th>
+            <th style="text-align:right">Feels like </th>
+            <th style="text-align:right">Humidity</th>
+            <th style="text-align:right">Minimum temp</th>
+            <th style="text-align:right">Maximum temp</th>
+            <th style="text-align:right">Wind speed</th>
+            <th style="text-align:right">Sunrise</th>
+            <th style="text-align:right">Sunset</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="text-align:right"> {{C.temp}} °C</td>
+            <td style="text-align:right"> {{C.feels_like}} °C</td>
+            <td style="text-align:right"> {{C.humidity}} %</td>
+            <td style="text-align:right"> {{C.min_temp}} °C</td>
+            <td style="text-align:right"> {{C.max_temp}} °C</td>
+            <td style="text-align:right"> {{C.wind_speed}} mph</td>
+            <td style="text-align:right"> {{C.sunrise}} </td>
+            <td style="text-align:right"> {{C.sunset}} </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}
