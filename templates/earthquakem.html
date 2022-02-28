@@ -48,6 +48,18 @@
                 <form action={{url_for('createtask.earthquake_monitor')}}>
                     <button class="button button2">Refresh!</button>
                 </form>
+
+
+                <script>
+                    function play() {
+                        var audio = document.getElementById("audio");
+                        audio.play();
+                    }
+                </script>
+
+                <input type="button" value="EARTHQUAKE SOUND" onclick="play()">
+                <audio id="audio" src="/static/earthquake.mp3"></audio>
+
             </td>
         </tr>
         </tbody>
