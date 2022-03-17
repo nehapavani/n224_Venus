@@ -1,5 +1,5 @@
 # AP CSP Period 4: Team Venus🔭
-Link to our Jekyll Page: https://anika1sharma1.github.io/Venus.github.io/
+Link to our Jekyll Page: 
 
 Insert Visual of homepage<br>
 
