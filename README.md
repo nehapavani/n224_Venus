@@ -8,11 +8,6 @@
 Unique Idea:Venus <br>
 to help a small business manage it orders<br>
 
-## Visual Thoughts 🛰
-Home page: geographical maps<br>
-Major locations that have the most damage because of natural disasters<br>
-Nav bar with Home, About > dropdown with team members, Mini-Labs > dropdown with different pages including a greetings page, Journals<br>
-
 ## Contributors 🛸⚡️
 | Name | GitHub ID and Profile | Link to personal Github page |
 |:-----|:----------------------|:-----------------------------|
