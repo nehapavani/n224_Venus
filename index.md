@@ -10,6 +10,7 @@
 - search bar
 - database for orders
 
+### Contributers Info
 
 | Name | GitHub ID and Profile | Link to personal Github page |
 |:-----|:----------------------|:-----------------------------|
