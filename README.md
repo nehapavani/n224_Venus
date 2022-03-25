@@ -1,7 +1,7 @@
 # AP CSP Period 4: Team Venus🔭
-(Link)[https://github.com/nehapavani/n224_Venus/tree/main] to our Jekyll Page
+(Github Page)[https://nehapavani.github.io/n224_Venus/]
 
-(Link)[https://www.canva.com/design/DAE6tsiF4aA/PPBth3MRES_rctjeomZvHg/view] to our wireframe
+(Link to our wireframe)[https://www.canva.com/design/DAE6tsiF4aA/PPBth3MRES_rctjeomZvHg/view] 
 
 
 ## Project Ideation 🚀
