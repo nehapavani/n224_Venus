@@ -1,7 +1,8 @@
 # AP CSP Period 4: Team Venus🔭
-(Github Page)[https://nehapavani.github.io/n224_Venus/]
+[Github Page](https://nehapavani.github.io/n224_Venus/)
 
-(Link to our wireframe)[https://www.canva.com/design/DAE6tsiF4aA/PPBth3MRES_rctjeomZvHg/view] 
+[Link to our wireframe](https://www.canva.com/design/DAE6tsiF4aA/PPBth3MRES_rctjeomZvHg/view)
+
 
 
 ## Project Ideation 🚀
