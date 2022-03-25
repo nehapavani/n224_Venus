@@ -20,3 +20,9 @@
 | Neha Pavani | [@nehapavani](https://github.com/nehapavani) | [Link](https://nehapavani.github.io/CSP-Tri-3/)|
 | Anika Sharma | [@anika1sharma1](https://github.com/anika1sharma1) | [Link](https://anika1sharma1.github.io/AnikaIndi/)|
 
+### Review Ticket
+
+| Week 📆       |  Review Ticket 🎟 |
+| ------------- | ---------------- |
+| Week 2        | [Week 2 Review Ticket](https://github.com/nehapavani/n224_Venus/issues/10)|
+
