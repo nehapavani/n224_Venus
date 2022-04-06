@@ -26,3 +26,17 @@ class Users(UserMixin, db.Model):
 # from the user_loader callback.
 def get_id(self):
     return self.userID
+
+from werkzeug.security import generate_password_hash, check_password_hash
+
+ # set password method is used to create encrypted password
+    def set_password(self, password):
+        """Create hashed password."""
+        * Procedural Abstraction
+        self.password = generate_password_hash(password, method='sha256')
+
+    # check password to check versus encrypted password
+    def is_password_match(self, password):
+        """Check hashed password."""
+        result = check_password_hash(self.password, password)
+        return result
