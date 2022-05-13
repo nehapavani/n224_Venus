@@ -25,4 +25,9 @@
 | Week 📆       |  Review Ticket 🎟 |
 | ------------- | ---------------- |
 | Week 2        | [Week 2 Review Ticket](https://github.com/nehapavani/n224_Venus/issues/10)|
+| Week 3        | [Week 3 Review Ticket](https://github.com/nehapavani/n224_Venus/issues/11)|
+| Week 8        | [Week 8 part. 1 Review Ticket](https://github.com/nehapavani/n224_Venus/issues/12)|
+| Week 8        | [Week 8 part. 2 Review Ticket](https://github.com/nehapavani/n224_Venus/issues/13)|
+| Week 8        | [Week 8 part. 3 Review Ticket](https://github.com/nehapavani/n224_Venus/issues/14)|
+
 
