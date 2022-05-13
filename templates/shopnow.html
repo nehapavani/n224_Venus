@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "layouts/base.html" %}
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% include "layouts/navbar.html" %}
 
-</body>
-</html>
+{% block body %}
+
+    <body style="background-color:#f57076;">
+    <h1 style="font-family: 'Vladimir Script', monospace; padding: 120px; text-align:center; color:lightyellow; font-size: 100px;">&#9734; All Designs &#9734;</h1>
+    <img src="smiley_Copy.gif" alt="Smiley face" width="42" height="42" style="vertical-align:bottom">
+
+    <style>
+        body{ background:#000; margin:0px;}
+        div#menubar1{ padding: 24px; border:#999 1px dashed;}
+        div#menubar1 > a{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:17px;
+            background: #333;
+            padding: 12px 24px;
+            color:#999;
+            margin-right: 10px;
+            text-decoration:none;
+            border-radius: 4px;
+            transition: background 0.5s linear 0.1s , color 0.5s linear 0s;
+
+        }
+        div#menubar1 > a:hover {
+            background: #00EEEE;
+            color: #FFF;
+        }
+    </style>
+
+
+    <div class="row-fluid">
+        <div class="col-">
+            <p style="font-size: x-large">
+            <h1 style="text-align: left; font-family: 'Serif'">There are 4 types of masks offered</h1>
+            <h2>HTML Image</h2>
+            <img src="/templates/images/mask1.jpg"  width="500" height="333">
+            </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <p style="font-size: x-large">
+            <h1 style="text-align: left; font-family: 'Serif'">*straight masks with tied behind straps</h1>
+            <h1 style="text-align: left; font-family: 'Serif'">*straight masks with over the ear straps</h1>
+            <h1 style="text-align: left; font-family: 'Serif'">*straight masks with tied behind straps</h1>
+            <h1 style="text-align: left; font-family: 'Serif'">*molded masks with over the ear straps</h1>
+            </a>
+            <img src="/templates/images/shoppingbag.jpg" width="70%">
+            <br>
+            </p>
+        </div>
+
+        <div class="row-2">
+            <p style="font-size: x-large">
+            <h2 style="text-align: left; font-family: 'Serif'">*Visit our size guide to determine which mask is right for you!</h2>
+            <h2 style="text-align: left; font-family: 'Serif'">*Once you have received your mask, please leave a review on our feedback page!</h2>
+            <h2 style="text-align: left; font-family: 'Serif'">*Handwash your masks!</h2>
+            </a>
+            <img src="shoppingbag.jpg" width="70%">
+            <br>
+            </p>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+{% endblock %}
+
+

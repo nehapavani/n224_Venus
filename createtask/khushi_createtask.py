@@ -30,7 +30,7 @@ median = median(numList)
 mode = mode(numList)
 min = min(numList)
 max = max(numList)
-statInput = input('Would you like to see the list and the statistics of the list? (y/n)')
+statInput = input('Would you like to see the list and the stastistics of the list? (y/n)')
 if OR(statInput, 'y', 'yes'):
     print('The list is: ' + str(numList))
     print('The mean is ' + str(mean) + '.')

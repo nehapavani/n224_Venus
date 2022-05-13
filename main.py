@@ -12,7 +12,7 @@ app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 
 
-@app.route("/")
+@app.route('/')
 # map URL route for function below
 def index():
     return render_template("index.html")
@@ -26,6 +26,11 @@ def shopnow():
 @app.route('/feedback', methods=['GET','POST'])
 def feedback():
     return render_template("feedback.html")
+
+
+@app.route('/size', methods=['GET','POST'])
+def size():
+    return render_template("size.html")
 
 
 if __name__ == "__main__":
