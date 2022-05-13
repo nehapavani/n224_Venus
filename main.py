@@ -36,6 +36,9 @@ def blog():
 def size():
     return render_template("size.html")
 
+@app.route('/quiz', methods=['GET','POST'])
+def quiz():
+    return render_template("quiz.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
