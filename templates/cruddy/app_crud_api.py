@@ -1,15 +1,16 @@
 """control dependencies to support CRUD routes and APIs"""
+# from flask import Flask
 from flask import Blueprint, render_template
 from flask_restful import Api, Resource
 import requests
 
-from cruddy.query import *
+from templates.cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
-
+# app = Flask(__name__, template_folder='cruddy/templates')
 app_crud_api = Blueprint('crud_api', __name__,
                          url_prefix='/crud_api',
-                         template_folder='templates/crud/',
+                         # template_folder='templates/cruddy/',
                          static_folder='static',
                          static_url_path='static')
 
@@ -21,7 +22,7 @@ api = Api(app_crud_api)
 @app_crud_api.route('/')
 def crud_api():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("crud_async.html", table=users_all())
+    return render_template("cruddy/templates/crud_async.html", table=users_all())
 
 
 """ API routes section """

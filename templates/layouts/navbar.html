@@ -19,28 +19,10 @@
             <li><a class="nav-link" style="font-palette: #ffffff;" href={{ url_for('feedback') }}>Customer Feedback</a></li>
             <li><a class="nav-link" style="font-palette: #ffffff;" href={{ url_for('blog') }}>Blog</a></li>
             <li><a class="nav-link" style="font-palette: #ffffff;" href={{ url_for('quiz') }}>Quiz</a></li>
+            <li><a class="dropdown-item" href={{ url_for('crud.crud') }}>Login</a></li>
 {#            <li><a class="nav-link" style="font-palette: #ffffff;" href={{ url_for('size') }}>Size Guide</a></li>#}
         </ul>
     </div>
-
-    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Data
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    {#                            <li><a class="dropdown-item" href={{ url_for('api.joke') }}>Joke RESTapi</a></li>#}
-                    {#                            <li><a class="dropdown-item" href={{ url_for('api.jokes') }}>Jokes RESTapi</a></li>#}
-                    <li><a class="dropdown-item" href={{ url_for('crud.crud') }}>SQL CRUD</a></li>
-                    <li><a class="dropdown-item" href={{ url_for('crud_api.crud_api') }}>SQL CRUD Async</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-        </ul>
-    </div>
-
 
 
 

@@ -1,13 +1,10 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask import render_template, request
-from cruddy.app_crud import app_crud
-from cruddy.app_crud_api import app_crud_api
-import requests
-import json
+# from flask import Flask
+from flask import render_template
+from templates.cruddy.app_crud import app_crud
+from templates.cruddy.app_crud_api import app_crud_api
+from __init__ import app
 
-app = Flask(__name__)
+# app = Flask(__name__)
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 
@@ -27,6 +24,7 @@ def shopnow():
 def feedback():
     return render_template("feedback.html")
 
+
 @app.route('/blog', methods=['GET','POST'])
 def blog():
     return render_template("blog.html")
@@ -36,9 +34,11 @@ def blog():
 def size():
     return render_template("size.html")
 
+
 @app.route('/quiz', methods=['GET','POST'])
 def quiz():
     return render_template("quiz.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

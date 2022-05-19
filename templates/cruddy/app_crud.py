@@ -1,14 +1,15 @@
 """control dependencies to support CRUD app routes and APIs"""
+# from flask import Flask
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
 
-from cruddy.query import *
-import ctypes
+from templates.cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
+# app = Flask(__name__, template_folder='cruddy/templates')
 app_crud = Blueprint('crud', __name__,
                      url_prefix='/crud',
-                     template_folder='templates/cruddy/',
+                     # template_folder='templates/cruddy/',
                      static_folder='static',
                      static_url_path='static')
 
@@ -24,7 +25,7 @@ app_crud = Blueprint('crud', __name__,
 @login_required  # Flask-Login uses this decorator to restrict acess to logged in users
 def crud():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("crud.html", table=users_all())
+    return render_template("cruddy/templates/crud.html", table=users_all())
 
 
 # Flask-Login directs unauthorised users to this unauthorized_handler
@@ -43,10 +44,10 @@ def crud_login():
         user_name = request.form.get("user_name")
         password = request.form.get("password")
         if login(email, password):       # zero index [0] used as email is a tuple
-            return redirect(url_for("crud.crud"))
+            return render_template("cruddy/templates/orderform.html")
 
     # if not logged in, show the login page
-    return render_template("login.html")
+    return render_template("cruddy/templates/login.html")
 
 
 @app_crud.route('/authorize/', methods=["GET", "POST"])
@@ -65,7 +66,7 @@ def crud_authorize():
             #     return render_template("authorize.html")
             return redirect(url_for('crud.crud_login'))
     # show the auth user page if the above fails for some reason
-    return render_template("authorize.html")
+    return render_template("cruddy/templates/orderform.html")
 
 
 # CRUD create/add
@@ -93,7 +94,7 @@ def read():
         po = user_by_id(userid)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
-    return render_template("crud.html", table=table)
+    return render_template("cruddy/templates/crud.html", table=table)
 
 
 # CRUD update
@@ -125,7 +126,7 @@ def delete():
 @app_crud.route('/search/')
 def search():
     """loads form to search Users data"""
-    return render_template("search.html")
+    return render_template("cruddy/templates/search.html")
 
 
 # Search request and response
