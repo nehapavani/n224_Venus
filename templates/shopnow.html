@@ -6,7 +6,6 @@
 
     <body style="background-color:#f57076;">
     <h1 style="font-family: 'Vladimir Script', monospace; padding: 120px; text-align:center; color:lightyellow; font-size: 100px;">&#9734; All Designs &#9734;</h1>
-    <img src="" alt="Smiley face" width="42" height="42" style="vertical-align:bottom">
 
     <style>
         body{ background:#000; margin:0px;}
@@ -27,53 +26,95 @@
             background: #00EEEE;
             color: #FFF;
         }
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {background-color: #F5B7B1;} /* Green */
+        * {
+            box-sizing: border-box;
+        }
+
+
+        button {
+            background-color: rebeccapurple;
+            border-radius: 5px;
+            box-shadow: 4px 4px 5px rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 1rem 2rem;
+            position: relative;
+            transition: transform 0.1s linear, box-shadow 0.1s linear;
+            z-index: 10;
+        }
+
+        button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0 0 0 rebeccapurple;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .particle {
+            --x: 0;
+            --y: 0;
+            background-color: rebeccapurple;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 5px;
+            width: 5px;
+            z-index: -1;
+        }
+
+        .particle.move {
+            animation: move 1000ms linear forwards;
+        }
     </style>
 
 
     <div class="row-fluid">
-        <div class="col-">
-            <p style="font-size: x-large">
-            <h1 style="text-align: left; font-family: 'Serif'">There are 4 types of masks offered</h1>
-            <h2>HTML Image</h2>
-            <p style="color: black">
-                <br>
-                <a href="http://clipart-library.com/clip-art/shopping-bag-transparent-background-1.htm">
-                    <img src="http://clipart-library.com../images_k/shopping-bag-transparent-background/shopping-bag-transparent-background-1.png" height="200px" width="800px">
-                </a>
-                <br>
-                <!-- the San Diego Blood Bank can be a picture that represents where the funds go to social cause. -->
-                <a href="https://www.sandiegobloodbank.org/donors?gclid=Cj0KCQiAw9qOBhC-ARIsAG-rdn6Jh99P25IJL08dGfAxmtu0nRm08b2OHBkvJkS5V3crO2a0arcmrV0aAnY5EALw_wcB">
-                    <img src="https://www.sandiegobloodbank.org/sites/default/files/SDBB_Logo_Horizontal_600x187.jpg" width="800px">
-                </a>
-            <img src="/templates/images/mask1.jpg" width="500" height="333">
-            </p>
+        <div class="container-fluid animate-bottom">
+            <h1 style="text-align: center"></h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">There are 4 types of masks offered <br> -straight masks with tied behind straps<br> -straight masks with over the ear straps <br> -straight masks with tied behind straps<br> -molded masks with over the ear straps</p>
+                    </p>
+                </div>
+
+                <div class="col-sm-6">
+                    <p>
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; padding-right: 20px; border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">Tips!<br> -Visit our size guide to determine which mask is right for you!<br> -Once you have received your mask, please leave a review on our feedback page!<br>-Handwash your masks!</p>
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; border: 8px solid cadetblue; text-align: -webkit-center; font-size:30px; font-family: 'SansSerif';">Virtual Mask<br>Donation, but no mask <br>  <button class="button button2">Donate Now</button><br> Thank you for your donation </p>
+                    <p style="padding: 10px;border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">  <a href="http://127.0.0.1:5000/quiz"> </a> <br> <img src="https://static.wixstatic.com/media/86a038_6b2cb34886a5449d97e022b6f1fecd50~mv2.jpg/v1/crop/x_0,y_176,w_3437,h_1488/fill/w_704,h_305,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20200617_170001%20(2).jpg">Paris Themed Mask <br> $10 <br> <button class="button button1">Buy Now</button></p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">  <a href="http://127.0.0.1:5000/quiz"> </a> <br> <img src="https://static.wixstatic.com/media/86a038_324175e1af1941079244ea6f94ebecf0~mv2.jpg/v1/crop/x_0,y_87,w_3363,h_1456/fill/w_704,h_305,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20200617_170201%20(1).jpg">NASA Themed Mask <br> $10 <br> <button class="button button1">Buy Now</button></p>
+                </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <p style="font-size: x-large">
-            <h1 style="text-align: left; font-family: 'Serif'">*straight masks with tied behind straps</h1>
-            <h1 style="text-align: left; font-family: 'Serif'">*straight masks with over the ear straps</h1>
-            <h1 style="text-align: left; font-family: 'Serif'">*straight masks with tied behind straps</h1>
-            <h1 style="text-align: left; font-family: 'Serif'">*molded masks with over the ear straps</h1>
-            </a>
-            <img src="" width="70%">
-            <br>
-            </p>
-        </div>
-
-        <div class="row-2">
-            <p style="font-size: x-large">
-            <h2 style="text-align: left; font-family: 'Serif'">*Visit our size guide to determine which mask is right for you!</h2>
-            <h2 style="text-align: left; font-family: 'Serif'">*Once you have received your mask, please leave a review on our feedback page!</h2>
-            <h2 style="text-align: left; font-family: 'Serif'">*Handwash your masks!</h2>
-            </a>
-            <img src="" width="70%" />
-            <br>
-            </p>
-        </div>
     </div>
-
-
     </body>
     </html>
 {% endblock %}
