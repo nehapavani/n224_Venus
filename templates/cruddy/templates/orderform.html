@@ -1,18 +1,127 @@
 <!DOCTYPE html>
-<html>
+{% extends "layouts/base.html" %}
+
+{% block body %}
 
 
-<body>
+    <h1 style="text-align:center;">Mask Order Form</h1>
+    <div style="padding:20px">
+        <form id="form1">
+            <p>Name: <input type="text" id="yourname" name="yourname" /></p>
 
-<h1>The input element</h1>
+            <form id="form1">
+                <p>Email: <input type="text" id="youremail" name="youremail" /></p>
 
-<form action="/action_page.php">
-    <label for="fname">First name:</label>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Last name:</label>
-    <input type="text" id="lname" name="lname"><br><br>
-    <input type="submit" value="Submit">
-</form>
+                <p>What theme of mask will you order?</p>
+                <select id="sub">
+                    <option value="0">Choose One:</option>
+                    <option value="0">Paris Themed Mask</option>
+                    <option value="0">NASA Themed Mask</option>
+                    <option value="0">Hummingbird Themed Mask</option>
+                    <option value="0">Red and Gold Mask</option>
+                    <option value="0">Patterned Circles Themed Mask</option>
+                    <option value="0">Neutral Grey Mask</option>
+                    <option value="0">Red Floral Mask</option>
+                    <option value="0">Harry Potter Themed Mask</option>
+                    <option value="0">Denim Mask</option>
+                    <option value="0">Bird Garden Themed Mask</option>
+                </select>
 
-</body>
-</html>
+                <p>How many masks of this type will you order?</p>
+                <select id="sub">
+                    <option value="0">Choose One:</option>
+                    <option value="0">1</option>
+                    <option value="0">2</option>
+                    <option value="">3</option>
+                    <option value="0">4</option>
+                </select>
+
+
+                <p>What sizes will your masks be?</p>
+                <select id="variable">
+                    <option value="0">Choose One:</option>
+                    <option value="0">Size Medium</option>
+                    <option value="0">Size Large</option>
+                </select>
+
+                <p>What type will your mask be?</p>
+                <select id="ifstate">
+                    <option value="0">Choose One:</option>
+                    <option value="0">Tied behind molded mask</option>
+                    <option value="0">Tied behind straight mask</option>
+                    <option value="0">Over the ear molded mask</option>
+                    <option value="0">Over the ear straight mask</option>
+                </select>
+
+                <p>How will you pay? (Please include Masks for Social Equality in the comment section when paying.)</p>
+                <select id="con">
+                    <option value="0">Choose One:</option>
+                    <option value="0">Paypal to prashanthsharma@gmail.com</option>
+                    <option value="0">Zell to prashanthsharma@gmail.com</option>
+                </select>
+
+                <form id="form1">
+                    <p>What address do you want the mask dropped off at? <input type="text" id="youraddress" name="youraddress" /></p>
+
+                    <form id="form1">
+                        <p>Any questions or comments? <input type="text" id="yourname" name="yourname" /></p>
+
+
+
+                        <form method="POST" ID="create" action={{url_for('crud.create')}} >
+                            <td><input type="submit" value="Create"></td>
+                            </tr>
+                            </tbody>
+
+                            <p id="pswError"></p>
+                        </form>
+    </div>
+
+    </div>
+
+
+    <title>CRUD page</title>
+
+    <!-- Password verification and error message -->
+    <script>
+        //adding dom event listener to allow the verifyPassword funtion to be attached to the form. This is so we can keep our JS separate from our html and not have onsubmit in the form.
+
+        'use strict' //ensures best environment to prevent JS programmer error and tells browser to use most modern version of JS interpreter it has.
+
+        document.addEventListener("DOMContentLoaded", function(){
+            // event listener fires when the DOM is fully loaded. This way you can write scripts that are before the elements are loaded into the dom, but waits to be added to the page until the dom is fully loaded.
+
+            // document.querySelector('#create').addEventListener('submit', verifyPassword );
+            //querySelector selects elements with CSS selectors. id="create" gets selected with the code above.
+
+            // pulled this function in here to keep it private from the window object/global scope. This is one way to protect your variables and functions from being hijacked by xss. Declared function names do act like variables in a way.
+
+            function verifyPassword(event) {
+                /*
+                because this is being called by an event, the event object is automatically
+                passed and captured as seen above. We are capturing it with the 'event' parameter in this function.
+                This is frequently represented in the following ways in JS: e, evt and event.
+                As a variable, it could be called anything - but it makes more sense to call it event rather than banana... etc.
+                Name your variables well, my friends.
+                */
+
+                const psw =  document.getElementById("location").value;
+
+                if (psw.length < 6 || psw.length > 20) {
+                    document.getElementById("pswError").innerHTML = "Password must be between 6 and 20 characters";
+                    event.preventDefault();
+                    //prevents submission of form when location length is not valid.
+                }
+
+            } //this function could be expanded upon, where we use JS to completely validate the form and have HTML5 as a fallback. Let me know if you want to have me expand this. - T
+
+            //additional listeners and functions could/should be put in here.
+
+        }); //end DOMContentLoaded listener
+
+    </script>
+
+
+
+
+{% endblock %}

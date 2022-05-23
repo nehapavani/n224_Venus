@@ -2,242 +2,186 @@
 {% extends "layouts/base.html" %}
 
 {% block body %}
-<h1>Mask Order Details</h1>
-<div class="quiz-container">
-    <div id="quiz"></div>
-</div>
-<button id="previous">Previous Question</button>
-<button id="next">Next Question</button>
-<button id="submit">Submit Quiz</button>
-<div id="results"></div>
-
-<style>
-@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
-
-body{
-    font-size: 20px;
-    font-family: 'Work Sans', sans-serif;
-    color: #333;
-    font-weight: 300;
-    text-align: center;
-    background-color: #f8f6f0;
-}
-h1{
-    font-weight: 300;
-    margin: 0px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #444;
-    color: #fff;
-}
-.question{
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-.answers {
-    margin-bottom: 20px;
-    text-align: left;
-    display: inline-block;
-}
-.answers label{
-    display: block;
-    margin-bottom: 10px;
-}
-button{
-    font-family: 'Work Sans', sans-serif;
-    font-size: 22px;
-    background-color: #279;
-    color: #fff;
-    border: 0px;
-    border-radius: 3px;
-    padding: 20px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-button:hover{
-    background-color: #38a;
-}
 
 
+    <h1 style="text-align:center;">Mask Order Form</h1>
+<div style="padding:20px">
+        <form id="form1">
+            <p>Name: <input type="text" id="yourname" name="yourname" /></p>
+
+        <form id="form1">
+            <p>Email: <input type="text" id="youremail" name="youremail" /></p>
+
+        <p>What theme of mask will you order?</p>
+        <select id="sub">
+            <option value="0">Choose One:</option>
+            <option value="0">Paris Themed Mask</option>
+            <option value="0">NASA Themed Mask</option>
+            <option value="0">Hummingbird Themed Mask</option>
+            <option value="0">Red and Gold Mask</option>
+            <option value="0">Patterned Circles Themed Mask</option>
+            <option value="0">Neutral Grey Mask</option>
+            <option value="0">Red Floral Mask</option>
+            <option value="0">Harry Potter Themed Mask</option>
+            <option value="0">Denim Mask</option>
+            <option value="0">Bird Garden Themed Mask</option>
+        </select>
+
+        <p>How many masks of this type will you order?</p>
+        <select id="sub">
+            <option value="0">Choose One:</option>
+            <option value="0">1</option>
+            <option value="0">2</option>
+            <option value="">3</option>
+            <option value="0">4</option>
+        </select>
+
+
+        <p>What sizes will your masks be?</p>
+        <select id="variable">
+            <option value="0">Choose One:</option>
+            <option value="0">Size Medium</option>
+            <option value="0">Size Large</option>
+        </select>
+
+        <p>What type will your mask be?</p>
+        <select id="ifstate">
+            <option value="0">Choose One:</option>
+            <option value="0">Tied behind molded mask</option>
+            <option value="0">Tied behind straight mask</option>
+            <option value="0">Over the ear molded mask</option>
+            <option value="0">Over the ear straight mask</option>
+        </select>
+
+        <p>How will you pay? (Please include Masks for Social Equality in the comment section when paying.)</p>
+        <select id="con">
+            <option value="0">Choose One:</option>
+            <option value="0">Paypal to prashanthsharma@gmail.com</option>
+            <option value="0">Zell to prashanthsharma@gmail.com</option>
+        </select>
+
+        <form id="form1">
+            <p>What address do you want the mask dropped off at? <input type="text" id="youraddress" name="youraddress" /></p>
+
+        <form id="form1">
+            <p>Any questions or comments? <input type="text" id="yourname" name="yourname" /></p>
 
 
 
-.slide{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-.active-slide{
-    opacity: 1;
-    z-index: 2;
-}
-.quiz-container{
-    position: relative;
-    height: 200px;
-    margin-top: 40px;
-}
-</style>
+                    <form method="POST" ID="create" action={{url_for('crud.create')}} >
+                                <td><input type="submit" value="Create"></td>
+                            </tr>
+                            </tbody>
 
-<script>
-    (function(){
-    // Functions
-    function buildQuiz(){
-        // variable to store the HTML output
-        const output = [];
+                        <p id="pswError"></p>
+                    </form>
+                </div>
 
-        // for each question...
-        myQuestions.forEach(
-            (currentQuestion, questionNumber) => {
+            </div>
 
-                // variable to store the list of possible answers
-                const answers = [];
 
-                // and for each available answer...
-                for(letter in currentQuestion.answers){
+    <title>CRUD page</title>
 
-                    // ...add an HTML radio button
-                    answers.push(
-                        `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-                    );
+    <!-- Password verification and error message -->
+    <script>
+        //adding dom event listener to allow the verifyPassword funtion to be attached to the form. This is so we can keep our JS separate from our html and not have onsubmit in the form.
+
+        'use strict' //ensures best environment to prevent JS programmer error and tells browser to use most modern version of JS interpreter it has.
+
+        document.addEventListener("DOMContentLoaded", function(){
+            // event listener fires when the DOM is fully loaded. This way you can write scripts that are before the elements are loaded into the dom, but waits to be added to the page until the dom is fully loaded.
+
+            // document.querySelector('#create').addEventListener('submit', verifyPassword );
+            //querySelector selects elements with CSS selectors. id="create" gets selected with the code above.
+
+            // pulled this function in here to keep it private from the window object/global scope. This is one way to protect your variables and functions from being hijacked by xss. Declared function names do act like variables in a way.
+
+            function verifyPassword(event) {
+                /*
+                because this is being called by an event, the event object is automatically
+                passed and captured as seen above. We are capturing it with the 'event' parameter in this function.
+                This is frequently represented in the following ways in JS: e, evt and event.
+                As a variable, it could be called anything - but it makes more sense to call it event rather than banana... etc.
+                Name your variables well, my friends.
+                */
+
+                const psw =  document.getElementById("location").value;
+
+                if (psw.length < 6 || psw.length > 20) {
+                    document.getElementById("pswError").innerHTML = "Password must be between 6 and 20 characters";
+                    event.preventDefault();
+                    //prevents submission of form when location length is not valid.
                 }
 
-                // add this question and its answers to the output
-                output.push(
-                    `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          </div>`
-                );
-            }
-        );
+            } //this function could be expanded upon, where we use JS to completely validate the form and have HTML5 as a fallback. Let me know if you want to have me expand this. - T
 
-        // finally combine our output list into one string of HTML and put it on the page
-        quizContainer.innerHTML = output.join('');
-    }
+            //additional listeners and functions could/should be put in here.
 
-    function showResults(){
+        }); //end DOMContentLoaded listener
 
-        // gather answer containers from our quiz
-        const answerContainers = quizContainer.querySelectorAll('.answers');
+    </script>
 
-        // keep track of user's answers
-        let numCorrect = 0;
 
-        // for each question...
-        myQuestions.forEach( (currentQuestion, questionNumber) => {
+    <!-- CONTENT (in <body>), content for this page -->
 
-            // find selected answer
-            const answerContainer = answerContainers[questionNumber];
-            const selector = `input[name=question${questionNumber}]:checked`;
-            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    <div class="container py-4 text-light bg-dark">
+        <header class="pb-3 mb-4 border-bottom">
+            <div class="d-flex align-items-center text-light text-decoration-none">
+                <span class="fs-4">SQL CRUD Admin Page</span>
+            </div>
+        </header>
 
-            // if answer is correct
-            if(userAnswer === currentQuestion.correctAnswer){
-                // add to the number of correct answers
-                numCorrect++;
+        <div class="container py-4">
+            <div class="p-5 mb-4 bg-light text-dark rounded-3">
+                <h2>Table Viewer</h2>
+                <div class="row align-items-md-stretch">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><a href={{url_for('crud.crud')}}>Full Table </a></td>
+                            <td><a href="https://github.com/christinlee367/n225_FireEradicatorsTheSequel/tree/main/crud">GitHub Source</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row align-items-md-stretch">
+                    <div class="container-fluid py-5">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Type of Disaster</th>
+                                <th>Disaster Rating (1-10)</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Loop through rows in table -->
+                            {% for row in table %}
+                                <!--
+                                Prepare table for display
+                                    caution: date number needs "~" format step to force type to string
+                                -->
 
-                // color the answers green
-                answerContainers[questionNumber].style.color = 'lightgreen';
-            }
-            // if answer is wrong or blank
-            else{
-                // color the answers red
-                answerContainers[questionNumber].style.color = 'red';
-            }
-        });
+                                <tr>
+                                    <td>{{ row['eventID'] }}</td>
+                                    <td>{{ row['type'] }}</td>
+                                    <td>{{ row['rating'] }}</td>
+                                    <td>{{ row['location'] }}</td>
+                                    <td>{{ row['date'] }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-        // show number of correct answers out of total
-        resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    }
+        </div>
+    </form>
+</div>
 
-    function showSlide(n) {
-        slides[currentSlide].classList.remove('active-slide');
-        slides[n].classList.add('active-slide');
-        currentSlide = n;
-        if(currentSlide === 0){
-            previousButton.style.display = 'none';
-        }
-        else{
-            previousButton.style.display = 'inline-block';
-        }
-        if(currentSlide === slides.length-1){
-            nextButton.style.display = 'none';
-            submitButton.style.display = 'inline-block';
-        }
-        else{
-            nextButton.style.display = 'inline-block';
-            submitButton.style.display = 'none';
-        }
-    }
-
-    function showNextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    function showPreviousSlide() {
-        showSlide(currentSlide - 1);
-    }
-
-    // Variables
-    const quizContainer = document.getElementById('quiz');
-    const resultsContainer = document.getElementById('results');
-    const submitButton = document.getElementById('submit');
-    const myQuestions = [
-        {
-            question: "How many masks of this type will you order?",
-            answers: {
-                a: "1",
-                b: "2",
-                c: "3",
-                d: "4"
-            },
-
-        },
-        {
-            question: "What sizes will your masks be?",
-            answers: {
-                a: "Medium",
-                b: "Large",
-
-            },
-
-        },
-        {
-            question: "What type will your mask be?",
-            answers: {
-                a: "Tied behind molded mask",
-                b: "Tied behind straight mask",
-                c: "Over the ear molded mask",
-                d: "Over the ear straight mask"
-            },
-
-        }
-    ];
-
-    // Kick things off
-    buildQuiz();
-
-    // Pagination
-    const previousButton = document.getElementById("previous");
-    const nextButton = document.getElementById("next");
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
-
-    // Show the first slide
-    showSlide(currentSlide);
-
-    // Event listeners
-    submitButton.addEventListener('click', showResults);
-    previousButton.addEventListener("click", showPreviousSlide);
-    nextButton.addEventListener("click", showNextSlide);
-})();
-</script>
 {% endblock %}
