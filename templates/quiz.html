@@ -2,242 +2,85 @@
 {% extends "layouts/base.html" %}
 
 {% block body %}
-<h1>Mask Order Details</h1>
-<div class="quiz-container">
-    <div id="quiz"></div>
+
+
+    <h1 style="text-align:center;">Mask Order Form</h1>
+<div style="padding:20px">
+        <form id="form1">
+            <p>Name: <input type="text" id="yourname" name="yourname" /></p>
+
+        <form id="form1">
+            <p>Email: <input type="text" id="youremail" name="youremail" /></p>
+
+        <p>What theme of mask will you order?</p>
+        <select id="sub">
+            <option value="0">Choose One:</option>
+            <option value="0">Paris Themed Mask</option>
+            <option value="0">NASA Themed Mask</option>
+            <option value="0">Hummingbird Themed Mask</option>
+            <option value="0">Red and Gold Mask</option>
+            <option value="0">Patterned Circles Themed Mask</option>
+            <option value="0">Neutral Grey Mask</option>
+            <option value="0">Red Floral Mask</option>
+            <option value="0">Harry Potter Themed Mask</option>
+            <option value="0">Denim Mask</option>
+            <option value="0">Bird Garden Themed Mask</option>
+        </select>
+
+        <p>How many masks of this type will you order?</p>
+        <select id="sub">
+            <option value="0">Choose One:</option>
+            <option value="0">1</option>
+            <option value="0">2</option>
+            <option value="">3</option>
+            <option value="0">4</option>
+        </select>
+
+
+        <p>What sizes will your masks be?</p>
+        <select id="variable">
+            <option value="0">Choose One:</option>
+            <option value="0">Size Medium</option>
+            <option value="0">Size Large</option>
+        </select>
+
+        <p>What type will your mask be?</p>
+        <select id="ifstate">
+            <option value="0">Choose One:</option>
+            <option value="0">Tied behind molded mask</option>
+            <option value="0">Tied behind straight mask</option>
+            <option value="0">Over the ear molded mask</option>
+            <option value="0">Over the ear straight mask</option>
+        </select>
+
+        <p>How will you pay? (Please include Masks for Social Equality in the comment section when paying.)</p>
+        <select id="con">
+            <option value="0">Choose One:</option>
+            <option value="0">Paypal to prashanthsharma@gmail.com</option>
+            <option value="0">Zell to prashanthsharma@gmail.com</option>
+        </select>
+
+        <form id="form1">
+            <p>What address do you want the mask dropped off at? <input type="text" id="youraddress" name="youraddress" /></p>
+
+        <form id="form1">
+            <p>Any questions or comments? <input type="text" id="yourname" name="yourname" /></p>
+
+
+
+                    <form method="POST" ID="create" action={{url_for('crud.create')}} >
+                                <td><input type="submit" value="Create"></td>
+                            </tr>
+                            </tbody>
+
+                        <p id="pswError"></p>
+                    </form>
+                </div>
+
+            </div>
+
+
+    </form>
 </div>
-<button id="previous">Previous Question</button>
-<button id="next">Next Question</button>
-<button id="submit">Submit Quiz</button>
-<div id="results"></div>
 
-<style>
-@import url(https://fonts.googleapis.com/css?family=Work+Sans:300,600);
-
-body{
-    font-size: 20px;
-    font-family: 'Work Sans', sans-serif;
-    color: #333;
-    font-weight: 300;
-    text-align: center;
-    background-color: #f8f6f0;
-}
-h1{
-    font-weight: 300;
-    margin: 0px;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #444;
-    color: #fff;
-}
-.question{
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-.answers {
-    margin-bottom: 20px;
-    text-align: left;
-    display: inline-block;
-}
-.answers label{
-    display: block;
-    margin-bottom: 10px;
-}
-button{
-    font-family: 'Work Sans', sans-serif;
-    font-size: 22px;
-    background-color: #279;
-    color: #fff;
-    border: 0px;
-    border-radius: 3px;
-    padding: 20px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-button:hover{
-    background-color: #38a;
-}
-
-
-
-
-
-.slide{
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-.active-slide{
-    opacity: 1;
-    z-index: 2;
-}
-.quiz-container{
-    position: relative;
-    height: 200px;
-    margin-top: 40px;
-}
-</style>
-
-<script>
-    (function(){
-    // Functions
-    function buildQuiz(){
-        // variable to store the HTML output
-        const output = [];
-
-        // for each question...
-        myQuestions.forEach(
-            (currentQuestion, questionNumber) => {
-
-                // variable to store the list of possible answers
-                const answers = [];
-
-                // and for each available answer...
-                for(letter in currentQuestion.answers){
-
-                    // ...add an HTML radio button
-                    answers.push(
-                        `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-                    );
-                }
-
-                // add this question and its answers to the output
-                output.push(
-                    `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          </div>`
-                );
-            }
-        );
-
-        // finally combine our output list into one string of HTML and put it on the page
-        quizContainer.innerHTML = output.join('');
-    }
-
-    function showResults(){
-
-        // gather answer containers from our quiz
-        const answerContainers = quizContainer.querySelectorAll('.answers');
-
-        // keep track of user's answers
-        let numCorrect = 0;
-
-        // for each question...
-        myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-            // find selected answer
-            const answerContainer = answerContainers[questionNumber];
-            const selector = `input[name=question${questionNumber}]:checked`;
-            const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-            // if answer is correct
-            if(userAnswer === currentQuestion.correctAnswer){
-                // add to the number of correct answers
-                numCorrect++;
-
-                // color the answers green
-                answerContainers[questionNumber].style.color = 'lightgreen';
-            }
-            // if answer is wrong or blank
-            else{
-                // color the answers red
-                answerContainers[questionNumber].style.color = 'red';
-            }
-        });
-
-        // show number of correct answers out of total
-        resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    }
-
-    function showSlide(n) {
-        slides[currentSlide].classList.remove('active-slide');
-        slides[n].classList.add('active-slide');
-        currentSlide = n;
-        if(currentSlide === 0){
-            previousButton.style.display = 'none';
-        }
-        else{
-            previousButton.style.display = 'inline-block';
-        }
-        if(currentSlide === slides.length-1){
-            nextButton.style.display = 'none';
-            submitButton.style.display = 'inline-block';
-        }
-        else{
-            nextButton.style.display = 'inline-block';
-            submitButton.style.display = 'none';
-        }
-    }
-
-    function showNextSlide() {
-        showSlide(currentSlide + 1);
-    }
-
-    function showPreviousSlide() {
-        showSlide(currentSlide - 1);
-    }
-
-    // Variables
-    const quizContainer = document.getElementById('quiz');
-    const resultsContainer = document.getElementById('results');
-    const submitButton = document.getElementById('submit');
-    const myQuestions = [
-        {
-            question: "How many masks of this type will you order?",
-            answers: {
-                a: "1",
-                b: "2",
-                c: "3",
-                d: "4"
-            },
-
-        },
-        {
-            question: "What sizes will your masks be?",
-            answers: {
-                a: "Medium",
-                b: "Large",
-
-            },
-
-        },
-        {
-            question: "What type will your mask be?",
-            answers: {
-                a: "Tied behind molded mask",
-                b: "Tied behind straight mask",
-                c: "Over the ear molded mask",
-                d: "Over the ear straight mask"
-            },
-
-        }
-    ];
-
-    // Kick things off
-    buildQuiz();
-
-    // Pagination
-    const previousButton = document.getElementById("previous");
-    const nextButton = document.getElementById("next");
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
-
-    // Show the first slide
-    showSlide(currentSlide);
-
-    // Event listeners
-    submitButton.addEventListener('click', showResults);
-    previousButton.addEventListener("click", showPreviousSlide);
-    nextButton.addEventListener("click", showNextSlide);
-})();
-</script>
 {% endblock %}
