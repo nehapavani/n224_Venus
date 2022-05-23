@@ -1,87 +1,18 @@
 <!DOCTYPE html>
-{% extends "layouts/base.html" %}
-
-{% block body %}
+<html>
 
 
-    <h1 style="text-align:center;">Mask Order Form</h1>
-    <div style="padding:20px">
-        <form id="form1">
-            <p>Name: <input type="text" id="yourname" name="yourname" /></p>
+<body>
 
-            <form id="form1">
-                <p>Email: <input type="text" id="youremail" name="youremail" /></p>
+<h1>The input element</h1>
 
-                <p>What theme of mask will you order?</p>
-                <select id="sub">
-                    <option value="0">Choose One:</option>
-                    <option value="0">Paris Themed Mask</option>
-                    <option value="0">NASA Themed Mask</option>
-                    <option value="0">Hummingbird Themed Mask</option>
-                    <option value="0">Red and Gold Mask</option>
-                    <option value="0">Patterned Circles Themed Mask</option>
-                    <option value="0">Neutral Grey Mask</option>
-                    <option value="0">Red Floral Mask</option>
-                    <option value="0">Harry Potter Themed Mask</option>
-                    <option value="0">Denim Mask</option>
-                    <option value="0">Bird Garden Themed Mask</option>
-                </select>
+<form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+</form>
 
-                <p>How many masks of this type will you order?</p>
-                <select id="sub">
-                    <option value="0">Choose One:</option>
-                    <option value="0">1</option>
-                    <option value="0">2</option>
-                    <option value="">3</option>
-                    <option value="0">4</option>
-                </select>
-
-
-                <p>What sizes will your masks be?</p>
-                <select id="variable">
-                    <option value="0">Choose One:</option>
-                    <option value="0">Size Medium</option>
-                    <option value="0">Size Large</option>
-                </select>
-
-                <p>What type will your mask be?</p>
-                <select id="ifstate">
-                    <option value="0">Choose One:</option>
-                    <option value="0">Tied behind molded mask</option>
-                    <option value="0">Tied behind straight mask</option>
-                    <option value="0">Over the ear molded mask</option>
-                    <option value="0">Over the ear straight mask</option>
-                </select>
-
-                <p>How will you pay? (Please include Masks for Social Equality in the comment section when paying.)</p>
-                <select id="con">
-                    <option value="0">Choose One:</option>
-                    <option value="0">Paypal to prashanthsharma@gmail.com</option>
-                    <option value="0">Zell to prashanthsharma@gmail.com</option>
-                </select>
-
-                <form id="form1">
-                    <p>What address do you want the mask dropped off at? <input type="text" id="youraddress" name="youraddress" /></p>
-
-                    <form id="form1">
-                        <p>Any questions or comments? <input type="text" id="yourname" name="yourname" /></p>
-
-
-
-                        <form method="POST" ID="create" action={{url_for('crud.create')}} >
-                            <td><input type="submit" value="Create"></td>
-                            </tr>
-                            </tbody>
-
-                            <p id="pswError"></p>
-                        </form>
-                </form>
-    </div>
-
-    </div>
-
-
-
-    </div>
-
-{% endblock %}
+</body>
+</html>

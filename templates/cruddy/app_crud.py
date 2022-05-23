@@ -140,12 +140,3 @@ def search_term():
     term = req['term']
     response = make_response(jsonify(users_ilike(term)), 200)
     return response
-
-
-
-
-
-
-
-
-

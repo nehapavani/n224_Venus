@@ -7,13 +7,6 @@
     <body style="background-color:#f57076;">
     <h1 style="font-family: 'Vladimir Script', monospace; padding: 120px; text-align:center; color:lightyellow; font-size: 100px;">&#9734; All Designs &#9734;</h1>
 
-    <script>
-        element.onmouseover = function() {
-            //Hovering
-        }
-
-    </script>
-
     <style>
         body{ background:#000; margin:0px;}
         div#menubar1{ padding: 24px; border:#999 1px dashed;}
@@ -50,18 +43,19 @@
             box-sizing: border-box;
         }
 
-.button {
-    background-color: rebeccapurple;
-    border-radius: 5px;
-    box-shadow: 4px 4px 5px rgba(255, 255, 255, 0.15);
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 1rem 2rem;
-    position: relative;
-    transition: transform 0.1s linear, box-shadow 0.1s linear;
-    z-index: 10;
-}
+
+        button {
+            background-color: rebeccapurple;
+            border-radius: 5px;
+            box-shadow: 4px 4px 5px rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 1rem 2rem;
+            position: relative;
+            transition: transform 0.1s linear, box-shadow 0.1s linear;
+            z-index: 10;
+        }
 
         button:active {
             transform: translate(4px, 4px);
@@ -88,49 +82,37 @@
         .particle.move {
             animation: move 1000ms linear forwards;
         }
-
-        @keyframes move {
-            to {
-                transform: translate(var(--x), var(--y));
-            }
-
-            95% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
     </style>
 
-    <div class="container-fluid animate-bottom">
-        <div class="row">
-            <div class="col-sm-6">
-                <p style="font-size: x-large">
-                <p style="padding: 10px; border: 8px solid cadetblue; text-align: left; font-size:25px; font-family: 'SansSerif';">There are 4 types of masks offered <br> -straight masks with tied behind straps<br> -straight masks with over the ear straps <br> -straight masks with tied behind straps<br> -molded masks with over the ear straps</p>
-                </p>
-            </div>
 
-            <div class="col-sm-6">
-                <p>
-                <p style="font-size: x-large">
-                <p style="padding: 10px; padding-right: 20px; border: 8px solid cadetblue; text-align: left; font-size:25px; font-family: 'SansSerif';">Tips!<br>-Visit our size guide to determine which mask is right for you!<br>-Once you have received your mask, please leave a review on our feedback page!<br>-Handwash your masks!</p>
-                </p>
+    <div class="row-fluid">
+        <div class="container-fluid animate-bottom">
+            <h1 style="text-align: center"></h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">There are 4 types of masks offered <br> -straight masks with tied behind straps<br> -straight masks with over the ear straps <br> -straight masks with tied behind straps<br> -molded masks with over the ear straps</p>
+                    </p>
+                </div>
+
+                <div class="col-sm-6">
+                    <p>
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; padding-right: 20px; border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">Tips!<br> -Visit our size guide to determine which mask is right for you!<br> -Once you have received your mask, please leave a review on our feedback page!<br>-Handwash your masks!</p>
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; border: 8px solid cadetblue; text-align: -webkit-center; font-size:30px; font-family: 'SansSerif';">Virtual Mask<br>Donation, but no mask <br>  <button class="button button2">Donate Now</button><br> Thank you for your donation </p>
+                    <p style="padding: 10px;border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">  <a href="http://127.0.0.1:5000/quiz"> </a> <br> <img src="https://static.wixstatic.com/media/86a038_6b2cb34886a5449d97e022b6f1fecd50~mv2.jpg/v1/crop/x_0,y_176,w_3437,h_1488/fill/w_704,h_305,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20200617_170001%20(2).jpg">Paris Themed Mask <br> $10 <br> <button class="button button1">Buy Now</button></p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                    <p style="font-size: x-large">
+                    <p style="padding: 10px; border: 8px solid cadetblue; text-align: left; font-size:30px; font-family: 'SansSerif';">  <a href="http://127.0.0.1:5000/quiz"> </a> <br> <img src="https://static.wixstatic.com/media/86a038_324175e1af1941079244ea6f94ebecf0~mv2.jpg/v1/crop/x_0,y_87,w_3363,h_1456/fill/w_704,h_305,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20200617_170201%20(1).jpg">NASA Themed Mask <br> $10 <br> <button class="button button1">Buy Now</button></p>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <p>
-                <p style="font-size: x-large">
-                <p style="padding: 1px; padding-block-end: 20px; border: 8px solid cadetblue; text-align: -webkit-center; font-size:30px; font-family: 'SansSerif';">Virtual Mask<br>Donation, but no mask <br> <button class="button button2">Donate Now</button><br> Thank you for your donation </p>
-                <p style="padding: 10px; padding-right: 20px; border: 8px solid cadetblue; text-align: center; font-size:30px; font-family: 'SansSerif';"> <a href="http://127.0.0.1:5000/quiz"> </a> <br> <img src="https://static.wixstatic.com/media/86a038_6b2cb34886a5449d97e022b6f1fecd50~mv2.jpg/v1/crop/x_0,y_176,w_3437,h_1488/fill/w_704,h_305,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20200617_170001%20(2).jpg">Paris Themed Mask <br> $10 <br> <button class="button button1">Buy Now</button></p>
-            </div>
-            <div class="col-sm-6">
-                <p>
-                <p style="font-size: x-large">
-                <p style="padding: 10px; padding-right: 20px; border: 8px solid cadetblue; text-align: center; font-size:30px; font-family: 'SansSerif';"> <a href="http://127.0.0.1:5000/quiz"> </a> <br> <img src="https://static.wixstatic.com/media/86a038_324175e1af1941079244ea6f94ebecf0~mv2.jpg/v1/crop/x_0,y_87,w_3363,h_1456/fill/w_704,h_305,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_20200617_170201%20(1).jpg">NASA Themed Mask <br> $10 <br> <button class="button button1">Buy Now</button></p>
-            </div>
-        </div>
         </div>
     </div>
     </body>
