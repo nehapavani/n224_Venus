@@ -1,14 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
 {% extends "layouts/base.html" %}
 
-
-
 {% block body %}
-<body>
-    <meta charset="UTF-8">
-    <title>Shop the Sizes</title>
 
-</body>
-    </html>
+    <!-- Formatting and managing aesthetics of sign-up page-->
+    <style>
+        * {box-sizing: border-box}
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: ;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color:;
+            outline: none;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        button:hover {
+            opacity:1;
+        }
+
+
+
+        .container {
+            padding: 16px;
+        }
+
+
+        @media screen and (max-width: 300px) {
+            .cancelbtn, .signupbtn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- The sign-up form on the site is linked to this specific google form-->
+    <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSfgmddGRK6gvxbZK9MWUkvVXZEdmcxXRhlUQw5_BCJMpKpeSQ/formResponse" style="border:1px solid #ccc">
+        <div class="container">
+            <h1>Feedback</h1> <!--The different questions being asked for the form, each name correlates to the answering portion in linked google form -->
+            <p>Want to give feedback? Let us know?</p>
+            <hr>
+            <label for="name"><b>Full Name</b></label>
+            <input type="text" placeholder="First and last name" name="entry.1564829526" jsname="YPqjbf" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="entry.1685589982" jsname="YPqjbf" required>
+
+            <label for="number"><b>Phone Number</b></label>
+            <input type="text" placeholder="Phone number" name="entry.592319792" jsname="YPqjbf" required>
+
+            <label for="qcc"><b>Questions/Comments/Concerns?</b></label>
+            <input type="text" placeholder="Type here" name="entry.80120306" jsname="YPqjbf" required>
+
+
+            <button type="submit" class="signupbtn">Submit</button> <!--Submit button, once submitted a Google Form confirmation page will show up-->
+        </div>
+        </div>
+    </form>
+
 {% endblock %}
