@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "layouts/navbar.html" %}
+
+{% block body %}
+
+    <body style="background-color:#F4C4D6;">
+
+<html>
+<body>
+<form enctype = "multipart/form-data" action = "python_script.py" method = "post">
+
+    <p>Upload File: <input type = "file" name = "filename" /></p>
+
+
+    <p><input type = "submit" value = "Upload" /></p>
+
+</form>
+</body>
+</html>
+{% endblock %}
