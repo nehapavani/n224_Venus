@@ -2,8 +2,8 @@
 from flask import render_template
 from templates.cruddy.app_crud import app_crud
 from templates.cruddy.app_crud_api import app_crud_api
-from PIL import Image
 from __init__ import app
+
 
 # app = Flask(__name__)
 app.register_blueprint(app_crud)
