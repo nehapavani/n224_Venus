@@ -6,6 +6,7 @@ from templates.cruddy.app_wish import app_wish
 from templates.cruddy.app_wish_api import app_wish_api
 from __init__ import app
 
+
 # app = Flask(__name__)
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
@@ -38,6 +39,9 @@ def blog():
 def size():
     return render_template("size.html")
 
+@app.route('/upload', methods=['GET','POST'])
+def upload():
+    return render_template("upload.html")
 
 @app.route('/quiz', methods=['GET','POST'])
 def quiz():

@@ -4,6 +4,7 @@ from templates.cruddy.model import WishList
 from flask_login import current_user, login_user, logout_user
 
 
+
 # this is method called by frontend, it has been randomized between Alchemy and Native SQL for fun
 def users_all():
     """  May have some problems with sql in deployment
