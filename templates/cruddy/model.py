@@ -87,6 +87,58 @@ class Users(UserMixin, db.Model):
         return self.userID
 
 
+class WishList(db.Model):
+    # define the Users schema
+    Item_Number = db.Column(db.Integer, primary_key=True)
+    Item_Name = db.Column(db.String(255), unique=True, nullable=False)
+    Quantity = db.Column(db.Integer, unique=False, nullable=False)
+
+    # constructor of a User object, initializes of instance variables within object
+    def __init__(self, Item_Name, Quantity):
+        self.Item_Name = Item_Name
+        self.Quantity = Quantity
+
+    # CRUD create/add a new record to the table
+    # returns self or None on error
+    def create(self):
+        try:
+            # creates a person object from Users(db.Model) class, passes initializers
+            db.session.add(self)  # add prepares to persist person object to Users table
+            db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    # CRUD read converts self to dictionary
+    # returns dictionary
+    def read(self):
+        return {
+            "num": self.Item_Number,
+            "name": self.Item_Name,
+            "quantity": self.Quantity,
+            "query": "by_alc"  # This is for fun, a little watermark
+        }
+
+    # CRUD update: updates users name, password, phone
+    # returns self
+    def update(self, name, quantity=0):
+        """only updates values with length"""
+
+        if len(name) > 0:
+            self.Item_Name = name
+        if quantity > 0:
+            self.Quantity(quantity)
+        db.session.commit()
+        return self
+
+    # CRUD delete: remove self
+    # None
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
+
 """Database Creation and Testing section"""
 
 
@@ -113,12 +165,39 @@ def model_tester():
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {row.email}")
 
+    print("--------------------------")
+    print("Seed Data for Table: Wishlist")
+    print("--------------------------")
+    db.create_all()
+    """Tester data for table"""
+
+    w1 = WishList(Item_Name='Toy',  Quantity=5)
+    w2 = WishList(Item_Name='Pen',  Quantity=3)
+    w3 = WishList(Item_Name='Pencil',  Quantity=20)
+    w4 = WishList(Item_Name='Phone',  Quantity=5)
+    table1 = [w1, w2, w3, w4]
+    for row in table1:
+        try:
+            db.session.add(row)
+            db.session.commit()
+        except IntegrityError:
+            db.session.remove()
+            print(f"Records exist, duplicate Iten, or error: {row.Item_Number}")
+
 
 def model_printer():
     print("------------")
     print("Table: users with SQL query")
     print("------------")
     result = db.session.execute('select * from users')
+    print(result.keys())
+    for row in result:
+        print(row)
+
+    print("------------")
+    print("Table: WishList with SQL query")
+    print("------------")
+    result = db.session.execute('select * from wish_list')
     print(result.keys())
     for row in result:
         print(row)

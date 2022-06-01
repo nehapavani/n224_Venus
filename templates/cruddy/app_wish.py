@@ -1,15 +1,13 @@
 """control dependencies to support CRUD app routes and APIs"""
-# from flask import Flask
 from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
 from flask_login import login_required
 
 from templates.cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
-# app = Flask(__name__, template_folder='cruddy/templates')
-app_crud = Blueprint('crud', __name__,
-                     url_prefix='/crud',
-                     # template_folder='templates/cruddy/',
+app_wish = Blueprint('wish', __name__,
+                     url_prefix='/wish',
+                     template_folder='templates/wishy/',
                      static_folder='static',
                      static_url_path='static')
 
@@ -21,40 +19,36 @@ app_crud = Blueprint('crud', __name__,
 
 
 # Default URL for Blueprint
-@app_crud.route('/')
-@login_required  # Flask-Login uses this decorator to restrict access to logged in users
-def crud():
+@app_wish.route('/')
+@login_required  # Flask-Login uses this decorator to restrict acess to logged in users
+def wish():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("cruddy/templates/crud.html", table=users_all())
+    return render_template("cruddy/templates/wish.html", table=wishlist_all())
 
 
 # Flask-Login directs unauthorised users to this unauthorized_handler
 @login_manager.unauthorized_handler
 def unauthorized():
     """Redirect unauthorized users to Login page."""
-    return redirect(url_for('crud.crud_login'))
+    return redirect(url_for('wish.wish_login'))
 
 
 # if login url, show phones table only
-@app_crud.route('/login/', methods=["GET", "POST"])
-def crud_login():
+@app_wish.route('/login/', methods=["GET", "POST"])
+def wish_login():
     # obtains form inputs and fulfills login requirements
     if request.form:
         email = request.form.get("email")
-        username = request.form.get("user_name")
         password = request.form.get("password")
-
-        if email == "fichwolfe@gmail.com" and password == "Password":
-            return redirect(url_for('crud_api.crud_api'))
         if login(email, password):       # zero index [0] used as email is a tuple
-            return render_template("cruddy/templates/orderform.html")
+            return redirect(url_for('wish.wish'))
 
     # if not logged in, show the login page
-    return render_template("cruddy/templates/login.html")
+    return render_template("cruddy/templates/wlogin.html")
 
 
-@app_crud.route('/authorize/', methods=["GET", "POST"])
-def crud_authorize():
+@app_wish.route('/authorize/', methods=["GET", "POST"])
+def wish_authorize():
     # check form inputs and creates user
     if request.form:
         # validation should be in HTML
@@ -62,78 +56,73 @@ def crud_authorize():
         email = request.form.get("email")
         phone = request.form.get("phone")
         password1 = request.form.get("password1")
-        password2 = request.form.get("password1")           # password should be verified
+        password2 = request.form.get("password1")         # password should be verified
         if authorize(user_name, email, password1):    # zero index [0] used as user_name and email are type tuple
-            # if password1 != password2:
-            #     ctypes.windll.user32.MessageBoxW(0, "Please type the same password!", "Message!", 1)
-            #     return render_template("authorize.html")
-            return render_template("cruddy/templates/login.html")
+            return redirect(url_for('wish.wish_login'))
     # show the auth user page if the above fails for some reason
-    return render_template("cruddy/templates/authorize.html")
+    return render_template("cruddy/templates/wauthorize.html")
 
 
 # CRUD create/add
-@app_crud.route('/create/', methods=["POST"])
+@app_wish.route('/create/', methods=["POST"])
 def create():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = Users(
+        po = WishList(
             request.form.get("name"),
-            request.form.get("email"),
-            request.form.get("password"),
-            request.form.get("phone")
+            request.form.get("quantity")
         )
         po.create()
-    return redirect(url_for('crud.crud'))
+    return redirect(url_for('wish.wish'))
 
 
 # CRUD read
-@app_crud.route('/read/', methods=["POST"])
+@app_wish.route('/read/', methods=["POST"])
 def read():
-    """gets userid from form and obtains corresponding data from Users table"""
+    """gets Item Number from form and obtains corresponding data from WishList table"""
     table = []
     if request.form:
-        userid = request.form.get("userid")
-        po = user_by_id(userid)
+        num = request.form.get("num")
+        po = wishlist_by_id(num)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
-    return render_template("cruddy/templates/crud.html", table=table)
+    return render_template("cruddy/templates/wish.html", table=table)
 
 
 # CRUD update
-@app_crud.route('/update/', methods=["POST"])
+@app_wish.route('/update/', methods=["POST"])
 def update():
     """gets userid and name from form and filters and then data in  Users table"""
     if request.form:
-        userid = request.form.get("userid")
+        num = request.form.get("num")
         name = request.form.get("name")
-        po = user_by_id(userid)
+        po = wishlist_by_id(num)
         if po is not None:
             po.update(name)
-    return redirect(url_for('crud.crud'))
+    return redirect(url_for('wish.wish'))
 
 
 # CRUD delete
-@app_crud.route('/delete/', methods=["POST"])
+@app_wish.route('/delete/', methods=["POST"])
 def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
-        userid = request.form.get("userid")
-        po = user_by_id(userid)
+        num = request.form.get("num")
+        po = wishlist_by_id(num)
         if po is not None:
             po.delete()
-    return redirect(url_for('crud.crud'))
+    return redirect(url_for('wish.wish'))
 
 
 # Search Form
-@app_crud.route('/search/')
+@app_wish.route('/search/')
 def search():
     """loads form to search Users data"""
-    return render_template("cruddy/templates/search.html")
+    return render_template("cruddy/templates/wsearch.html")
 
 
 # Search request and response
-@app_crud.route('/search/term/', methods=["POST"])
+@app_wish.route('/search/term/', methods=["POST"])
 def search_term():
     """ obtain term/search request """
     req = request.get_json()

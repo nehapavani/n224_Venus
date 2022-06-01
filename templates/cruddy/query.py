@@ -1,5 +1,6 @@
 from __init__ import login_manager, db
 from templates.cruddy.model import Users
+from templates.cruddy.model import WishList
 from flask_login import current_user, login_user, logout_user
 
 
@@ -16,6 +17,16 @@ def users_all():
     return users_all_alc()
 
 # this is method called by frontend, it has been randomized between Alchemy and Native SQL for fun
+def wishlist_all():
+    """  May have some problems with sql in deployment
+    if random.randint(0, 1) == 0:
+        table = users_all_alc()
+    else:
+        table = users_all_sql()
+    return table
+    """
+
+    return wishlist_all_alc()
 
 
 # SQLAlchemy extract all users from database
@@ -24,6 +35,12 @@ def users_all_alc():
     json_ready = [peep.read() for peep in table]
     return json_ready
 
+
+# SQLAlchemy extract all users from database
+def wishlist_all_alc():
+    table = WishList.query.all()
+    json_ready = [peep.read() for peep in table]
+    return json_ready
 
 # Native SQL extract all users from database
 def users_all_sql():
@@ -58,6 +75,10 @@ def user_by_id(userid):
     """finds User in table matching userid """
     return Users.query.filter_by(userID=userid).first()
 
+# SQLAlchemy extract single user from database matching ID
+def wishlist_by_id(num):
+    """finds User in table matching userid """
+    return WishList.query.filter_by(Item_Number=num).first()
 
 # SQLAlchemy extract single user from database matching email
 def user_by_email(email):
