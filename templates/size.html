@@ -9,6 +9,38 @@
     <meta charset="UTF-8">
     <title>Shop the Sizes</title>
 
+    if form.getvalue("interior"):
+    print "<p>Interior Painting(s) quantity:", form["quantity"].value, "</p>"
+    print "<p>You Cost is :$" ,int(form["quantity"].value)*2, ".00</p>"
+
+    else:
+    print "<p>Interior Painting(s) ordered: <b>0</b> <br /> Cost: <b>$0</b></p>"
+
+    if form.getvalue("exterior"):
+    print "<p>Exterior Painting quantity:", form["quantity2"].value, "</p>"
+    print "<p>You Cost is :$" ,int(form["quantity2"].value)*1, ".00</p>"
+
+    else:
+    print "<p>Exterior Painting(s) ordered: <b>0</b> <br /> Cost: <b>$0</b></p>"
+
+    if form.getvalue("pressure"):
+    print "<p>Pressure Washing quantity:", form["quantity3"].value, "</p>"
+    print "<p>You Cost is :$" ,int(form["quantity3"].value)*150, ".00</p>"
+    else:
+    print "<p>Pressure Washings(s)ordered: <b>0</b> <br /> Cost: <b>$0</b></p>"
+
+    if form.getvalue("wood"):
+    print "<p>Wood Finishing quantity:", form["quantity4"].value, "</p>"
+    print "<p>You Cost is $" ,int(form["quantity4"].value)*3, ".00</p>"
+    else:
+    print "<p>Wood Finsihings(s) ordered: <b>0</b> <br /> Cost: <b>$0</b></p>"
+
+    if form.getvalue("spraycan"):
+    print "<p>Spray Can quantity:", form["quantity5"].value, "</p>"
+    print "<p>You Cost is $" ,int(form["quantity5"].value)*10, ".00</p>"
+    else:
+    print "<p>Spray Cans ordered: <b>0</b> <br /> Cost: <b>$0</b></p>"
+
     </body>
     </html>
 {% endblock %}
