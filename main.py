@@ -47,6 +47,9 @@ def upload():
 def quiz():
     return render_template("quiz.html")
 
+@app.route('/sizeguide', methods=['GET','POST'])
+def sizeguide():
+    return render_template("sizeguide.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
