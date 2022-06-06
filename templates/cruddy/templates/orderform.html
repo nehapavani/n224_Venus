@@ -6,70 +6,69 @@
 
     <h1 style="text-align:center;">Mask Order Form</h1>
     <div style="padding:20px">
-        <form id="form1">
-            <p>Name: <input type="text" id="yourname" name="yourname" /></p>
+        <form class="form1", method="POST" ID="login" action={{url_for('purchase.purchase_create')}}>
+            <p>Name: <input type="text" id="name" name="name" /></p>
 
             <form id="form1">
-                <p>Email: <input type="text" id="youremail" name="youremail" /></p>
+                <p>Email: <input type="text" id="email" name="email" /></p>
 
                 <p>What theme of mask will you order?</p>
-                <select id="sub">
+                <select id="theme">
                     <option value="0">Choose One:</option>
-                    <option value="0">Paris Themed Mask</option>
-                    <option value="0">NASA Themed Mask</option>
-                    <option value="0">Hummingbird Themed Mask</option>
-                    <option value="0">Red and Gold Mask</option>
-                    <option value="0">Patterned Circles Themed Mask</option>
-                    <option value="0">Neutral Grey Mask</option>
-                    <option value="0">Red Floral Mask</option>
-                    <option value="0">Harry Potter Themed Mask</option>
-                    <option value="0">Denim Mask</option>
-                    <option value="0">Bird Garden Themed Mask</option>
+                    <option value="1">Paris Themed Mask</option>
+                    <option value="2">NASA Themed Mask</option>
+                    <option value="3">Hummingbird Themed Mask</option>
+                    <option value="4">Red and Gold Mask</option>
+                    <option value="5">Patterned Circles Themed Mask</option>
+                    <option value="6">Neutral Grey Mask</option>
+                    <option value="7">Red Floral Mask</option>
+                    <option value="8">Harry Potter Themed Mask</option>
+                    <option value="9">Denim Mask</option>
+                    <option value="10">Bird Garden Themed Mask</option>
                 </select>
 
                 <p>How many masks of this type will you order?</p>
-                <select id="sub">
+                <select id="amount">
                     <option value="0">Choose One:</option>
-                    <option value="0">1</option>
-                    <option value="0">2</option>
-                    <option value="">3</option>
-                    <option value="0">4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
 
 
                 <p>What sizes will your masks be?</p>
-                <select id="variable">
+                <select id="size">
                     <option value="0">Choose One:</option>
-                    <option value="0">Size Medium</option>
-                    <option value="0">Size Large</option>
+                    <option value="1">Size Medium</option>
+                    <option value="2">Size Large</option>
                 </select>
 
                 <p>What type will your mask be?</p>
-                <select id="ifstate">
+                <select id="type">
                     <option value="0">Choose One:</option>
-                    <option value="0">Tied behind molded mask</option>
-                    <option value="0">Tied behind straight mask</option>
-                    <option value="0">Over the ear molded mask</option>
-                    <option value="0">Over the ear straight mask</option>
+                    <option value="1">Tied behind molded mask</option>
+                    <option value="2">Tied behind straight mask</option>
+                    <option value="3">Over the ear molded mask</option>
+                    <option value="4">Over the ear straight mask</option>
                 </select>
 
                 <p>How will you pay? (Please include Masks for Social Equality in the comment section when paying.)</p>
-                <select id="con">
+                <select id="pay">
                     <option value="0">Choose One:</option>
-                    <option value="0">Paypal to prashanthsharma@gmail.com</option>
-                    <option value="0">Zell to prashanthsharma@gmail.com</option>
+                    <option value="1">Paypal to prashanthsharma@gmail.com</option>
+                    <option value="2">Zell to prashanthsharma@gmail.com</option>
                 </select>
 
-                <form id="form1">
-                    <p>What address do you want the mask dropped off at? <input type="text" id="youraddress" name="youraddress" /></p>
-
-                    <form id="form1">
-                        <p>Any questions or comments? <input type="text" id="yourname" name="yourname" /></p>
+                    <p>What address do you want the mask dropped off at? <input type="text" id="address" name="address" /></p>
 
 
+                        <p>Any questions or comments? <input type="text" id="notes" name="notes" /></p>
 
-                        <form method="POST" ID="create" action={{url_for('crud.create')}} >
-                            <td><input type="submit" value="Create"></td>
+
+
+{#                        <form method="POST" ID="create" action={{url_for('crud.create')}} >#}
+{#                            <td><input type="submit" value="Create"></td>#}
                             </tr>
                             </tbody>
 

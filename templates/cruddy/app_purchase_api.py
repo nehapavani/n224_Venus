@@ -7,21 +7,21 @@ from templates.cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
 
-app_wish_api = Blueprint('wish_api', __name__,
-                         url_prefix='/wish_api',
-                         template_folder='templates/wishy/',
-                         static_folder='static',
-                         static_url_path='static')
+app_purchase_api = Blueprint('purchase_api', __name__,
+                             url_prefix='/purchase_api',
+                             template_folder='/cruddy/templates',
+                             static_folder='static',
+                             static_url_path='static')
 
 # API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1
-api = Api(app_wish_api)
+api = Api(app_purchase_api)
 
 
 # Method #2 for CRUD
-@app_wish_api.route('/')
-def wish_api():
+@app_purchase_api.route('/')
+def purchase_api():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("cruddy/templates/wish_async.html", table=users_all())
+    return render_template("cruddy/templates/purchase_async.html", table=users_all())
 
 
 """ API routes section """
@@ -109,7 +109,7 @@ class UsersAPI:
 
 def api_tester():
     # local host URL for model
-    url = 'http://localhost:5222/wish_api'
+    url = 'http://localhost:5222/purchase_api'
 
     # test conditions
     API = 0

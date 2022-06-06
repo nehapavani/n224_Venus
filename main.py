@@ -2,16 +2,16 @@
 from flask import render_template
 from templates.cruddy.app_crud import app_crud
 from templates.cruddy.app_crud_api import app_crud_api
-from templates.cruddy.app_wish import app_wish
-from templates.cruddy.app_wish_api import app_wish_api
+from templates.cruddy.app_purchase import app_purchase
+from templates.cruddy.app_purchase_api import app_purchase_api
 from __init__ import app
 
 
 # app = Flask(__name__)
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
-app.register_blueprint(app_wish)
-app.register_blueprint(app_wish_api)
+app.register_blueprint(app_purchase)
+app.register_blueprint(app_purchase_api)
 
 
 @app.route('/')

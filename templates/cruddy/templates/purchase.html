@@ -40,9 +40,16 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Item Number</th>
-                                <th>Item Name</th>
-                                <th>Quantity</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Theme</th>
+                                <th>Amount</th>
+                                <th>Size</th>
+                                <th>Type</th>
+                                <th>Pay</th>
+                                <th>Address</th>
+                                <th>Notes</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -55,7 +62,14 @@
                                 <tr>
                                     <td>{{ row['num'] }}</td>
                                     <td>{{ row['name'] }}</td>
-                                    <td>{{ row['quantity'] }}</td>
+                                    <td>{{ row['email'] }}</td>
+                                    <td>{{ row['theme'] }}</td>
+                                    <td>{{ row['amount'] }}</td>
+                                    <td>{{ row['size'] }}</td>
+                                    <td>{{ row['type'] }}</td>
+                                    <td>{{ row['pay'] }}</td>
+                                    <td>{{ row['address'] }}</td>
+                                    <td>{{ row['notes'] }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -75,15 +89,29 @@
                         <thead>
                         <tr>
                             <!--      <th><label for="num">Item Number</label></th> -->
-                            <th><label for="name">Item Name</label></th>
-                            <th><label for="quantity">Quantity</label></th>
+                            <th><label for="name">Username</label></th>
+                            <th><label for="email">Email</label></th>
+                            <th><label for="theme">Theme</label></th>
+                            <th><label for="amount">Amount</label></th>
+                            <th><label for="size">Size</label></th>
+                            <th><label for="type">Type</label></th>
+                            <th><label for="pay">Pay</label></th>
+                            <th><label for="address">Address</label></th>
+                            <th><label for="notes">Notes</label></th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td><input type="text" name="name" id="name" required></td>
-                            <td><input type="text" name="quantity" id="quantity" required></td>
+                            <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
+                            <td><input type="text" name="theme" id="theme" required></td>
+                            <td><input type="text" name="amount" id="amount" required></td>
+                            <td><input type="text" name="size" id="size" required></td>
+                            <td><input type="text" name="type" id="type" required></td>
+                            <td><input type="text" name="pay" id="pay" required></td>
+                            <td><input type="text" name="address" id="address" required></td>
+                            <td><input type="text" name="notes" id="notes" placeholder="***" required></td>
                             <td><input type="submit" value="Create"></td>
                         </tr>
                         </tbody>

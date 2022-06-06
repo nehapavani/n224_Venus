@@ -9,13 +9,17 @@
     <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
 
     <script>
-        function create_User(){
+        function create_Purchase(){
             //Validate Password (must be 6-20 characters in len)
-            verifyPassword("click");
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            const phone = document.getElementById("phone").value;
+            const theme = document.getElementById("theme").value;
+            const amount = document.getElementById("amount").value;
+            const size = document.getElementById("size").value;
+            const type = document.getElementById("type").value;
+            const pay = document.getElementById("pay").value;
+            const address = document.getElementById("address").value;
+            const notes = document.getElementById("notes").value;
             const requestOptions = {
                 method: 'POST',
                 headers: {
@@ -24,7 +28,7 @@
                 },
             };
             //url for Create API
-            const url='/wish_api/create/' + name + '/' + email+ '/' + password + '/' + phone;
+            const url='/purchase_api/create/' + name + '/' + email + '/' + theme + '/' + amount + '/' + size + '/' + type + '/' + pay + '/' + address + '/' + notes ;
             //Asynch fetch API call to the database to create a new user
             fetch(url, requestOptions).then(response => {
                 // prepare HTML search result container for new output
@@ -60,34 +64,39 @@
                     }
                     resultContainer.appendChild(tr);
                     //Update the Userid drop downs with the new/created userid
-                    let optGrp = document.getElementById("ogr_userid");
+                    let optGrp = document.getElementById("ogr_purchaseid");
                     //create a DOM element for the option(new userid) in the option group(dropdown)
                     let option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['purchaseID'];
                     //add the new userid to the dropdown
                     optGrp.appendChild(option);
-                    optGrp = document.getElementById("ogu_userid");
+                    optGrp = document.getElementById("ogu_purchaseid");
                     option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['purchaseID'];
                     optGrp.appendChild(option);
-                    optGrp = document.getElementById("ogd_userid");
+                    optGrp = document.getElementById("ogd_purchaseid");
                     option = document.createElement("option");
-                    option.innerText = data['userID'];
+                    option.innerText = data['purchaseID'];
                     optGrp.appendChild(option);
                     document.getElementById("pswError").innerHTML ="";
                     document.getElementById("name").value="";
                     document.getElementById("email").value="";
-                    document.getElementById("password").value="";
-                    document.getElementById("phone").value="";
+                    document.getElementById("theme").value="";
+                    document.getElementById("amount").value="";
+                    document.getElementById("size").value="";
+                    document.getElementById("type").value="";
+                    document.getElementById("pay").value="";
+                    document.getElementById("address").value="";
+                    document.getElementById("notes").value="";
                 })
             })
         }
         // fetch the record from the database for a chosen userid
-        function read_User(){
-            const get_userid = document.getElementById("read_userid");
-            const userID = get_userid.value;
+        function read_Purchase(){
+            const get_purchaseid = document.getElementById("read_purchaseid");
+            const purchaseID = get_purchaseid.value;
             //url for Read API
-            const url='/wish_api/read/' + userID;
+            const url='/purchase_api/read/' + purchaseID;
             const requestOptions = {
                 method: 'GET',
             };
@@ -134,11 +143,11 @@
             })
         }
 
-        function update_User() {
+        function update_Purchase() {
             const username = document.getElementById("update_name").value;
-            const userid = document.getElementById("update_userid").value;
+            const purchaseid = document.getElementById("update_purchaseid").value;
             //url for Update API
-            const url = '/wish_api/update/' + userid + '/' + username;
+            const url = '/purchase_api/update/' + purchaseid + '/' + username;
             const requestOptions = {
                 method: 'PUT',
                 headers: {
@@ -163,7 +172,7 @@
                     let rows = table.querySelectorAll('tbody tr');
                     for(let i = 0; i < rows.length; ++i) {
                         //search for the required userid starting at row 0, column 0
-                        if (parseInt(rows[i].cells[0].innerHTML) === parseInt(userid)) {
+                        if (parseInt(rows[i].cells[0].innerHTML) === parseInt(purchaseid)) {
                             //for the selected userid, update the username in column 1
                             rows[i].cells[1].innerHTML = username;
                         }
@@ -180,10 +189,10 @@
 
         }
 
-        function delete_User(){
-            const userid = document.getElementById("delete_userid").value;
+        function delete_Purchase(){
+            const purchaseid = document.getElementById("delete_purchaseid").value;
             //url for Delete API
-            const url = '/wish_api/delete/' + userid;
+            const url = '/purchase_api/delete/' + purchaseid;
             const requestOptions = {
                 method: 'DELETE',
                 headers: {
@@ -203,18 +212,18 @@
                 response.json().then(data => {
                     console.log(data);
 
-                    let table = document.getElementById('users');
+                    let table = document.getElementById('purchase');
                     let rows = table.querySelectorAll('tbody tr');
                     //search for the required userid in the HTML table
                     for(let i = 0; i < rows.length; ++i) {
                         //search for the userid starting at row 0, column 0
-                        if (parseInt(rows[i].cells[0].innerHTML) === parseInt(userid)) {
+                        if (parseInt(rows[i].cells[0].innerHTML) === parseInt(purchaseid)) {
                             //delete the table row for the matched userid
-                            document.getElementById("users").deleteRow(i+1);
+                            document.getElementById("purchase").deleteRow(i+1);
                             //remove the deleted userid from the dropdowns
-                            document.getElementById("delete_userid").options[i].style.display = "none";
-                            document.getElementById("read_userid").options[i].style.display = "none";
-                            document.getElementById("update_userid").options[i].style.display = "none";
+                            document.getElementById("delete_purchaseid").options[i].style.display = "none";
+                            document.getElementById("read_purchaseid").options[i].style.display = "none";
+                            document.getElementById("update_purchaseid").options[i].style.display = "none";
                         }
                     }
                     //Another way of doing it is with jquery, in the table, find closest tr containing data and delete it
@@ -242,7 +251,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href={{url_for('wish_api.wish_api')}}>Full Table </a></td>
+                            <td><a href={{url_for('purchase_api.purchase_api')}}>Full Table </a></td>
                             <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/wish">GitHub Source</a></td>
                         </tr>
                         </tbody>
@@ -256,25 +265,30 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Password</th>
-                                <th>Phone</th>
+                                <th>Theme</th>
+                                <th>Amount</th>
+                                <th>Size</th>
+                                <th>Type</th>
+                                <th>Pay</th>
+                                <th>Address</th>
+                                <th>Notes</th>
                             </tr>
                             </thead>
                             <tbody id="result">
                             <!-- Loop through rows in table -->
                             {% for row in table %}
-                                <!--
-                                Prepare table for display
-                                    caution: phone number needs "~" format step to force type to string
-                                -->
-                                {% set pn = "" ~ row['phone'] %}
-                                {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
+
                                 <tr>
-                                    <td>{{ row['userID'] }}</td>
+                                    <td>{{ row['purchaseID'] }}</td>
                                     <td>{{ row['name'] }}</td>
                                     <td>{{ row['email'] }}</td>
-                                    <td>{{ row['password'] | truncate(20) }}</td>
-                                    <td>{{ pnf }}</td>
+                                    <td>{{ row['theme'] }}</td>
+                                    <td>{{ row['amount'] }}</td>
+                                    <td>{{ row['size'] }}</td>
+                                    <td>{{ row['type'] }}</td>
+                                    <td>{{ row['pay'] }}</td>
+                                    <td>{{ row['address'] }}</td>
+                                    <td>{{ row['notes'] }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -292,17 +306,27 @@
                     <tr>
                         <th><label for="name">Name</label></th>
                         <th><label for="email">Email</label></th>
-                        <th><label for="password">Password</label></th>
-                        <th><label for="phone">Phone</label></th>
+                        <th><label for="theme">Theme</label></th>
+                        <th><label for="amount">Amount</label></th>
+                        <th><label for="size">Size</label></th>
+                        <th><label for="type">Type</label></th>
+                        <th><label for="pay">Pay</label></th>
+                        <th><label for="address">Address</label></th>
+                        <th><label for="notes">Notes</label></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td><input type="text" name="name" id="name" required></td>
                         <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required></td>
-                        <td><input type="password" name="password" id="password" required></td>
-                        <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required></td>
-                        <td ><button onclick="create_User()">Create</button></td>
+                        <td><input type="text" name="theme" id="theme" required></td>
+                        <td><input type="text" name="amount" id="amount" required></td>
+                        <td><input type="text" name="size" id="size" required></td>
+                        <td><input type="text" name="type" id="type" required></td>
+                        <td><input type="text" name="pay" id="pay" required></td>
+                        <td><input type="text" name="address" id="address" required></td>
+                        <td><input type="text" name="notes" id="notes" placeholder="***" required></td>
+                        <td ><button onclick="create_Purchase()">Create</button></td>
 
                     </tr>
                     </tbody>
@@ -317,20 +341,20 @@
                         <h2>Read</h2>
                         <!-- <input type="submit" value="Read" -->
                         <table id="read_table">
-                            <tr><th><label for="read_userid">ID</label></th></tr>
+                            <tr><th><label for="read_purchaseid">ID</label></th></tr>
                             <tr>
                                 <td>
-                                    <select name="userid" id="read_userid">
-                                        <optgroup id="ogr_userid" label="userid" >
+                                    <select name="purchaseid" id="read_purchaseid">
+                                        <optgroup id="ogr_purchaseid" label="purchaseid" >
                                             {% for row in table %}
-                                                <option id="option" label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option id="option" label="{{ row['purchaseID'] }}">{{ row['purchaseID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
                                 </td>
                                 <td>
                                     <!-- <input type="submit" value="Read" -->
-                                    <button onclick="read_User()">Read</button>
+                                    <button onclick="read_Purchase()">Read</button>
                                 </td>
                             </tr>
                         </table>
@@ -341,22 +365,22 @@
                         <h2>Update</h2>
                         <table id="update_table">
                             <tr>
-                                <th><label for="update_userid">ID</label></th>
+                                <th><label for="update_purchaseid">ID</label></th>
                                 <th><label for="update_name">Name</label></th>
                             </tr>
                             <tr>
                                 <td>
-                                    <select name="userid" id="update_userid">
-                                        <optgroup id="ogu_userid" label="userid" >
+                                    <select name="purchaseid" id="update_purchaseid">
+                                        <optgroup id="ogu_purchaseid" label="purchaseid" >
                                             {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option label="{{ row['purchaseID'] }}">{{ row['purchaseID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
                                 </td>
                                 <td><input type="text" name="name" id="update_name" required></td>
                                 <!-- td><input type="submit" value="Update"></td -->
-                                <td> <button onclick="update_User()">Update</button>
+                                <td> <button onclick="update_Purchase()">Update</button>
                                 </td>
                             </tr>
                         </table>
@@ -366,18 +390,18 @@
                     <div class="p-5 mb-4 bg-light text-dark rounded-3">
                         <h2>Delete</h2>
                         <table id="read_table">
-                            <tr><th><label for="delete_userid">ID</label></th></tr>
+                            <tr><th><label for="delete_purchaseid">ID</label></th></tr>
                             <tr>
                                 <td>
-                                    <select name="userid" id="delete_userid">
-                                        <optgroup id="ogd_userid" label="userid">
+                                    <select name="purchaseid" id="delete_purchaseid">
+                                        <optgroup id="ogd_purchaseid" label="purchaseid">
                                             {% for row in table %}
-                                                <option label="{{ row['userID'] }}">{{ row['userID'] }}</option>
+                                                <option label="{{ row['purchaseID'] }}">{{ row['purchaseID'] }}</option>
                                             {% endfor %}
                                         </optgroup>
                                     </select>
                                 </td>
-                                <td><button onclick="delete_User()">Delete</button></td>
+                                <td><button onclick="delete_Purchase()">Delete</button></td>
                             </tr>
                         </table>
                     </div>

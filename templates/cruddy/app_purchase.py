@@ -5,7 +5,7 @@ from flask_login import login_required
 from templates.cruddy.query import *
 
 # blueprint defaults https://flask.palletsprojects.com/en/2.0.x/api/#blueprint-objects
-app_wish = Blueprint('wish', __name__,
+app_purchase = Blueprint('wish', __name__,
                      url_prefix='/wish',
                      template_folder='templates/wishy/',
                      static_folder='static',
@@ -19,36 +19,36 @@ app_wish = Blueprint('wish', __name__,
 
 
 # Default URL for Blueprint
-@app_wish.route('/')
+@app_purchase.route('/')
 @login_required  # Flask-Login uses this decorator to restrict acess to logged in users
-def wish():
+def purchase():
     """obtains all Users from table and loads Admin Form"""
-    return render_template("cruddy/templates/wish.html", table=wishlist_all())
+    return render_template("cruddy/templates/purchase.html", table=purchase_all())
 
 
 # Flask-Login directs unauthorised users to this unauthorized_handler
 @login_manager.unauthorized_handler
 def unauthorized():
     """Redirect unauthorized users to Login page."""
-    return redirect(url_for('wish.wish_login'))
+    return redirect(url_for('purchase.purchase_login'))
 
 
 # if login url, show phones table only
-@app_wish.route('/login/', methods=["GET", "POST"])
-def wish_login():
+@app_purchase.route('/login/', methods=["GET", "POST"])
+def purchase_login():
     # obtains form inputs and fulfills login requirements
     if request.form:
         email = request.form.get("email")
         password = request.form.get("password")
         if login(email, password):       # zero index [0] used as email is a tuple
-            return redirect(url_for('wish.wish'))
+            return redirect(url_for('purchase.purchase'))
 
     # if not logged in, show the login page
-    return render_template("cruddy/templates/wlogin.html")
+    return render_template("cruddy/templates/plogin.html")
 
 
-@app_wish.route('/authorize/', methods=["GET", "POST"])
-def wish_authorize():
+@app_purchase.route('/authorize/', methods=["GET", "POST"])
+def purchase_authorize():
     # check form inputs and creates user
     if request.form:
         # validation should be in HTML
@@ -58,71 +58,78 @@ def wish_authorize():
         password1 = request.form.get("password1")
         password2 = request.form.get("password1")         # password should be verified
         if authorize(user_name, email, password1):    # zero index [0] used as user_name and email are type tuple
-            return redirect(url_for('wish.wish_login'))
+            return redirect(url_for('purchase.purchase_login'))
     # show the auth user page if the above fails for some reason
-    return render_template("cruddy/templates/wauthorize.html")
+    return render_template("cruddy/templates/pauthorize.html")
 
 
 # CRUD create/add
-@app_wish.route('/create/', methods=["POST"])
-def create():
+@app_purchase.route('/create/', methods=["POST"])
+def purchase_create():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = WishList(
+        po = Purchase(
             request.form.get("name"),
-            request.form.get("quantity")
+            request.form.get("email"),
+            request.form.get("theme"),
+            request.form.get("amount"),
+            request.form.get("size"),
+            request.form.get("type"),
+            request.form.get("pay"),
+            request.form.get("address"),
+            request.form.get("notes")
         )
         po.create()
-    return redirect(url_for('wish.wish'))
+    return redirect(url_for('purchase.purchase'))
 
 
 # CRUD read
-@app_wish.route('/read/', methods=["POST"])
+@app_purchase.route('/read/', methods=["POST"])
 def read():
-    """gets Item Number from form and obtains corresponding data from WishList table"""
+    """gets Item Number from form and obtains corresponding data from Purchase table"""
     table = []
     if request.form:
         num = request.form.get("num")
-        po = wishlist_by_id(num)
+        po = purchase_by_id(num)
         if po is not None:
             table = [po.read()]  # placed in list for easier/consistent use within HTML
-    return render_template("cruddy/templates/wish.html", table=table)
+    return render_template("cruddy/templates/purchase.html", table=table)
 
 
 # CRUD update
-@app_wish.route('/update/', methods=["POST"])
+@app_purchase.route('/update/', methods=["POST"])
 def update():
     """gets userid and name from form and filters and then data in  Users table"""
     if request.form:
         num = request.form.get("num")
         name = request.form.get("name")
-        po = wishlist_by_id(num)
+        po = purchase_by_id(num)
         if po is not None:
             po.update(name)
-    return redirect(url_for('wish.wish'))
+    return redirect(url_for('purchase.purchase'))
 
 
 # CRUD delete
-@app_wish.route('/delete/', methods=["POST"])
+@app_purchase.route('/delete/', methods=["POST"])
 def delete():
     """gets userid from form delete corresponding record from Users table"""
     if request.form:
         num = request.form.get("num")
-        po = wishlist_by_id(num)
+        po = purchase_by_id(num)
         if po is not None:
             po.delete()
-    return redirect(url_for('wish.wish'))
+    return redirect(url_for('purchase.purchase'))
 
 
 # Search Form
-@app_wish.route('/search/')
+@app_purchase.route('/search/')
 def search():
     """loads form to search Users data"""
-    return render_template("cruddy/templates/wsearch.html")
+    return render_template("cruddy/templates/psearch.html")
 
 
 # Search request and response
-@app_wish.route('/search/term/', methods=["POST"])
+@app_purchase.route('/search/term/', methods=["POST"])
 def search_term():
     """ obtain term/search request """
     req = request.get_json()
