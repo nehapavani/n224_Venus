@@ -6,6 +6,18 @@
 
     <body style="background-color:#F4C4D6;">
 
+    <label for="photo">Choose a photo!</label>
+
+    <span>File Upload<input type="file"
+           id="photo" name="photo"
+           accept="image/png, image/jpeg"></span>
+
+    <form action="yourScript">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit">
+    </form>
+
+
     {% block content %}
         <div class="container py-4">
             <header class="pb-3 mb-4 border-bottom border-primary text-dark">
