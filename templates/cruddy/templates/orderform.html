@@ -6,7 +6,7 @@
 
     <h1 style="text-align:center;">Mask Order Form</h1>
     <div style="padding:20px">
-        <form class="form1", method="POST" ID="login" action={{url_for('purchase.purchase_create')}}>
+        <form class="form1", method="POST" ID="login" action={{url_for('purchase_api.purchase_api')}}>
             <p>Name: <input type="text" id="name" name="name" /></p>
 
             <form id="form1">
@@ -57,7 +57,7 @@
                 <select id="pay">
                     <option value="0">Choose One:</option>
                     <option value="1">Paypal to prashanthsharma@gmail.com</option>
-                    <option value="2">Zell to prashanthsharma@gmail.com</option>
+                    <option value="2">Zelle to prashanthsharma@gmail.com</option>
                 </select>
 
                     <p>What address do you want the mask dropped off at? <input type="text" id="address" name="address" /></p>
@@ -67,8 +67,8 @@
 
 
 
-{#                        <form method="POST" ID="create" action={{url_for('crud.create')}} >#}
-{#                            <td><input type="submit" value="Create"></td>#}
+                        <form method="POST" ID="create" action={{url_for('crud.create')}} >
+                            <td><input type="submit" value="Create"></td>
                             </tr>
                             </tbody>
 

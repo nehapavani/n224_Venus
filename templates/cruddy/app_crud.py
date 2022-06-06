@@ -44,7 +44,7 @@ def crud_login():
         username = request.form.get("user_name")
         password = request.form.get("password")
 
-        if email == "fichwolfe@gmail.com" and password == "Password":
+        if email == "prashanthsharma@gmail.com" and password == "Password":
             return redirect(url_for('crud_api.crud_api'))
         if login(email, password):       # zero index [0] used as email is a tuple
             return render_template("cruddy/templates/orderform.html")
@@ -67,7 +67,7 @@ def crud_authorize():
             # if password1 != password2:
             #     ctypes.windll.user32.MessageBoxW(0, "Please type the same password!", "Message!", 1)
             #     return render_template("authorize.html")
-            return render_template("cruddy/templates/login.html")
+            return redirect(url_for('crud.crud_login'))
     # show the auth user page if the above fails for some reason
     return render_template("cruddy/templates/authorize.html")
 
